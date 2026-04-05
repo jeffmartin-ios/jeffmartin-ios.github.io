@@ -3,54 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pandesal Bytes - iOS App Development</title>
+    <title>Pandesal Bytes — Independent iOS software</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared/styles.css">
-    
-    <!-- Inline styles for the specific new icon colors -->
-    <style>
-        .recipe-mini-icon {
-            background-color: #fff7ed; /* Light Orange/Beige */
-            color: #c2410c; /* Dark Orange */
-            font-size: 32px; /* For the fallback emoji if needed */
-        }
-        .vocab-bento-icon {
-            background-color: #fef2f2; /* Light Red */
-            color: #991b1b; /* Dark Red */
-        }
-    </style>
 </head>
-<body>
+<body class="page-home">
 
-    <!-- This div will be populated by shared/header.html -->
     <div id="header-placeholder"></div>
 
-    <!-- This div is a placeholder to prevent content from jumping when the header becomes fixed -->
-    <div id="hero-placeholder" style="height: 64px;"></div>
+    <div id="hero-placeholder" class="header-spacer"></div>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container text-section">
-            <h1 class="hero-title" data-i18n-key="hero.title">Pandesal Bytes</h1>
-            <p class="hero-subtitle" data-i18n-key="hero.subtitle-subfree">
+    <section class="hero-section hero-section--home">
+        <div class="container hero-home-inner">
+            <p class="site-tagline mono-eyebrow" data-i18n-key="site.tagline">Independent iOS software <span class="tagline-sep">/</span> インディーズのiOSアプリ</p>
+            <h1 class="hero-title hero-title--home" data-i18n-key="hero.title">Pandesal Bytes</h1>
+            <p class="hero-subtitle hero-subtitle--home" data-i18n-key="hero.subtitle-subfree">
                 Simple, subscription-free apps for iOS. Pay once, keep forever. We build minimal, focused software that we genuinely use ourselves.
             </p>
         </div>
     </section>
 
-    <main class="container">
-        
-        <!-- Photography Section -->
-        <section id="photography" class="page-section">
-             <div class="text-section" style="text-align: left; margin: 0 0 32px 0; max-width: 100%;">
-                <h2 class="section-title" style="font-size: 28px;" data-i18n-key="home.category.photography">Photography</h2>
-                <hr style="border: 0; border-top: 1px solid var(--border-color); margin-top: 8px;">
-            </div>
-            
+    <main class="container main-home">
+
+        <section id="photography" class="page-section page-section--tight-top">
+            <header class="section-block-head">
+                <h2 class="section-block-title" data-i18n-key="home.category.photography">Photography</h2>
+                <span class="section-block-label mono-eyebrow" aria-hidden="true">01</span>
+            </header>
+            <div class="section-block-rule" role="presentation"></div>
+
             <div class="app-grid">
-                <!-- App Card: Camera Pouch -->
                 <a href="camerapouch/" class="app-card card-style">
                     <div class="app-card-content">
                         <div>
@@ -70,12 +54,11 @@
                     </div>
                 </a>
 
-                <!-- App Card: Simulated Film -->
                 <a href="simulatedfilm/" class="app-card card-style">
                     <div class="app-card-content">
                         <div>
                             <div class="app-card-header">
-                                <div class="app-icon-placeholder" style="background-color: #dcfce7; color: #166534;">
+                                <div class="app-icon-placeholder app-icon-placeholder--mint">
                                     <img src="assets/simulatedfilm/icon.png" alt="Simulated Film App Icon" class="app-icon-image">
                                 </div>
                                 <div>
@@ -90,12 +73,11 @@
                     </div>
                 </a>
 
-                <!-- App Card: Camera Shelf -->
                 <a href="camerashelf/" class="app-card card-style">
                     <div class="app-card-content">
                         <div>
                             <div class="app-card-header">
-                                <div class="app-icon-placeholder camera-shelf-icon" style="background-color: #1c1917; color: #e7e5e4;">
+                                <div class="app-icon-placeholder camera-shelf-icon">
                                     <img src="assets/camerashelf/icon.png" alt="Camera Shelf App Icon" class="app-icon-image">
                                 </div>
                                 <div>
@@ -112,15 +94,14 @@
             </div>
         </section>
 
-        <!-- Productivity Section -->
-        <section id="productivity" class="page-section" style="padding-top: 0;">
-             <div class="text-section" style="text-align: left; margin: 0 0 32px 0; max-width: 100%;">
-                <h2 class="section-title" style="font-size: 28px;" data-i18n-key="home.category.productivity">Productivity</h2>
-                 <hr style="border: 0; border-top: 1px solid var(--border-color); margin-top: 8px;">
-            </div>
+        <section id="productivity" class="page-section">
+            <header class="section-block-head">
+                <h2 class="section-block-title" data-i18n-key="home.category.productivity">Productivity</h2>
+                <span class="section-block-label mono-eyebrow" aria-hidden="true">02</span>
+            </header>
+            <div class="section-block-rule" role="presentation"></div>
 
             <div class="app-grid">
-                <!-- App Card: Spent Today -->
                 <a href="spent-today/" class="app-card card-style">
                     <div class="app-card-content">
                         <div>
@@ -140,7 +121,6 @@
                     </div>
                 </a>
 
-                <!-- App Card: My Inventory Stack -->
                 <a href="inventory/" class="app-card card-style">
                     <div class="app-card-content">
                         <div>
@@ -160,12 +140,11 @@
                     </div>
                 </a>
 
-                <!-- App Card: Habit Habit -->
                 <a href="habit-habit/" class="app-card card-style">
                     <div class="app-card-content">
                         <div>
                             <div class="app-card-header">
-                                <div class="app-icon-placeholder" style="background-color: #f3f4f6;">
+                                <div class="app-icon-placeholder app-icon-placeholder--neutral">
                                     <img src="assets/horizons/icon.png" alt="Habit Habit App Icon" class="app-icon-image">
                                 </div>
                                 <div>
@@ -180,7 +159,6 @@
                     </div>
                 </a>
 
-                <!-- App Card: Pattern Projects -->
                 <a href="pattern-projects/" class="app-card card-style">
                     <div class="app-card-content">
                         <div>
@@ -200,7 +178,6 @@
                     </div>
                 </a>
 
-                <!-- App Card: Recipe Mini -->
                 <a href="recipe-mini/" class="app-card card-style">
                     <div class="app-card-content">
                         <div>
@@ -220,7 +197,6 @@
                     </div>
                 </a>
 
-                <!-- App Card: Vocab Bento (NEW) -->
                 <a href="vocab-bento/" class="app-card card-style">
                     <div class="app-card-content">
                         <div>
@@ -242,92 +218,65 @@
             </div>
         </section>
 
-        <!-- Latest Updates Section -->
-        <section id="latest-updates" class="page-section" style="display: none; padding-top: 0;">
-            <div class="text-section" style="text-align: left; margin: 0 0 32px 0; max-width: 100%;">
-                <h2 class="section-title" style="font-size: 28px;">Latest Updates</h2>
-                <hr style="border: 0; border-top: 1px solid var(--border-color); margin-top: 8px;">
-            </div>
+        <section id="latest-updates" class="page-section latest-updates-section" hidden>
+            <header class="section-block-head">
+                <h2 class="section-block-title" data-i18n-key="home.updates.title">Latest updates</h2>
+                <span class="section-block-label mono-eyebrow" aria-hidden="true">03</span>
+            </header>
+            <div class="section-block-rule" role="presentation"></div>
             <div id="home-posts-grid" class="updates-posts-grid"></div>
-            <div style="text-align: center; margin-top: 32px;">
-                <a href="/updates/" class="cta-button">See All Updates</a>
+            <div class="latest-updates-cta">
+                <a href="/updates/" class="cta-button cta-button--outline" data-i18n-key="home.updates.cta">All updates</a>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="page-section text-section">
-            <h2 class="section-title" data-i18n-key="about.title">Crafted with Care, Built for Focus.</h2>
+        <section id="about" class="page-section about-section text-section">
+            <h2 class="section-title section-title--about" data-i18n-key="about.title">Small studio. Careful software.</h2>
             <p class="section-subtitle" data-i18n-key="about.subtitle">
-                Based in Toronto, we believe in creating tools that are not just functional, but a pleasure to use. Our approach is straightforward: we identify a personal need, craft a beautiful solution, and polish it until it feels just right.
+                We are an independent team building focused iOS apps—subscription-free where it matters, private by design, and shaped by what we actually use day to day. Based in Toronto today; shipping quietly from the workbench.
             </p>
         </section>
 
-        <!-- Commitment Section -->
-        <section class="page-section">
-            <div class="container commitment-box">
-                <div class="commitment-card-grid">
-                    <!-- Card 1: Privacy First -->
-                    <div class="commitment-card">
-                        <div class="card-icon">
-                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15L15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 data-i18n-key="commitment.privacy.title">Privacy First</h3>
-                            <p data-i18n-key="commitment.privacy.description">We build our apps to be private by design. We don't collect or sell your personal data. Ever.</p>
-                        </div>
+        <section class="page-section" aria-label="Principles">
+            <div class="commitment-bento">
+                <div class="commitment-bento-cell">
+                    <div class="commitment-bento-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                     </div>
-                    <!-- Card 2: No Distractions -->
-                    <div class="commitment-card">
-                        <div class="card-icon">
-                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15L15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 data-i18n-key="commitment.distractions.title">No Distractions</h3>
-                            <p data-i18n-key="commitment.distractions.description">You won't find ads, trackers, or unnecessary notifications in our software.</p>
-                        </div>
+                    <h3 data-i18n-key="commitment.privacy.title">Privacy First</h3>
+                    <p data-i18n-key="commitment.privacy.description">We build our apps to be private by design. We don't collect or sell your personal data. Ever.</p>
+                </div>
+                <div class="commitment-bento-cell">
+                    <div class="commitment-bento-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                     </div>
-                    <!-- Card 3: Built to Last -->
-                    <div class="commitment-card">
-                        <div class="card-icon">
-                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15L15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 data-i18n-key="commitment.longevity.title">Built to Last</h3>
-                            <p data-i18n-key="commitment.longevity.description">We focus on quality and long-term support, ensuring our apps remain reliable and useful for years to come.</p>
-                        </div>
+                    <h3 data-i18n-key="commitment.distractions.title">No Distractions</h3>
+                    <p data-i18n-key="commitment.distractions.description">You won't find ads, trackers, or unnecessary notifications in our software.</p>
+                </div>
+                <div class="commitment-bento-cell">
+                    <div class="commitment-bento-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                     </div>
-                    <!-- Card 4: Ditch the Subscriptions -->
-                    <div class="commitment-card">
-                        <div class="card-icon">
-                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15L15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 data-i18n-key="commitment.subscriptions.title">Own Your Apps</h3>
-                            <p data-i18n-key="commitment.subscriptions.description">Our apps are free to use with powerful core features. Premium access is just a one-time purchase away—no subscriptions.</p>
-                        </div>
+                    <h3 data-i18n-key="commitment.longevity.title">Built to Last</h3>
+                    <p data-i18n-key="commitment.longevity.description">We focus on quality and long-term support, ensuring our apps remain reliable and useful for years to come.</p>
+                </div>
+                <div class="commitment-bento-cell">
+                    <div class="commitment-bento-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                     </div>
+                    <h3 data-i18n-key="commitment.subscriptions.title">Own Your Apps</h3>
+                    <p data-i18n-key="commitment.subscriptions.description">Our apps are free to use with powerful core features. Premium access is just a one-time purchase away—no subscriptions.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- This div will be populated by shared/footer.html -->
     <div id="footer-placeholder"></div>
-    
-    <!-- Load the shared script -->
+
     <script src="shared/scripts.js" defer></script>
 
     <script>
-        // Load latest 3 posts for the Latest Updates section
         const PRODUCT_NAMES_HOME = {
             'camerashelf': 'Camera Shelf', 'camerapouch': 'Camera Pouch',
             'simulatedfilm': 'Simulated Film', 'spent-today': 'Spent Today',
@@ -335,15 +284,26 @@
             'pattern-projects': 'Pattern Projects', 'recipe-mini': 'Recipe Mini',
             'vocab-bento': 'Vocab Bento',
         };
-        function formatDateHome(dateStr) {
-            return new Date(dateStr + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        function formatDateHome(dateStr, lang) {
+            const loc = lang === 'ja' ? 'ja-JP' : 'en-US';
+            return new Date(dateStr + 'T12:00:00').toLocaleDateString(loc, { year: 'numeric', month: 'long', day: 'numeric' });
         }
-        async function loadLatestUpdates() {
+
+        async function loadLatestUpdates(translations, lang) {
+            const grid = document.getElementById('home-posts-grid');
+            const section = document.getElementById('latest-updates');
+            if (!grid || !section) return;
+
+            const tr = translations || {};
+            const readMore = tr['home.updates.readmore'] || 'Read more →';
+
             try {
                 const res = await fetch('updates/posts.json');
                 const posts = await res.json();
                 if (!posts.length) return;
-                const grid = document.getElementById('home-posts-grid');
+
+                grid.innerHTML = '';
                 posts.slice(0, 3).forEach(post => {
                     const tagHTML = post.tags.map(t =>
                         `<span class="post-tag">${PRODUCT_NAMES_HOME[t] || t}</span>`
@@ -355,20 +315,23 @@
                         <div class="post-card-inner">
                             <div>
                                 <div class="post-card-meta">
-                                    <span class="post-date">${formatDateHome(post.date)}</span>
+                                    <span class="post-date">${formatDateHome(post.date, lang)}</span>
                                     ${tagHTML ? `<div class="post-tags">${tagHTML}</div>` : ''}
                                 </div>
                                 <h2 class="post-card-title">${post.title}</h2>
                                 <p class="post-card-excerpt">${post.excerpt}</p>
                             </div>
-                            <span class="post-read-more">Read more →</span>
+                            <span class="post-read-more">${readMore}</span>
                         </div>`;
                     grid.appendChild(card);
                 });
-                document.getElementById('latest-updates').style.display = 'block';
-            } catch (e) { /* silently skip if posts unavailable */ }
+                section.hidden = false;
+            } catch (e) { /* skip if unavailable */ }
         }
-        document.addEventListener('DOMContentLoaded', loadLatestUpdates);
+
+        window.onPandesalTranslationsReady = function (translations, lang) {
+            loadLatestUpdates(translations, lang);
+        };
     </script>
 
 </body>

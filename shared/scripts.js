@@ -1,22 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Translation Logic ---
     let translations = {};
+    let currentLang = 'en';
 
-    // This function now ONLY fetches and stores the translation data.
-    async function loadTranslations(lang) {
+    function normalizeLang(lang) {
+        return lang === 'ja' ? 'ja' : 'en';
+    }
+
+    function isNestedPath() {
         const currentPath = window.location.pathname;
-        const isNested = currentPath.startsWith('/spent-today') || 
-                         currentPath.startsWith('/privacy') || 
-                         currentPath.startsWith('/inventory') || 
-                         currentPath.startsWith('/camerapouch') ||
-                         currentPath.startsWith('/habit-habit') ||
-                         currentPath.startsWith('/simulatedfilm') ||
-                         currentPath.startsWith('/camerashelf') ||
-                         currentPath.startsWith('/pattern-projects') ||
-                         currentPath.startsWith('/recipe-mini') ||
-                         currentPath.startsWith('/vocab-bento');
-        const basePath = isNested ? '../' : '';
+        return currentPath.startsWith('/spent-today') ||
+            currentPath.startsWith('/privacy') ||
+            currentPath.startsWith('/inventory') ||
+            currentPath.startsWith('/camerapouch') ||
+            currentPath.startsWith('/habit-habit') ||
+            currentPath.startsWith('/simulatedfilm') ||
+            currentPath.startsWith('/camerashelf') ||
+            currentPath.startsWith('/pattern-projects') ||
+            currentPath.startsWith('/recipe-mini') ||
+            currentPath.startsWith('/vocab-bento') ||
+            currentPath.startsWith('/updates');
+    }
 
+    function langBasePath() {
+        return isNestedPath() ? '../' : '';
+    }
+
+    function sharedBasePath() {
+        return isNestedPath() ? '../shared/' : 'shared/';
+    }
+
+    async function loadTranslations(lang) {
+        lang = normalizeLang(lang);
+        const basePath = langBasePath();
         try {
             const response = await fetch(`${basePath}lang/${lang}.json`);
             if (!response.ok) {
@@ -24,13 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (lang !== 'en') await loadTranslations('en');
                 return;
             }
-            translations = await response.json(); // Store translations globally
+            translations = await response.json();
+            currentLang = lang;
         } catch (error) {
             console.error('Error loading translations:', error);
         }
     }
 
-    // This function applies the currently stored translations to the DOM.
     function updateAllText() {
         document.querySelectorAll('[data-i18n-key]').forEach(element => {
             const key = element.getAttribute('data-i18n-key');
@@ -40,40 +55,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function applyDocumentLang(lang) {
+        lang = normalizeLang(lang);
+        document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
+        document.body.classList.remove('lang-en', 'lang-ja');
+        document.body.classList.add(lang === 'ja' ? 'lang-ja' : 'lang-en');
 
-    // --- Component Loading & Initialization ---
-    const loadComponents = async () => {
-        // Step 1: Determine the initial language and load the translation data first.
-        const savedLang = localStorage.getItem('userLanguage');
-        const browserLang = navigator.language.split('-')[0];
-        const supportedLangs = ['en', 'ja'];
-        let initialLang = 'en';
-        if (savedLang) {
-            initialLang = savedLang;
-        } else if (supportedLangs.includes(browserLang)) {
-            initialLang = browserLang;
+        document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+            const btnLang = btn.getAttribute('data-set-lang');
+            btn.classList.toggle('is-active', btnLang === lang);
+            btn.setAttribute('aria-pressed', btnLang === lang ? 'true' : 'false');
+        });
+    }
+
+    function notifyTranslationListeners() {
+        if (typeof window.onPandesalTranslationsReady === 'function') {
+            window.onPandesalTranslationsReady(translations, currentLang);
         }
-        await loadTranslations(initialLang);
+    }
 
-        // Step 2: Fetch and inject the HTML components.
+    const loadComponents = async () => {
+        const savedRaw = localStorage.getItem('userLanguage');
+        const browserLang = navigator.language.split('-')[0];
+        let initialLang = 'en';
+        if (savedRaw) {
+            initialLang = normalizeLang(savedRaw);
+            if (normalizeLang(savedRaw) !== savedRaw) {
+                localStorage.setItem('userLanguage', initialLang);
+            }
+        } else if (browserLang === 'ja') {
+            initialLang = 'ja';
+        }
+
+        await loadTranslations(initialLang);
+        applyDocumentLang(currentLang);
+
         const headerPlaceholder = document.getElementById('header-placeholder');
         const footerPlaceholder = document.getElementById('footer-placeholder');
-        const currentPath = window.location.pathname;
-        
-        const isNested = currentPath.startsWith('/spent-today') || 
-                         currentPath.startsWith('/privacy') || 
-                         currentPath.startsWith('/inventory') || 
-                         currentPath.startsWith('/camerapouch') ||
-                         currentPath.startsWith('/habit-habit') ||
-                         currentPath.startsWith('/simulatedfilm') ||
-                         currentPath.startsWith('/camerashelf') ||
-                         currentPath.startsWith('/pattern-projects') ||
-                         currentPath.startsWith('/recipe-mini') ||
-                         currentPath.startsWith('/vocab-bento');
-        const basePath = isNested ? '../shared/' : 'shared/';
-        
+        const basePath = sharedBasePath();
+
         try {
-            // Use Promise.all to fetch components concurrently
             const [headerRes, footerRes] = await Promise.all([
                 fetch(`${basePath}header.html`),
                 fetch(`${basePath}footer.html`)
@@ -86,15 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 footerPlaceholder.innerHTML = await footerRes.text();
             }
 
-            // [THE FIX] Defer the final setup until the browser has processed the injected HTML.
             setTimeout(() => {
-                // Step 3: Initialize component interactivity (menus, dropdowns, etc.).
                 initializeHeader();
-                
-                // Step 4: Now that the DOM is complete, apply the translations.
                 updateAllText();
+                applyDocumentLang(currentLang);
+                notifyTranslationListeners();
             }, 0);
-
         } catch (error) {
             console.error('Error loading components:', error);
         }
@@ -104,8 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const hamburger = document.getElementById('hamburger');
         const menuOverlay = document.getElementById('menu-overlay');
         const closeMenuButton = document.getElementById('close-menu');
-        
-        // Menu toggle
+
         const toggleMenu = () => {
             if (hamburger && menuOverlay) {
                 hamburger.classList.toggle('active');
@@ -126,43 +143,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Language selector
-        const langSelector = document.querySelector('.lang-selector');
-        const langButton = document.getElementById('lang-button');
-        const langDropdown = document.getElementById('lang-dropdown');
-
-        if (langButton && langDropdown && langSelector) {
-            langButton.addEventListener('click', (e) => {
-                e.stopPropagation();
-                langSelector.classList.toggle('active');
-            });
-
-            document.addEventListener('click', (e) => {
-                if (langSelector.classList.contains('active') && !langSelector.contains(e.target)) {
-                    langSelector.classList.remove('active');
-                }
-            });
-
-            const langOptions = langDropdown.querySelectorAll('.lang-option');
-            const eventType = ('ontouchend' in document.documentElement) ? 'touchend' : 'click';
-
-            langOptions.forEach(option => {
-                option.addEventListener(eventType, async (e) => {
-                    e.preventDefault();
-                    const selectedLang = option.getAttribute('data-lang');
-                    
-                    // First, await the new translation data.
+        const langToggleButtons = document.querySelectorAll('.lang-toggle-btn');
+        if (langToggleButtons.length) {
+            langToggleButtons.forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const selectedLang = normalizeLang(btn.getAttribute('data-set-lang'));
                     await loadTranslations(selectedLang);
-                    // THEN, update the text on the entire page.
-                    updateAllText();
-                    
                     localStorage.setItem('userLanguage', selectedLang);
-                    langSelector.classList.remove('active');
+                    updateAllText();
+                    applyDocumentLang(currentLang);
+                    notifyTranslationListeners();
                 });
             });
+            applyDocumentLang(currentLang);
         }
     };
 
-    // Start the process
     loadComponents();
 });

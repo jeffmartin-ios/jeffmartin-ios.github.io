@@ -2,31 +2,18 @@
 <header class="header">
     <div id="nav-bar" class="nav-bar">
         <div class="container nav-container">
-            <!-- Logo / Collapsed Title (Always Visible) -->
             <a href="/" id="nav-logo" class="nav-logo">
-                <div class="nav-logo-icon">PB</div>
+                <div class="nav-logo-mark" aria-hidden="true">PB</div>
                 <span class="nav-logo-text">Pandesal Bytes</span>
             </a>
-            
-            <!-- Right side controls -->
+
             <div class="nav-controls">
-                <!-- Language Selector -->
-                <div class="lang-selector">
-                    <button id="lang-button" class="lang-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/></svg>
-                    </button>
-                    <div id="lang-dropdown" class="lang-dropdown">
-                        <a href="#" class="lang-option" data-lang="en">English</a>
-                        <a href="#" class="lang-option" data-lang="ja">日本語</a>
-                        <a href="#" class="lang-option" data-lang="zh-CN">简体中文</a>
-                        <a href="#" class="lang-option" data-lang="zh-TW">繁體中文</a>
-                        <a href="#" class="lang-option" data-lang="fr-CA">Français (CA)</a>
-                        <a href="#" class="lang-option" data-lang="th">ไทย</a>
-                    </div>
+                <div class="lang-toggle" role="group" aria-label="Language">
+                    <button type="button" class="lang-toggle-btn" data-set-lang="en" aria-pressed="true">EN</button>
+                    <button type="button" class="lang-toggle-btn" data-set-lang="ja" aria-pressed="false">日本語</button>
                 </div>
 
-                <!-- Hamburger Menu Icon -->
-                <button id="hamburger" class="hamburger-button">
+                <button id="hamburger" class="hamburger-button" aria-label="Open menu">
                     <span class="top"></span>
                     <span class="middle"></span>
                     <span class="bottom"></span>
@@ -36,19 +23,15 @@
     </div>
 </header>
 
-<!-- Full-screen Menu Overlay -->
 <div id="menu-overlay" class="menu-overlay">
-    <!-- Close button for the menu -->
-    <button id="close-menu" class="menu-close-button">
+    <button id="close-menu" class="menu-close-button" aria-label="Close menu">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
         </svg>
     </button>
 
     <div class="container menu-content">
-        <!-- Menu Scroller for vertical centering and overflow management -->
         <div class="menu-scroller">
-            <!-- Main Menu Links -->
             <nav class="main-nav">
                 <div class="nav-category">
                     <span class="nav-category-title" data-i18n-key="home.category.photography">Photography</span>
@@ -68,44 +51,17 @@
                 </div>
 
                 <div class="nav-category">
-                    <span class="nav-category-title">Studio</span>
-                    <a href="/updates/">Updates</a>
+                    <span class="nav-category-title" data-i18n-key="nav.studio">Studio</span>
+                    <a href="/updates/" data-i18n-key="nav.updates">Updates</a>
                 </div>
             </nav>
         </div>
 
-        <!-- Footer Links in Menu -->
         <footer class="menu-footer">
             <div class="menu-footer-links">
                 <a href="/privacy/" data-i18n-key="footer.privacy">Privacy Policy</a>
-                <span data-i18n-key="footer.copyright">&copy; 2025 Pandesal Bytes</span>
+                <span data-i18n-key="footer.copyright">&copy; 2026 Pandesal Bytes</span>
             </div>
         </footer>
     </div>
 </div>
-
-<style>
-    /* Inline styles for the new grouped menu structure */
-    .nav-category {
-        margin-bottom: 24px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .nav-category-title {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        color: var(--secondary-text);
-        margin-bottom: 8px;
-        font-weight: 600;
-    }
-    .main-nav a {
-        font-size: 32px;
-        padding: 8px 0;
-    }
-    @media (max-height: 700px) {
-        .main-nav a { font-size: 24px; padding: 6px 0; }
-        .nav-category { margin-bottom: 16px; }
-    }
-</style>
