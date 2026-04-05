@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GitHub project Pages: set content="/your-repo-name" if auto-detection fails -->
+    <meta name="pb-site-base" content="">
     <title>Pandesal Bytes — Independent iOS software</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared/styles.css">
 </head>
 <body class="page-home">
@@ -226,7 +228,7 @@
             <div class="section-block-rule" role="presentation"></div>
             <div id="home-posts-grid" class="updates-posts-grid"></div>
             <div class="latest-updates-cta">
-                <a href="/updates/" class="cta-button cta-button--outline" data-i18n-key="home.updates.cta">All updates</a>
+                <a href="updates/" data-pb="/updates/" class="cta-button cta-button--outline" data-i18n-key="home.updates.cta">All updates</a>
             </div>
         </section>
 
@@ -274,6 +276,7 @@
 
     <div id="footer-placeholder"></div>
 
+    <script src="shared/paths.js"></script>
     <script src="shared/scripts.js" defer></script>
 
     <script>
@@ -299,7 +302,8 @@
             const readMore = tr['home.updates.readmore'] || 'Read more →';
 
             try {
-                const res = await fetch('updates/posts.json');
+                const postsUrl = typeof pbUrl === 'function' ? pbUrl('/updates/posts.json') : 'updates/posts.json';
+                const res = await fetch(postsUrl);
                 const posts = await res.json();
                 if (!posts.length) return;
 
@@ -309,7 +313,10 @@
                         `<span class="post-tag">${PRODUCT_NAMES_HOME[t] || t}</span>`
                     ).join('');
                     const card = document.createElement('a');
-                    card.href = `/updates/post.html?slug=${post.slug}`;
+                    const postPath = typeof pbUrl === 'function'
+                        ? pbUrl('/updates/post.html?slug=' + encodeURIComponent(post.slug))
+                        : ('updates/post.html?slug=' + encodeURIComponent(post.slug));
+                    card.href = postPath;
                     card.className = 'post-card card-style';
                     card.innerHTML = `
                         <div class="post-card-inner">

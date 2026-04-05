@@ -1,13 +1,13 @@
-/* --- Global Styles & Variables (Japanese indie studio — warm paper, vermillion accent) --- */
+/* --- Global Styles & Variables (JP-friendly indie studio — warm neutral + indigo trust accent) --- */
 :root {
-    --primary-text: #161616;
-    --secondary-text: #5a5854;
-    --background-color: #f4f1eb;
-    --surface-color: #fffcf7;
-    --accent-color: #b42318;
-    --accent-hover: #8f1c14;
-    --border-color: #dad6cf;
-    --grid-dot: rgba(22, 22, 22, 0.06);
+    --primary-text: #1a2027;
+    --secondary-text: #5d6470;
+    --background-color: #f5f4f1;
+    --surface-color: #fdfcfa;
+    --accent-color: #2c5282;
+    --accent-hover: #1e3a5f;
+    --border-color: #d8d6d1;
+    --grid-dot: rgba(26, 32, 39, 0.045);
     --font-sans: 'Inter', 'Zen Kaku Gothic New', 'Noto Sans JP', system-ui, sans-serif;
     --font-display: 'Zen Kaku Gothic New', 'Inter', 'Noto Sans JP', system-ui, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
@@ -39,12 +39,26 @@ body {
 }
 
 body.lang-ja {
-    font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', 'Inter', system-ui, sans-serif;
+    font-family: 'M PLUS 2', 'Noto Sans JP', 'Zen Kaku Gothic New', system-ui, sans-serif;
+    font-feature-settings: 'palt' 1;
+}
+
+body.lang-ja :is(.hero-subtitle, .section-subtitle, .app-card-description, .commitment-bento-cell p, .post-card-excerpt, .faq-item p, .prose p, .prose li) {
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+}
+
+body.lang-ja .mono-eyebrow {
+    letter-spacing: 0.12em;
+}
+
+body.lang-ja .nav-logo-mark {
+    color: var(--accent-color);
 }
 
 .page-home {
     background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-size: 22px 22px;
 }
 
 a {
@@ -1068,14 +1082,14 @@ a:hover {
 /* --- Dark Mode --- */
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-text: #eceae4;
-        --secondary-text: #9c9890;
-        --background-color: #141210;
-        --surface-color: #1c1a17;
-        --border-color: #2e2b27;
-        --accent-color: #e85d52;
-        --accent-hover: #ff7a6e;
-        --grid-dot: rgba(236, 234, 228, 0.04);
+        --primary-text: #e8eaed;
+        --secondary-text: #9aa3af;
+        --background-color: #12161c;
+        --surface-color: #1a222c;
+        --border-color: #2d3540;
+        --accent-color: #7eb8ff;
+        --accent-hover: #a8d0ff;
+        --grid-dot: rgba(232, 234, 237, 0.035);
     }
 
     .header, .menu-overlay {

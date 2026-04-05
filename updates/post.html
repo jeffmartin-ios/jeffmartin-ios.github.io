@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="pb-site-base" content="">
     <title>Updates — Pandesal Bytes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
 </head>
@@ -17,19 +18,20 @@
 
     <main class="container post-page">
         <div id="post-not-found" style="display: none; padding: 80px 0; text-align: center;">
-            <p style="color: var(--secondary-text); font-size: 18px;">Post not found. <a href="/updates/">Back to Updates →</a></p>
+            <p style="color: var(--secondary-text); font-size: 18px;">Post not found. <a href="index.html">Back to Updates →</a></p>
         </div>
         <article id="post-article" style="display: none;">
             <header id="post-header" class="post-header"></header>
             <div id="post-body" class="prose"></div>
             <div class="post-back">
-                <a href="/updates/">← Back to Updates</a>
+                <a href="index.html">← Back to Updates</a>
             </div>
         </article>
     </main>
 
     <div id="footer-placeholder"></div>
 
+    <script src="../shared/paths.js"></script>
     <script src="../shared/scripts.js" defer></script>
     <script>
         const PRODUCT_NAMES = {
@@ -60,7 +62,7 @@
 
             let posts;
             try {
-                const res = await fetch('/updates/posts.json');
+                const res = await fetch('posts.json');
                 posts = await res.json();
             } catch (e) {
                 document.getElementById('post-not-found').style.display = 'block';
@@ -76,11 +78,11 @@
             document.title = `${post.title} — Pandesal Bytes`;
 
             const tagHTML = post.tags.map(t =>
-                `<a href="/updates/?tag=${t}" class="post-tag">${PRODUCT_NAMES[t] || t}</a>`
+                `<a href="index.html?tag=${encodeURIComponent(t)}" class="post-tag">${PRODUCT_NAMES[t] || t}</a>`
             ).join('');
 
             document.getElementById('post-header').innerHTML = `
-                <a href="/updates/" class="post-breadcrumb">← Updates</a>
+                <a href="index.html" class="post-breadcrumb">← Updates</a>
                 <h1 class="post-title">${post.title}</h1>
                 <div class="post-meta">
                     <span class="post-date">${formatDate(post.date)}</span>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="pb-site-base" content="">
     <title>Camera Shelf - Gear Tracker</title>
     
     <!-- Smart App Banner for iOS -->
@@ -10,7 +11,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
 </head>
 <body>
@@ -115,7 +116,7 @@
             </div>
             <div id="cs-posts-grid" class="updates-posts-grid" style="max-width: 900px; margin: 0 auto;"></div>
             <div style="text-align: center; margin-top: 32px;">
-                <a href="/updates/?tag=camerashelf" class="cta-button">See All Camera Shelf Updates</a>
+                <a href="../updates/?tag=camerashelf" class="cta-button">See All Camera Shelf Updates</a>
             </div>
         </div>
     </section>
@@ -123,6 +124,7 @@
     <!-- This div will be populated by ../shared/footer.html -->
     <div id="footer-placeholder"></div>
 
+    <script src="../shared/paths.js"></script>
     <script src="../shared/scripts.js" defer></script>
     <script>
         // Load Camera Shelf-tagged posts for What's New section
@@ -131,14 +133,14 @@
         }
         async function loadCSUpdates() {
             try {
-                const res = await fetch('/updates/posts.json');
+                const res = await fetch('../updates/posts.json');
                 const all = await res.json();
                 const posts = all.filter(p => p.tags.includes('camerashelf')).slice(0, 3);
                 if (!posts.length) return;
                 const grid = document.getElementById('cs-posts-grid');
                 posts.forEach(post => {
                     const card = document.createElement('a');
-                    card.href = `/updates/post.html?slug=${post.slug}`;
+                    card.href = '../updates/post.html?slug=' + encodeURIComponent(post.slug);
                     card.className = 'post-card card-style';
                     card.innerHTML = `
                         <div class="post-card-inner">

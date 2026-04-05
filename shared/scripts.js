@@ -7,18 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function isNestedPath() {
-        const currentPath = window.location.pathname;
-        return currentPath.startsWith('/spent-today') ||
-            currentPath.startsWith('/privacy') ||
-            currentPath.startsWith('/inventory') ||
-            currentPath.startsWith('/camerapouch') ||
-            currentPath.startsWith('/habit-habit') ||
-            currentPath.startsWith('/simulatedfilm') ||
-            currentPath.startsWith('/camerashelf') ||
-            currentPath.startsWith('/pattern-projects') ||
-            currentPath.startsWith('/recipe-mini') ||
-            currentPath.startsWith('/vocab-bento') ||
-            currentPath.startsWith('/updates');
+        if (typeof window.getPbSiteBase !== 'function') {
+            const p = window.location.pathname;
+            return p.includes('/spent-today') ||
+                p.includes('/privacy') ||
+                p.includes('/inventory') ||
+                p.includes('/camerapouch') ||
+                p.includes('/habit-habit') ||
+                p.includes('/simulatedfilm') ||
+                p.includes('/camerashelf') ||
+                p.includes('/pattern-projects') ||
+                p.includes('/recipe-mini') ||
+                p.includes('/vocab-bento') ||
+                p.includes('/updates');
+        }
+        let rest = window.location.pathname;
+        const base = window.getPbSiteBase();
+        if (base && rest.startsWith(base)) {
+            rest = rest.slice(base.length);
+            if (!rest || rest.charAt(0) !== '/') rest = '/' + (rest || '');
+        }
+        if (rest.charAt(0) !== '/') rest = '/' + rest;
+        return /^\/(spent-today|privacy|inventory|camerapouch|habit-habit|simulatedfilm|camerashelf|pattern-projects|recipe-mini|vocab-bento|updates)(\/|$)/.test(rest);
     }
 
     function langBasePath() {
@@ -108,6 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             setTimeout(() => {
+                if (typeof window.pbPatchInternalLinks === 'function') {
+                    window.pbPatchInternalLinks(document.body);
+                }
                 initializeHeader();
                 updateAllText();
                 applyDocumentLang(currentLang);
