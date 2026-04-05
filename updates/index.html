@@ -13,19 +13,32 @@
 <body>
 
     <div id="header-placeholder"></div>
-    <div style="height: 64px;"></div>
+    <div class="header-spacer"></div>
 
-    <section class="hero-section" style="padding-top: 80px; padding-bottom: 40px;">
-        <div class="container text-section">
-            <h1 class="hero-title" style="font-size: clamp(2.5rem, 8vw, 3.75rem);">Updates</h1>
-            <p class="hero-subtitle">Release notes, new features, and news from Pandesal Bytes.</p>
+    <section class="hero-section hero-section--home">
+        <div class="container">
+            <div class="hero-home-inner">
+                <p class="site-tagline mono-eyebrow">Blog &amp; Updates <span class="tagline-sep">/</span> ブログ・お知らせ</p>
+                <h1 class="hero-title hero-title--home">Updates</h1>
+                <p class="hero-subtitle hero-subtitle--home" style="max-width: none;">Release notes, new features, and news from Pandesal Bytes.</p>
+            </div>
         </div>
     </section>
 
-    <main class="container" style="padding-bottom: 80px;">
-        <div id="filter-bar" class="updates-filter-bar" style="display: none;"></div>
-        <div id="posts-container" class="updates-posts-grid"></div>
-        <p id="posts-empty" class="updates-empty" style="display: none;">No updates yet. Check back soon.</p>
+    <main class="container main-home">
+        <section class="page-section page-section--tight-top">
+
+            <header class="section-block-head">
+                <h2 class="section-block-title" id="filter-label">All Posts</h2>
+                <span class="section-block-label mono-eyebrow" id="filter-count" aria-hidden="true"></span>
+            </header>
+            <div class="section-block-rule" role="presentation"></div>
+
+            <div id="filter-bar" class="updates-filter-bar" style="display: none;"></div>
+            <div id="posts-container" class="updates-posts-grid"></div>
+            <p id="posts-empty" class="updates-empty" style="display: none;">No updates yet. Check back soon.</p>
+
+        </section>
     </main>
 
     <div id="footer-placeholder"></div>
@@ -34,15 +47,15 @@
     <script src="../shared/scripts.js" defer></script>
     <script>
         const PRODUCT_NAMES = {
-            'camerashelf': 'Camera Shelf',
-            'camerapouch': 'Camera Pouch',
-            'simulatedfilm': 'Simulated Film',
-            'spent-today': 'Spent Today',
-            'inventory': 'My Inventory Stack',
-            'habit-habit': 'Habit Habit',
+            'camerashelf':      'Camera Shelf',
+            'camerapouch':      'Camera Pouch',
+            'simulatedfilm':    'Simulated Film',
+            'spent-today':      'Spent Today',
+            'inventory':        'My Inventory Stack',
+            'habit-habit':      'Habit Habit',
             'pattern-projects': 'Pattern Projects',
-            'recipe-mini': 'Recipe Mini',
-            'vocab-bento': 'Vocab Bento',
+            'recipe-mini':      'Recipe Mini',
+            'vocab-bento':      'Vocab Bento',
         };
 
         function formatDate(dateStr) {
@@ -52,7 +65,7 @@
 
         function renderPosts(posts) {
             const container = document.getElementById('posts-container');
-            const empty = document.getElementById('posts-empty');
+            const empty     = document.getElementById('posts-empty');
             container.innerHTML = '';
             if (posts.length === 0) {
                 empty.style.display = 'block';
@@ -64,7 +77,7 @@
                     `<span class="post-tag">${PRODUCT_NAMES[t] || t}</span>`
                 ).join('');
                 const card = document.createElement('a');
-                card.href = `post.html?slug=${post.slug}`;
+                card.href = `post.html?slug=${encodeURIComponent(post.slug)}`;
                 card.className = 'post-card card-style';
                 card.innerHTML = `
                     <div class="post-card-inner">
@@ -83,35 +96,44 @@
             });
         }
 
+        function applyFilter(tag, posts) {
+            const filtered = tag ? posts.filter(p => p.tags.includes(tag)) : posts;
+            renderPosts(filtered);
+            const filterLabel = document.getElementById('filter-label');
+            const filterCount = document.getElementById('filter-count');
+            if (filterLabel) filterLabel.textContent = tag ? (PRODUCT_NAMES[tag] || tag) : 'All Posts';
+            if (filterCount) filterCount.textContent = filtered.length > 0 ? String(filtered.length) : '';
+        }
+
         async function init() {
             let posts = [];
             try {
-                const res = await fetch('posts.json');
+                const res  = await fetch('posts.json');
                 posts = await res.json();
             } catch (e) {
                 document.getElementById('posts-empty').style.display = 'block';
                 return;
             }
 
-            // Check for ?tag= in URL to pre-select a filter
-            const params = new URLSearchParams(window.location.search);
-            const preselectedTag = params.get('tag') || '';
+            const params     = new URLSearchParams(window.location.search);
+            let   activeTag  = params.get('tag') || '';
 
-            // Build filter bar from tags that appear in at least one post
-            const allTags = [...new Set(posts.flatMap(p => p.tags))];
+            // Build filter bar
+            const allTags  = [...new Set(posts.flatMap(p => p.tags))];
             const filterBar = document.getElementById('filter-bar');
+
             if (allTags.length > 0) {
                 filterBar.style.display = 'flex';
 
                 const allBtn = document.createElement('button');
-                allBtn.className = 'filter-btn' + (preselectedTag === '' ? ' active' : '');
+                allBtn.className   = 'filter-btn' + (activeTag === '' ? ' active' : '');
                 allBtn.textContent = 'All';
                 allBtn.dataset.tag = '';
                 filterBar.appendChild(allBtn);
 
                 allTags.forEach(tag => {
                     const btn = document.createElement('button');
-                    btn.className = 'filter-btn' + (preselectedTag === tag ? ' active' : '');
+                    btn.className   = 'filter-btn' + (activeTag === tag ? ' active' : '');
                     btn.textContent = PRODUCT_NAMES[tag] || tag;
                     btn.dataset.tag = tag;
                     filterBar.appendChild(btn);
@@ -122,13 +144,26 @@
                     if (!btn) return;
                     filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    const tag = btn.dataset.tag;
-                    renderPosts(tag ? posts.filter(p => p.tags.includes(tag)) : posts);
+                    activeTag = btn.dataset.tag;
+                    applyFilter(activeTag, posts);
+                    // Keep URL in sync so filtered views are shareable
+                    const newUrl = activeTag
+                        ? `?tag=${encodeURIComponent(activeTag)}`
+                        : window.location.pathname;
+                    history.pushState({ tag: activeTag }, '', newUrl);
                 });
             }
 
-            const filtered = preselectedTag ? posts.filter(p => p.tags.includes(preselectedTag)) : posts;
-            renderPosts(filtered);
+            // Restore filter on browser back / forward
+            window.addEventListener('popstate', e => {
+                const tag = e.state?.tag ?? new URLSearchParams(window.location.search).get('tag') ?? '';
+                filterBar.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.toggle('active', b.dataset.tag === tag);
+                });
+                applyFilter(tag, posts);
+            });
+
+            applyFilter(activeTag, posts);
         }
 
         document.addEventListener('DOMContentLoaded', init);
