@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spent Today — Updates — Pandesal Bytes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../shared/styles.css">
+</head>
+<body>
+
+    <div class="product-updates-header">
+        <div class="container">
+            <a href="../" class="product-updates-back">← All Updates</a>
+            <h1 class="product-updates-title">Spent Today</h1>
+            <p class="product-updates-subtitle mono-eyebrow">Updates &amp; Release Notes</p>
+        </div>
+    </div>
+
+    <main class="container product-updates-main">
+        <div id="posts-container" class="updates-posts-grid"></div>
+        <p id="posts-empty" class="updates-empty" style="display: none;">No updates yet. Check back soon.</p>
+    </main>
+
+    <script>window.UPDATES_FILTER_TAG = 'spent-today';</script>
+    <script src="../product-page.js"></script>
+</body>
+</html>

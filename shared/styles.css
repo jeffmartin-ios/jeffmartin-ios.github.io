@@ -1144,6 +1144,46 @@ a:hover {
 .prose strong { font-weight: 600; color: var(--primary-text); }
 .prose em { color: var(--secondary-text); }
 
+/* --- Product Updates Page (iOS webview-optimized, /updates/{tag}/) --- */
+.product-updates-header {
+    padding: 48px 0 28px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 48px;
+}
+
+.product-updates-back {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--secondary-text);
+    text-decoration: none;
+    margin-bottom: 18px;
+    transition: color 0.2s;
+}
+
+.product-updates-back:hover {
+    color: var(--accent-color);
+}
+
+.product-updates-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--primary-text);
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.product-updates-subtitle {
+    margin-top: 6px;
+}
+
+.product-updates-main {
+    padding-bottom: 80px;
+}
+
 /* --- Dark Mode --- */
 @media (prefers-color-scheme: dark) {
     :root {
