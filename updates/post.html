@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates — Pandesal Bytes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    <div style="height: 64px;"></div>
+
+    <main class="container post-page">
+        <div id="post-not-found" style="display: none; padding: 80px 0; text-align: center;">
+            <p style="color: var(--secondary-text); font-size: 18px;">Post not found. <a href="/updates/">Back to Updates →</a></p>
+        </div>
+        <article id="post-article" style="display: none;">
+            <header id="post-header" class="post-header"></header>
+            <div id="post-body" class="prose"></div>
+            <div class="post-back">
+                <a href="/updates/">← Back to Updates</a>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../shared/scripts.js" defer></script>
+    <script>
+        const PRODUCT_NAMES = {
+            'camerashelf': 'Camera Shelf',
+            'camerapouch': 'Camera Pouch',
+            'simulatedfilm': 'Simulated Film',
+            'spent-today': 'Spent Today',
+            'inventory': 'My Inventory Stack',
+            'habit-habit': 'Habit Habit',
+            'pattern-projects': 'Pattern Projects',
+            'recipe-mini': 'Recipe Mini',
+            'vocab-bento': 'Vocab Bento',
+        };
+
+        function formatDate(dateStr) {
+            const d = new Date(dateStr + 'T12:00:00');
+            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        async function init() {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+
+            if (!slug) {
+                document.getElementById('post-not-found').style.display = 'block';
+                return;
+            }
+
+            let posts;
+            try {
+                const res = await fetch('/updates/posts.json');
+                posts = await res.json();
+            } catch (e) {
+                document.getElementById('post-not-found').style.display = 'block';
+                return;
+            }
+
+            const post = posts.find(p => p.slug === slug);
+            if (!post) {
+                document.getElementById('post-not-found').style.display = 'block';
+                return;
+            }
+
+            document.title = `${post.title} — Pandesal Bytes`;
+
+            const tagHTML = post.tags.map(t =>
+                `<a href="/updates/?tag=${t}" class="post-tag">${PRODUCT_NAMES[t] || t}</a>`
+            ).join('');
+
+            document.getElementById('post-header').innerHTML = `
+                <a href="/updates/" class="post-breadcrumb">← Updates</a>
+                <h1 class="post-title">${post.title}</h1>
+                <div class="post-meta">
+                    <span class="post-date">${formatDate(post.date)}</span>
+                    ${tagHTML ? `<div class="post-tags">${tagHTML}</div>` : ''}
+                </div>
+            `;
+
+            document.getElementById('post-body').innerHTML = marked.parse(post.body);
+            document.getElementById('post-article').style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

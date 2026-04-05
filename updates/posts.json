@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "camera-shelf-april-2026",
+    "title": "Camera Shelf — April 2026 Update",
+    "date": "2026-04-05",
+    "tags": ["camerashelf"],
+    "excerpt": "Faster gear search, improved kit sorting, and quality-of-life fixes based on your feedback.",
+    "body": "## What's New\n\nThanks to everyone who wrote in with suggestions — this update addresses the most common requests.\n\n### Faster Gear Search\n\nSearching your catalog is now significantly faster, particularly for larger collections. Results appear as you type with improved accuracy.\n\n### Kit Sorting Options\n\nYou can now sort your kits by name, total value, or total weight. The preference is saved automatically between sessions.\n\n### UI Refinements\n\n- Gear detail screen layout improved for smaller iPhone models\n- Purchase date input redesigned for faster entry\n- Minor typography improvements throughout\n\n## Bug Fixes\n\n- Fixed an issue where kit weight wasn't updating immediately after editing a gear item\n- Resolved a rare crash when deleting an item shared across multiple kits\n- Corrected currency display inconsistency in the Collection Insights screen\n\n---\n\nIf you run into any issues or have ideas for future updates, please leave a review on the App Store — it genuinely helps."
+  },
+  {
+    "slug": "welcome-to-updates",
+    "title": "Welcome to Pandesal Bytes Updates",
+    "date": "2026-04-05",
+    "tags": [],
+    "excerpt": "Introducing the new Updates page — your home for release notes, feature announcements, and news from the studio.",
+    "body": "## Hello\n\nWelcome to the Pandesal Bytes Updates page.\n\nThis is where I'll share release notes, new feature announcements, and the occasional behind-the-scenes update about what's being worked on across all the apps.\n\n## Why an Updates Page?\n\nAs the app lineup grows, it's become harder to communicate changes clearly through App Store release notes alone. They're limited in length and don't support any formatting.\n\nThis page gives more room to explain *what* changed, *why* it changed, and what's coming next — organized by app so you can follow only what's relevant to you.\n\n## What to Expect\n\n- **Release notes** for every meaningful update to every app\n- **Feature previews** when something bigger is in development\n- **General posts** about the studio, new apps, or other news\n\nUse the filter buttons at the top of the Updates page to view posts for a specific app.\n\nThanks for using Pandesal Bytes apps."
+  }
+]

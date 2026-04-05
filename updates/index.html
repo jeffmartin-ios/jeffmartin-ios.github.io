@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates — Pandesal Bytes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    <div style="height: 64px;"></div>
+
+    <section class="hero-section" style="padding-top: 80px; padding-bottom: 40px;">
+        <div class="container text-section">
+            <h1 class="hero-title" style="font-size: clamp(2.5rem, 8vw, 3.75rem);">Updates</h1>
+            <p class="hero-subtitle">Release notes, new features, and news from Pandesal Bytes.</p>
+        </div>
+    </section>
+
+    <main class="container" style="padding-bottom: 80px;">
+        <div id="filter-bar" class="updates-filter-bar" style="display: none;"></div>
+        <div id="posts-container" class="updates-posts-grid"></div>
+        <p id="posts-empty" class="updates-empty" style="display: none;">No updates yet. Check back soon.</p>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../shared/scripts.js" defer></script>
+    <script>
+        const PRODUCT_NAMES = {
+            'camerashelf': 'Camera Shelf',
+            'camerapouch': 'Camera Pouch',
+            'simulatedfilm': 'Simulated Film',
+            'spent-today': 'Spent Today',
+            'inventory': 'My Inventory Stack',
+            'habit-habit': 'Habit Habit',
+            'pattern-projects': 'Pattern Projects',
+            'recipe-mini': 'Recipe Mini',
+            'vocab-bento': 'Vocab Bento',
+        };
+
+        function formatDate(dateStr) {
+            const d = new Date(dateStr + 'T12:00:00');
+            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        function renderPosts(posts) {
+            const container = document.getElementById('posts-container');
+            const empty = document.getElementById('posts-empty');
+            container.innerHTML = '';
+            if (posts.length === 0) {
+                empty.style.display = 'block';
+                return;
+            }
+            empty.style.display = 'none';
+            posts.forEach(post => {
+                const tagHTML = post.tags.map(t =>
+                    `<span class="post-tag">${PRODUCT_NAMES[t] || t}</span>`
+                ).join('');
+                const card = document.createElement('a');
+                card.href = `post.html?slug=${post.slug}`;
+                card.className = 'post-card card-style';
+                card.innerHTML = `
+                    <div class="post-card-inner">
+                        <div>
+                            <div class="post-card-meta">
+                                <span class="post-date">${formatDate(post.date)}</span>
+                                ${tagHTML ? `<div class="post-tags">${tagHTML}</div>` : ''}
+                            </div>
+                            <h2 class="post-card-title">${post.title}</h2>
+                            <p class="post-card-excerpt">${post.excerpt}</p>
+                        </div>
+                        <span class="post-read-more">Read more →</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        async function init() {
+            let posts = [];
+            try {
+                const res = await fetch('/updates/posts.json');
+                posts = await res.json();
+            } catch (e) {
+                document.getElementById('posts-empty').style.display = 'block';
+                return;
+            }
+
+            // Check for ?tag= in URL to pre-select a filter
+            const params = new URLSearchParams(window.location.search);
+            const preselectedTag = params.get('tag') || '';
+
+            // Build filter bar from tags that appear in at least one post
+            const allTags = [...new Set(posts.flatMap(p => p.tags))];
+            const filterBar = document.getElementById('filter-bar');
+            if (allTags.length > 0) {
+                filterBar.style.display = 'flex';
+
+                const allBtn = document.createElement('button');
+                allBtn.className = 'filter-btn' + (preselectedTag === '' ? ' active' : '');
+                allBtn.textContent = 'All';
+                allBtn.dataset.tag = '';
+                filterBar.appendChild(allBtn);
+
+                allTags.forEach(tag => {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-btn' + (preselectedTag === tag ? ' active' : '');
+                    btn.textContent = PRODUCT_NAMES[tag] || tag;
+                    btn.dataset.tag = tag;
+                    filterBar.appendChild(btn);
+                });
+
+                filterBar.addEventListener('click', e => {
+                    const btn = e.target.closest('.filter-btn');
+                    if (!btn) return;
+                    filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const tag = btn.dataset.tag;
+                    renderPosts(tag ? posts.filter(p => p.tags.includes(tag)) : posts);
+                });
+            }
+
+            const filtered = preselectedTag ? posts.filter(p => p.tags.includes(preselectedTag)) : posts;
+            renderPosts(filtered);
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

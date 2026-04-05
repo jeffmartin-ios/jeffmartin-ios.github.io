@@ -51,7 +51,7 @@
                      <!-- Carousel Dots -->
                     <div id="carousel-dots" class="carousel-dots"></div>
                     <!-- CTA Button -->
-                    <a href="#" target="_blank" class="app-store-button" data-i18n-key="cs.download">
+                    <a href="https://apps.apple.com/app/id6755641228" target="_blank" class="app-store-button" data-i18n-key="cs.download">
                         Download on the App Store
                     </a>
                 </div>
@@ -106,10 +106,58 @@
         </section>
     </main>
 
+    <!-- What's New Section -->
+    <section id="whats-new" class="page-section" style="display: none;">
+        <div class="container">
+            <div class="text-section" style="padding: 0 0 40px 0;">
+                <h2 class="section-title">What's New</h2>
+                <p class="section-subtitle">The latest updates and improvements to Camera Shelf.</p>
+            </div>
+            <div id="cs-posts-grid" class="updates-posts-grid" style="max-width: 900px; margin: 0 auto;"></div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="/updates/?tag=camerashelf" class="cta-button">See All Camera Shelf Updates</a>
+            </div>
+        </div>
+    </section>
+
     <!-- This div will be populated by ../shared/footer.html -->
     <div id="footer-placeholder"></div>
 
     <script src="../shared/scripts.js" defer></script>
+    <script>
+        // Load Camera Shelf-tagged posts for What's New section
+        function formatDateCS(dateStr) {
+            return new Date(dateStr + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+        async function loadCSUpdates() {
+            try {
+                const res = await fetch('/updates/posts.json');
+                const all = await res.json();
+                const posts = all.filter(p => p.tags.includes('camerashelf')).slice(0, 3);
+                if (!posts.length) return;
+                const grid = document.getElementById('cs-posts-grid');
+                posts.forEach(post => {
+                    const card = document.createElement('a');
+                    card.href = `/updates/post.html?slug=${post.slug}`;
+                    card.className = 'post-card card-style';
+                    card.innerHTML = `
+                        <div class="post-card-inner">
+                            <div>
+                                <div class="post-card-meta">
+                                    <span class="post-date">${formatDateCS(post.date)}</span>
+                                </div>
+                                <h2 class="post-card-title">${post.title}</h2>
+                                <p class="post-card-excerpt">${post.excerpt}</p>
+                            </div>
+                            <span class="post-read-more">Read more →</span>
+                        </div>`;
+                    grid.appendChild(card);
+                });
+                document.getElementById('whats-new').style.display = 'block';
+            } catch (e) { /* silently skip */ }
+        }
+        document.addEventListener('DOMContentLoaded', loadCSUpdates);
+    </script>
     <script>
         // Page-specific script for Carousel
         document.addEventListener('DOMContentLoaded', () => {
