@@ -90,7 +90,15 @@
                 </div>
             `;
 
-            document.getElementById('post-body').innerHTML = marked.parse(post.body);
+            try {
+                const mdRes = await fetch('posts/' + slug + '.md');
+                if (!mdRes.ok) throw new Error('Markdown not found');
+                const mdText = await mdRes.text();
+                document.getElementById('post-body').innerHTML = marked.parse(mdText);
+            } catch (e) {
+                document.getElementById('post-body').innerHTML = '<p>Error loading post content.</p>';
+            }
+            
             document.getElementById('post-article').style.display = 'block';
         }
 
