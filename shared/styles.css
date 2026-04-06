@@ -1,22 +1,21 @@
-/* --- Global Variables (Sci-Fi Utopian Glass Light Theme) --- */
+/* --- Global Styles & Variables (JP-friendly indie studio — warm neutral + indigo trust accent) --- */
 :root {
     --primary-text: #172430;
     --secondary-text: #596a7e;
     --background-color: #f1f6f9;
-    --surface-color: rgba(255, 255, 255, 0.65);
-    --surface-color-solid: #ffffff;
+    --surface-glass: rgba(255, 255, 255, 0.45);
+    --surface-solid: #ffffff;
     --accent-color: #0088ff;
     --accent-hover: #0066cc;
     --accent-cyan: #00d2ff;
-    --border-color: rgba(255, 255, 255, 0.6);
-    --border-highlight: rgba(0, 136, 255, 0.3);
+    --border-color: rgba(255, 255, 255, 0.7);
     --grid-dot: rgba(23, 36, 48, 0.05);
     --font-sans: 'Inter', 'Zen Kaku Gothic New', 'Noto Sans JP', system-ui, sans-serif;
     --font-display: 'Zen Kaku Gothic New', 'Inter', 'Noto Sans JP', system-ui, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
     --font-family: var(--font-sans);
-    --radius-card: 16px;
-    --radius-pill: 8px;
+    --radius-card: 20px;
+    --radius-pill: 12px;
     --header-h: 70px;
 }
 
@@ -38,15 +37,14 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     background-image: 
-        linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(241, 246, 249, 1) 100%),
-        radial-gradient(circle at 100% 0%, rgba(0, 210, 255, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 0% 100%, rgba(0, 136, 255, 0.08) 0%, transparent 40%);
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(241, 246, 249, 0.9) 100%),
+        radial-gradient(circle at 80% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 10% 80%, rgba(0, 136, 255, 0.12) 0%, transparent 50%);
     background-attachment: fixed;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 body.lang-ja {
-    font-family: 'M PLUS 2', 'Noto Sans JP', 'Zen Kaku Gothic New', system-ui, sans-serif;
+    font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', 'Zen Kaku Gothic New', system-ui, sans-serif;
     font-feature-settings: 'palt' 1;
 }
 
@@ -60,7 +58,20 @@ body.lang-ja .mono-eyebrow {
 }
 
 body.lang-ja .nav-logo-mark {
-    color: var(--accent-color);
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-color) 100%);
+    border: none;
+    color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 136, 255, 0.3);
 }
 
 .page-home {
@@ -113,27 +124,25 @@ a:hover {
 }
 
 .card-style {
-    background: var(--surface-color);
+    background: var(--surface-glass);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-card);
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    backdrop-filter: blur(24px) saturate(140%);
+    -webkit-backdrop-filter: blur(24px) saturate(140%);
     box-shadow: 
-        0 8px 32px rgba(31, 38, 135, 0.04),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8),
-        inset 1px 0 0 rgba(255, 255, 255, 0.3);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    position: relative;
-    overflow: hidden;
+        0 12px 36px rgba(0, 136, 255, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        inset 1px 0 0 rgba(255, 255, 255, 0.6);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-style:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px) scale(1.01);
     box-shadow: 
-        0 14px 40px rgba(31, 38, 135, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9),
-        inset 1px 0 0 rgba(255, 255, 255, 0.5);
-    border-color: rgba(255, 255, 255, 0.9);
+        0 20px 48px rgba(0, 136, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 1px 0 0 rgba(255, 255, 255, 0.8);
+    border-color: #ffffff;
 }
 
 /* --- Header & Navigation --- */
@@ -147,11 +156,11 @@ a:hover {
     left: 0;
     right: 0;
     z-index: 50;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(24px) saturate(150%);
-    -webkit-backdrop-filter: blur(24px) saturate(150%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 24px rgba(0, 136, 255, 0.03);
 }
 
 .nav-bar {
@@ -181,14 +190,16 @@ a:hover {
     width: 36px;
     height: 36px;
     background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-color) 100%);
-    color: #fff;
+    border: none;
+    color: #ffffff;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-mono);
     font-size: 14px;
     font-weight: bold;
-    border-radius: 8px;
+    flex-shrink: 0;
     box-shadow: 0 4px 12px rgba(0, 136, 255, 0.3);
 }
 
@@ -379,10 +390,10 @@ a:hover {
     z-index: 60; 
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease, background-color 0.3s;
-    background-color: color-mix(in srgb, var(--surface-color) 94%, transparent);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    transition: opacity 0.4s ease;
+    background: rgba(241, 246, 249, 0.85);
+    backdrop-filter: blur(30px) saturate(160%);
+    -webkit-backdrop-filter: blur(30px) saturate(160%);
 }
 
 .menu-overlay.active {
@@ -488,6 +499,8 @@ a:hover {
 }
 
 .hero-title {
+    text-shadow: 0 10px 30px rgba(0, 136, 255, 0.15);
+    letter-spacing: -0.05em;
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     font-weight: 700;
@@ -670,37 +683,34 @@ a:hover {
 .cta-button {
     background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-color) 100%);
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: var(--radius-pill);
     font-family: var(--font-display);
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.05em;
-    transition: all 0.2s;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: inline-block;
     border: none;
-    box-shadow: 0 4px 15px rgba(0, 136, 255, 0.25);
+    box-shadow: 0 4px 16px rgba(0, 136, 255, 0.25);
 }
 
 .cta-button:hover {
-    box-shadow: 0 6px 20px rgba(0, 136, 255, 0.4);
-    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0, 136, 255, 0.4);
+    transform: translateY(-2px);
     color: #fff;
 }
 
 .cta-button--outline {
     background: transparent;
     color: var(--accent-color);
-    border-color: var(--accent-color);
-    box-shadow: none;
-    border: 1px solid var(--accent-color);
+    border-color: color-mix(in srgb, var(--accent-color) 45%, var(--border-color));
 }
 
 .cta-button--outline:hover {
     background: color-mix(in srgb, var(--accent-color) 8%, transparent);
     color: var(--accent-hover);
-    box-shadow: none;
-    transform: translateY(0);
 }
 
 /* [NEW] Disabled button style */
@@ -726,25 +736,31 @@ a:hover {
 
 .commitment-bento {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     border: none;
     background: transparent;
 }
 
 .commitment-bento-cell {
+    padding: 32px;
     background: var(--surface-glass);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-card);
-    backdrop-filter: blur(20px);
-    padding: 40px 30px;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.03);
-    transition: transform 0.3s;
+    backdrop-filter: blur(24px) saturate(140%);
+    -webkit-backdrop-filter: blur(24px) saturate(140%);
+    box-shadow: 
+        0 12px 36px rgba(0, 136, 255, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .commitment-bento-cell:hover {
-    transform: translateY(-4px);
-    background: rgba(255,255,255,0.85);
+    transform: translateY(-6px) scale(1.01);
+    border-color: #ffffff;
+    box-shadow: 
+        0 20px 48px rgba(0, 136, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .commitment-bento-icon {
@@ -776,11 +792,12 @@ a:hover {
 
 /* --- Footer --- */
 .footer {
-    padding: 60px 0;
-    margin-top: 80px;
-    border-top: 1px solid rgba(23, 36, 48, 0.08);
+    padding: 40px 0 48px;
+    margin-top: 24px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.4);
+    color: var(--secondary-text);
+    border-top: 1px solid var(--border-color);
+    background: color-mix(in srgb, var(--surface-color) 40%, transparent);
 }
 
 .footer-content {
@@ -807,14 +824,18 @@ a:hover {
     align-items: center;
     padding-top: 32px;
 }
-.phone-frame { 
-    width: 300px; 
-    height: 620px; 
-    background-color: var(--surface-color); 
-    border-radius: 40px; 
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); 
-    border: 1px solid var(--border-color);
-    padding: 12px; 
+.phone-frame {
+    width: 320px; 
+    height: 660px; 
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(30px) saturate(150%);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+    border-radius: 48px; 
+    box-shadow: 
+        0 30px 80px rgba(0, 136, 255, 0.1),
+        inset 0 2px 4px rgba(255,255,255,0.9),
+        inset 0 0 0 1px var(--border-color);
+    padding: 14px; 
     position: relative; 
     margin-bottom: 32px; 
 }
@@ -1214,19 +1235,36 @@ a:hover {
 /* --- Dark Mode --- */
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-text: #e8eaed;
-        --secondary-text: #9aa3af;
-        --background-color: #12161c;
-        --surface-color: #1a222c;
-        --border-color: #2d3540;
-        --accent-color: #7eb8ff;
-        --accent-hover: #a8d0ff;
-        --grid-dot: rgba(232, 234, 237, 0.035);
-    }
+    --primary-text: #172430;
+    --secondary-text: #596a7e;
+    --background-color: #f1f6f9;
+    --surface-glass: rgba(255, 255, 255, 0.45);
+    --surface-solid: #ffffff;
+    --accent-color: #0088ff;
+    --accent-hover: #0066cc;
+    --accent-cyan: #00d2ff;
+    --border-color: rgba(255, 255, 255, 0.7);
+    --grid-dot: rgba(23, 36, 48, 0.05);
+    --font-sans: 'Inter', 'Zen Kaku Gothic New', 'Noto Sans JP', system-ui, sans-serif;
+    --font-display: 'Zen Kaku Gothic New', 'Inter', 'Noto Sans JP', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --font-family: var(--font-sans);
+    --radius-card: 20px;
+    --radius-pill: 12px;
+    --header-h: 70px;
+}
 
     .header, .menu-overlay {
-        background-color: color-mix(in srgb, var(--surface-color) 88%, transparent);
-    }
+    position: fixed;
+    inset: 0;
+    z-index: 60; 
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    background: rgba(241, 246, 249, 0.85);
+    backdrop-filter: blur(30px) saturate(160%);
+    -webkit-backdrop-filter: blur(30px) saturate(160%);
+}
 
     .card-style:hover {
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
