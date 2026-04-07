@@ -13,8 +13,71 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
+    <style>
+        .cs-page .hero-title {
+            letter-spacing: -0.03em;
+        }
+        .cs-page .hero-subtitle {
+            max-width: 38rem;
+            line-height: 1.9;
+        }
+        .cs-section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--secondary-text);
+            margin-bottom: 14px;
+        }
+        .cs-section-label::before {
+            content: "";
+            width: 20px;
+            height: 1px;
+            background: color-mix(in srgb, var(--accent-color) 45%, var(--border-color));
+        }
+        .cs-soft-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .cs-soft-card {
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px 18px;
+            background: color-mix(in srgb, var(--surface-solid) 84%, transparent);
+            text-align: left;
+        }
+        .cs-soft-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .cs-soft-card p {
+            color: var(--secondary-text);
+            line-height: 1.75;
+            font-size: 0.95rem;
+        }
+        .cs-page .feature-showcase {
+            border-radius: 16px;
+        }
+        .cs-page .feature-showcase-text p {
+            line-height: 1.85;
+        }
+        .cs-page .faq-item h3 {
+            letter-spacing: -0.01em;
+        }
+        @media (max-width: 900px) {
+            .cs-soft-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="cs-page">
 
     <!-- This div will be populated by ../shared/header.html -->
     <div id="header-placeholder"></div>
@@ -23,14 +86,13 @@
     <div style="height: 64px;"></div>
 
     <main>
-        <!-- Carousel Hero -->
         <section class="hero-carousel hero-section">
             <div class="container">
+                <p class="mono-eyebrow" data-i18n-key="cs.hero.eyebrow">Camera inventory for creators</p>
                 <h1 class="hero-title" data-i18n-key="cs.hero.title">Camera Shelf</h1>
-                <h3 class="hero-subtitle" data-i18n-key="cs.hero.subtitle">Track & Organize Your Gear</h3>
+                <h3 class="hero-subtitle" data-i18n-key="cs.hero.subtitle">The simple inventory manager for photographers, filmmakers, and gear enthusiasts.</h3>
                 
                 <div class="hero-carousel-wrapper">
-                    <!-- Phone Frame -->
                     <div class="phone-frame">
                         <div class="phone-screen">
                             <div class="carousel-track">
@@ -49,43 +111,115 @@
                             </div>
                         </div>
                     </div>
-                     <!-- Carousel Dots -->
                     <div id="carousel-dots" class="carousel-dots"></div>
-                    <!-- CTA Button -->
-                    <a href="https://apps.apple.com/app/id6755641228" target="_blank" class="app-store-button" data-i18n-key="cs.download">
+                    <a href="https://apps.apple.com/app/id6755641228" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="cs.download">
                         Download on the App Store
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="page-section">
-             <div class="container">
-                     <div class="text-section" style="padding: 0 0 48px 0;">
-                     <h2 class="section-title" data-i18n-key="cs.features.title">Your Digital Camera Bag</h2>
-                     <p class="section-subtitle" data-i18n-key="cs.features.subtitle">The ultimate utility for photographers to track inventory, value, and usage.</p>
+        <section class="page-section" style="padding-top: 0;">
+            <div class="container">
+                <p class="cs-section-label" data-i18n-key="cs.section.value">Overview</p>
+                <div class="text-section" style="padding: 0 0 40px 0;">
+                    <h2 class="section-title" data-i18n-key="cs.value.title">Stop using spreadsheets. Start building your digital shelf.</h2>
+                    <p class="section-subtitle" data-i18n-key="cs.value.subtitle">Know exactly what you own, where it is, and what it is worth.</p>
                  </div>
-                 <div class="features-grid">
-                     <div class="feature-item">
-                        <h3 data-i18n-key="cs.feature1.title">Inventory Tracker</h3>
-                        <p data-i18n-key="cs.feature1.body">Catalog every body, lens, and accessory. Track serial numbers, purchase dates, and prices in one secure place.</p>
+                 <div class="cs-soft-grid">
+                     <div class="cs-soft-card">
+                        <h3 data-i18n-key="cs.value1.title">Organize your collection</h3>
+                        <p data-i18n-key="cs.value1.body">Create a visual database for cameras, lenses, drones, lighting, and accessories with detailed specs and photo logs.</p>
                      </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="cs.feature2.title">Smart Kits</h3>
-                        <p data-i18n-key="cs.feature2.body">Build virtual camera bags for different needs (e.g., "Travel", "Studio"). Calculate the total weight and value of your rig instantly.</p>
+                     <div class="cs-soft-card">
+                        <h3 data-i18n-key="cs.value2.title">Smart packing kits</h3>
+                        <p data-i18n-key="cs.value2.body">Build custom loadouts for each shoot with automatic weight and insurance-value totals.</p>
                      </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="cs.feature3.title">Collection Insights</h3>
-                        <p data-i18n-key="cs.feature3.body">Visualize your investment. See your total collection value, brand distribution, and category breakdowns at a glance.</p>
+                     <div class="cs-soft-card">
+                        <h3 data-i18n-key="cs.value3.title">Insights and protection</h3>
+                        <p data-i18n-key="cs.value3.body">Track maintenance, attach receipts, and generate reports for insurance, planning, and production workflows.</p>
                      </div>
                  </div>
-             </div>
+            </div>
         </section>
 
-        <!-- FAQ Section -->
+        <section class="page-section" style="padding-top: 0;">
+            <div class="container">
+                <p class="cs-section-label" data-i18n-key="cs.section.kits">Kits</p>
+                <div class="feature-showcase card-style">
+                    <div class="feature-showcase-text">
+                        <h3 data-i18n-key="cs.kits.title">Never leave a battery or SD card behind</h3>
+                        <p data-i18n-key="cs.kits.body">Create kits like Wedding Day, Travel Light, or Studio Rig, then check total pack weight before heading out.</p>
+                        <h3 style="margin-top: 18px;" data-i18n-key="cs.kits.point1.title">Build loadouts for every job</h3>
+                        <p data-i18n-key="cs.kits.point1.body">Group bodies, lenses, filters, and accessories into reusable packing templates.</p>
+                        <h3 style="margin-top: 18px;" data-i18n-key="cs.kits.point2.title">Weight and value calculators built in</h3>
+                        <p data-i18n-key="cs.kits.point2.body">See pack weight for travel constraints and total value for insurance planning.</p>
+                    </div>
+                    <div class="feature-showcase-image-wrapper">
+                        <img src="../assets/camerashelf/2-kitshome.png" alt="Camera Shelf kit loadout screen" class="feature-showcase-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" style="padding-top: 0;">
+            <div class="container">
+                <p class="cs-section-label" data-i18n-key="cs.section.insights">Insights</p>
+                <div class="feature-showcase card-style">
+                    <div class="feature-showcase-image-wrapper">
+                        <img src="../assets/camerashelf/3-insights.png" alt="Camera Shelf analytics dashboard" class="feature-showcase-image">
+                    </div>
+                    <div class="feature-showcase-text">
+                        <h3 data-i18n-key="cs.insights.title">Understand your investment</h3>
+                        <p data-i18n-key="cs.insights.body">Use dashboard analytics to see collection value, item counts, and brand/category distribution at a glance.</p>
+                        <h3 style="margin-top: 18px;" data-i18n-key="cs.insights.point1.title">Maintenance history included</h3>
+                        <p data-i18n-key="cs.insights.point1.body">Keep logs of cleanings, repairs, and firmware updates so your kit stays reliable over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" style="padding-top: 0;">
+            <div class="container">
+                <p class="cs-section-label" data-i18n-key="cs.section.protect">Protection</p>
+                <div class="feature-showcase card-style">
+                    <div class="feature-showcase-text">
+                        <h3 data-i18n-key="cs.protect.title">Protect your gear investment</h3>
+                        <p data-i18n-key="cs.protect.body">Store receipts, export professional PDFs, and keep records ready for insurers or production teams.</p>
+                        <h3 style="margin-top: 18px;" data-i18n-key="cs.protect.point1.title">Secure and private by design</h3>
+                        <p data-i18n-key="cs.protect.point1.body">Your data stays on your device and syncs via personal iCloud. No accounts. No tracking.</p>
+                    </div>
+                    <div class="feature-showcase-image-wrapper">
+                        <img src="../assets/camerashelf/1-home.png" alt="Camera Shelf collection overview" class="feature-showcase-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" style="padding-top: 0;">
+            <div class="container">
+                <p class="cs-section-label" data-i18n-key="cs.section.premium">Premium</p>
+                <div class="text-section card-style" style="padding: 40px 28px;">
+                    <h2 class="section-title" data-i18n-key="cs.premium.title">Camera Shelf Premium</h2>
+                    <p class="section-subtitle" data-i18n-key="cs.premium.subtitle">Unlock the full workflow with one-time purchase access. No subscriptions.</p>
+                    <div class="faq-list" style="margin-top: 20px;">
+                        <div class="faq-item">
+                            <h3 data-i18n-key="cs.premium.item1">Unlimited Items & Kits</h3>
+                        </div>
+                        <div class="faq-item">
+                            <h3 data-i18n-key="cs.premium.item2">PDF Report Exporting</h3>
+                        </div>
+                        <div class="faq-item">
+                            <h3 data-i18n-key="cs.premium.item3">Unlimited Receipt Storage</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="faq" class="page-section faq-section">
             <div class="container faq-content">
+                <p class="cs-section-label" data-i18n-key="cs.section.faq">FAQ</p>
                 <div class="text-section" style="padding: 0 0 40px 0;">
                     <h2 class="section-title" data-i18n-key="cs.faq.title">Frequently Asked Questions</h2>
                 </div>
@@ -99,8 +233,8 @@
                         <p data-i18n-key="cs.faq2.body">Yes. You can input purchase prices in different currencies, and the app will help you normalize the total value of your collection.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="cs.faq3.title">Can I organize non-camera gear?</h3>
-                        <p data-i18n-key="cs.faq3.body">Absolutely. Camera Shelf is perfect for tracking drones, lighting equipment, audio gear, and computer accessories alongside your cameras.</p>
+                        <h3 data-i18n-key="cs.faq3.title">Do I need a subscription for premium?</h3>
+                        <p data-i18n-key="cs.faq3.body">No. Premium is a one-time purchase that unlocks unlimited items and kits, report exports, and receipt storage.</p>
                     </div>
                 </div>
             </div>
