@@ -251,7 +251,7 @@ a:hover {
 
 .lang-toggle-btn.is-active {
     background: var(--primary-text);
-    color: var(--surface-color);
+    color: var(--background-color);
 }
 
 .lang-toggle-btn[data-set-lang="ja"] {
