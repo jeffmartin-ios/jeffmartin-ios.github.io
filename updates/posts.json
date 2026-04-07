@@ -1,10 +1,12 @@
 [
   {
-    "slug": "camera-shelf-april-2026",
-    "title": "Camera Shelf — April 2026 Update",
-    "date": "2026-04-05",
-    "tags": ["camerashelf"],
-    "excerpt": "Faster gear search, improved kit sorting, and quality-of-life fixes based on your feedback."
+    "slug": "camera-shelf-2-0-april-2026",
+    "title": "Camera Shelf — Version 2.0 Update",
+    "date": "2026-04-07",
+    "tags": [
+      "camerashelf"
+    ],
+    "excerpt": "Grid View, All New Item Enhancements, Widgets, Siri, and More!"
   },
   {
     "slug": "welcome-to-updates",
