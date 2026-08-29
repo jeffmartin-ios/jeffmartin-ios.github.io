@@ -87,35 +87,7 @@
                         <!-- Bento-kun Mascot Speech Callout -->
                         <div class="vb-mascot-badge">
                             <div class="vb-mascot-avatar" aria-hidden="true">
-                                <svg class="vb-shiba-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- Shiba Head -->
-                                    <ellipse cx="50" cy="52" rx="36" ry="34" fill="#E59846"/>
-                                    <!-- Ears -->
-                                    <polygon points="20,40 10,12 36,25" fill="#E59846"/>
-                                    <polygon points="18,36 14,18 32,26" fill="#F4A7B9"/>
-                                    <polygon points="80,40 90,12 64,25" fill="#E59846"/>
-                                    <polygon points="82,36 86,18 68,26" fill="#F4A7B9"/>
-                                    <!-- White Cheeks & Muzzle -->
-                                    <ellipse cx="50" cy="62" rx="26" ry="20" fill="#FFFFFF"/>
-                                    <circle cx="36" cy="64" r="12" fill="#FFFFFF"/>
-                                    <circle cx="64" cy="64" r="12" fill="#FFFFFF"/>
-                                    <!-- Cute Eyes -->
-                                    <ellipse cx="36" cy="46" rx="4.5" ry="5.5" fill="#1E2226"/>
-                                    <circle cx="37.5" cy="44" r="1.5" fill="#FFFFFF"/>
-                                    <ellipse cx="64" cy="46" rx="4.5" ry="5.5" fill="#1E2226"/>
-                                    <circle cx="65.5" cy="44" r="1.5" fill="#FFFFFF"/>
-                                    <!-- Cute Eyebrows -->
-                                    <ellipse cx="35" cy="37" rx="3" ry="2" fill="#FFFFFF"/>
-                                    <ellipse cx="65" cy="37" rx="3" ry="2" fill="#FFFFFF"/>
-                                    <!-- Nose & Smile -->
-                                    <polygon points="46,55 54,55 50,60" fill="#1E2226"/>
-                                    <path d="M 46 62 Q 50 66 54 62" stroke="#1E2226" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-                                    <!-- Navy Polka-dot Bandana -->
-                                    <path d="M 26 78 Q 50 94 74 78 Q 50 82 26 78 Z" fill="#1E3A5F"/>
-                                    <circle cx="42" cy="81" r="1.5" fill="#FFFFFF"/>
-                                    <circle cx="50" cy="84" r="1.5" fill="#FFFFFF"/>
-                                    <circle cx="58" cy="81" r="1.5" fill="#FFFFFF"/>
-                                </svg>
+                                <img src="../assets/benkyo/shiba_love.png" alt="Bento-kun Shiba Inu Mascot" class="vb-mascot-img">
                             </div>
                             <div class="vb-mascot-text">
                                 <strong>Bento-kun says:</strong> "Learn 1 kanji per hour. That’s <span>720 words</span> a month!"
@@ -155,43 +127,48 @@
                         <div class="vb-phone-mockup">
                             <div class="vb-dynamic-island"></div>
 
-                            <!-- View 1: Simulated iOS 18 Lock Screen -->
-                            <div id="vb-view-lockscreen" class="vb-lockscreen-view">
-                                <div id="vb-sim-date" class="vb-lock-date">Thursday, Aug 27</div>
-                                <div id="vb-sim-clock" class="vb-lock-clock">09:41</div>
+                            <!-- View 1: iOS 18 Lock Screen with Real Screenshot & Fallback Simulator -->
+                            <div id="vb-view-lockscreen" class="vb-lockscreen-view" style="padding: 0;">
+                                <img src="../assets/benkyo/lockscreen.png" alt="Vocab Bento iOS 18 Lock Screen Widget" class="vb-lockscreen-img" onerror="this.style.display='none'; document.getElementById('vb-sim-lock-content').style.display='flex';">
+                                
+                                <!-- Graceful Fallback if lockscreen.png isn't available yet -->
+                                <div id="vb-sim-lock-content" style="display: none; width: 100%; height: 100%; padding: 44px 18px 24px 18px; flex-direction: column; align-items: center;">
+                                    <div id="vb-sim-date" class="vb-lock-date">Thursday, Aug 27</div>
+                                    <div id="vb-sim-clock" class="vb-lock-clock">09:41</div>
 
-                                <!-- Rectangular Widget -->
-                                <div class="vb-widget-sim">
-                                    <div class="vb-widget-sim-header">
-                                        <span>Vocab Bento</span>
-                                        <span class="vb-widget-sim-badge">N5 · Hourly</span>
-                                    </div>
-                                    <div class="vb-widget-sim-body">
-                                        <div class="vb-widget-sim-kanji">勉</div>
-                                        <div class="vb-widget-sim-details">
-                                            <div class="vb-widget-sim-reading">ベン · つと.める</div>
-                                            <div class="vb-widget-sim-meaning">Exertion / Endeavor</div>
+                                    <!-- Rectangular Widget -->
+                                    <div class="vb-widget-sim">
+                                        <div class="vb-widget-sim-header">
+                                            <span>Vocab Bento</span>
+                                            <span class="vb-widget-sim-badge">N5 · Hourly</span>
+                                        </div>
+                                        <div class="vb-widget-sim-body">
+                                            <div class="vb-widget-sim-kanji">勉</div>
+                                            <div class="vb-widget-sim-details">
+                                                <div class="vb-widget-sim-reading">ベン · つと.める</div>
+                                                <div class="vb-widget-sim-meaning">Exertion / Endeavor</div>
+                                            </div>
+                                        </div>
+                                        <div class="vb-widget-sim-footer">
+                                            <span>Next card in 42m</span>
+                                            <span>10 strokes</span>
                                         </div>
                                     </div>
-                                    <div class="vb-widget-sim-footer">
-                                        <span>Next card in 42m</span>
-                                        <span>10 strokes</span>
-                                    </div>
-                                </div>
 
-                                <!-- Secondary Circular Widget Mockup -->
-                                <div class="vb-widget-sim" style="margin-top: 10px; padding: 10px 14px; background: rgba(255,255,255,0.08);">
-                                    <div class="vb-widget-sim-body" style="gap: 10px;">
-                                        <span style="font-size: 1.4rem; font-family: var(--vb-font-serif); color: #F4A7B9;">強</span>
-                                        <div class="vb-widget-sim-details">
-                                            <span style="font-size: 0.75rem; color: #CBD5E1;">きょう · つよ.い (Strong)</span>
+                                    <!-- Secondary Circular Widget Mockup -->
+                                    <div class="vb-widget-sim" style="margin-top: 10px; padding: 10px 14px; background: rgba(255,255,255,0.08);">
+                                        <div class="vb-widget-sim-body" style="gap: 10px;">
+                                            <span style="font-size: 1.4rem; font-family: var(--vb-font-serif); color: #F4A7B9;">強</span>
+                                            <div class="vb-widget-sim-details">
+                                                <span style="font-size: 0.75rem; color: #CBD5E1;">きょう · つよ.い (Strong)</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="vb-lock-actions">
-                                    <div class="vb-lock-circle-btn">🔦</div>
-                                    <div class="vb-lock-circle-btn">📷</div>
+                                    <div class="vb-lock-actions">
+                                        <div class="vb-lock-circle-btn">🔦</div>
+                                        <div class="vb-lock-circle-btn">📷</div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -326,10 +303,8 @@
                     </div>
 
                     <!-- Feature 2: Pay Once (4-col) -->
-                    <div class="vb-bento-card vb-bento-card--4">
-                        <div class="vb-bento-icon-wrapper" style="background: var(--vb-matcha-light); color: var(--vb-matcha);">
-                            🛡️
-                        </div>
+                    <div class="vb-bento-card vb-bento-card--4" style="text-align: center;">
+                        <img src="../assets/benkyo/shiba_onigiri_reward.png" alt="Bento-kun Onigiri Reward" class="vb-shiba-card-img">
                         <h3 data-i18n-key="vb.feature4.title">Pay Once, Keep Forever</h3>
                         <p data-i18n-key="vb.feature4.body">
                             Zero recurring subscriptions. Master the entire JLPT N5 curriculum for free, and unlock lifetime access to all 6,000+ words with a single honest purchase.
@@ -338,24 +313,28 @@
 
                     <!-- Feature 3: Spaced Repetition (6-col) -->
                     <div class="vb-bento-card vb-bento-card--6">
-                        <div class="vb-bento-icon-wrapper" style="background: var(--vb-indigo-light); color: var(--vb-indigo);">
-                            🧠
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <img src="../assets/benkyo/shiba_studious.png" alt="Studious Bento-kun" style="width: 100px; height: 100px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 6px 12px rgba(30, 58, 95, 0.15));">
+                            <div>
+                                <h3 data-i18n-key="vb.feature2.title">Intelligent Spaced Repetition (SRS)</h3>
+                                <p data-i18n-key="vb.feature2.body">
+                                    Over 6,000+ curated words across JLPT N5–N1, Kana, Radicals, and thematic packs. Built on memory-optimized forgetting curves to make sure you never forget a word.
+                                </p>
+                            </div>
                         </div>
-                        <h3 data-i18n-key="vb.feature2.title">Intelligent Spaced Repetition (SRS)</h3>
-                        <p data-i18n-key="vb.feature2.body">
-                            Over 6,000+ curated words across JLPT N5–N1, Kana, Radicals, and thematic packs. Built on memory-optimized forgetting curves to make sure you never forget a word.
-                        </p>
                     </div>
 
                     <!-- Feature 4: Washi Craft & Mascot (6-col) -->
                     <div class="vb-bento-card vb-bento-card--6">
-                        <div class="vb-bento-icon-wrapper" style="background: var(--vb-shiba-cream); color: var(--vb-shiba-tan);">
-                            🌸
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <img src="../assets/benkyo/shiba_sushi_happy.png" alt="Happy Bento-kun with Japanese treats" style="width: 100px; height: 100px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 6px 12px rgba(229, 152, 70, 0.2));">
+                            <div>
+                                <h3 data-i18n-key="vb.feature3.title">Mindful Washi Craft &amp; Bento-kun</h3>
+                                <p data-i18n-key="vb.feature3.body">
+                                    Distraction-free Japanese stationery aesthetic accompanied by Bento-kun, your faithful Shiba Inu mascot celebrating your study streaks and milestones.
+                                </p>
+                            </div>
                         </div>
-                        <h3 data-i18n-key="vb.feature3.title">Mindful Washi Craft &amp; Bento-kun</h3>
-                        <p data-i18n-key="vb.feature3.body">
-                            Distraction-free Japanese stationery aesthetic accompanied by Bento-kun, your faithful Shiba Inu mascot celebrating your study streaks and milestones.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -389,8 +368,8 @@
                     <!-- Guide 2: JLPT N5 Kanji List -->
                     <a href="/vocab-bento/jlpt-n5-kanji-list/" class="vb-guide-card">
                         <div>
-                            <div class="vb-guide-icon">📚</div>
-                            <span class="vb-tag vb-tag--matcha" style="margin-bottom: 12px;">JLPT N5 Reference</span>
+                            <img src="../assets/benkyo/shiba_studious.png" alt="JLPT N5 Bento-kun" style="width: 52px; height: 52px; object-fit: contain; margin-bottom: 8px;">
+                            <span class="vb-tag vb-tag--matcha" style="margin-bottom: 12px; display: block; width: fit-content;">JLPT N5 Reference</span>
                             <h3 class="vb-guide-title">Complete JLPT N5 Kanji List with Readings, Meanings &amp; Audio</h3>
                             <p class="vb-guide-excerpt">
                                 Searchable directory of essential beginner Kanji characters with Onyomi, Kunyomi, stroke orders, and pronunciation.
@@ -402,8 +381,8 @@
                     <!-- Guide 3: Anime Japanese Vocabulary -->
                     <a href="/vocab-bento/anime-japanese-vocabulary/" class="vb-guide-card">
                         <div>
-                            <div class="vb-guide-icon">⚔️</div>
-                            <span class="vb-tag vb-tag--indigo" style="margin-bottom: 12px;">Culture &amp; Anime</span>
+                            <img src="../assets/benkyo/shiba_sushi_happy.png" alt="Anime Bento-kun" style="width: 52px; height: 52px; object-fit: contain; margin-bottom: 8px;">
+                            <span class="vb-tag vb-tag--indigo" style="margin-bottom: 12px; display: block; width: fit-content;">Culture &amp; Anime</span>
                             <h3 class="vb-guide-title">50 Essential Anime Japanese Words, Kanji &amp; Catchphrases</h3>
                             <p class="vb-guide-excerpt">
                                 From 仲間 (nakama) to 限界突破 (genkai toppa), master iconic anime vocabulary with context, kanji, and audio.
