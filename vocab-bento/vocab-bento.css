@@ -1,0 +1,1182 @@
+/* ==========================================================================
+   Vocab Bento (勉強 · Benkyo) — Japanese Washi Brand Stylesheet
+   Designed for Pandesal Bytes (pandesalbytes.ca/vocab-bento)
+   ========================================================================== */
+
+:root {
+    --vb-washi-bg: #FDFBF7;
+    --vb-washi-surface: #FFFFFF;
+    --vb-washi-surface-subtle: #F7F3EB;
+    --vb-washi-border: #EADBCE;
+    --vb-washi-border-subtle: rgba(216, 74, 56, 0.12);
+    
+    --vb-vermilion: #D84A38;
+    --vb-vermilion-hover: #BF3E2E;
+    --vb-vermilion-light: #FDF0ED;
+    --vb-vermilion-glow: rgba(216, 74, 56, 0.22);
+    
+    --vb-matcha: #2C5E43;
+    --vb-matcha-light: #EBF4EF;
+    --vb-matcha-hover: #224934;
+    
+    --vb-indigo: #1E3A5F;
+    --vb-indigo-light: #EEF4FA;
+    --vb-indigo-dark: #12243C;
+    
+    --vb-sakura: #FCE7EC;
+    --vb-sakura-accent: #E5738E;
+    --vb-sakura-deep: #B53856;
+    
+    --vb-shiba-tan: #E59846;
+    --vb-shiba-dark: #B26A20;
+    --vb-shiba-cream: #FFF7ED;
+    
+    --vb-text-sumi: #1E2226;
+    --vb-text-muted: #5B6470;
+    --vb-text-light: #8792A2;
+    
+    --vb-font-serif: 'Shippori Mincho', 'Noto Serif JP', 'Zen Antique', Georgia, serif;
+    --vb-font-sans: 'Zen Kaku Gothic New', 'Inter', 'Noto Sans JP', system-ui, sans-serif;
+    --vb-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    
+    --vb-shadow-soft: 0 10px 30px -10px rgba(30, 34, 38, 0.07), 0 4px 12px -2px rgba(30, 34, 38, 0.04);
+    --vb-shadow-card: 0 14px 36px -12px rgba(30, 34, 38, 0.1), 0 2px 8px -2px rgba(30, 34, 38, 0.04);
+    --vb-shadow-elevated: 0 24px 48px -14px rgba(216, 74, 56, 0.15), 0 8px 24px -4px rgba(30, 34, 38, 0.08);
+}
+
+/* Base Body Background for Vocab Bento */
+body.vb-page {
+    background-color: var(--vb-washi-bg);
+    color: var(--vb-text-sumi);
+    font-family: var(--vb-font-sans);
+    background-image: 
+        radial-gradient(var(--vb-washi-border) 0.75px, transparent 0.75px),
+        linear-gradient(180deg, rgba(253, 251, 247, 0.8) 0%, rgba(250, 246, 238, 0.95) 100%);
+    background-size: 24px 24px, 100% 100%;
+    background-attachment: fixed;
+    line-height: 1.65;
+}
+
+/* Washi Section Styling */
+.vb-section {
+    padding: 72px 0;
+    position: relative;
+}
+
+.vb-section--tinted {
+    background-color: #F8F3EA;
+    border-top: 1px dashed var(--vb-washi-border);
+    border-bottom: 1px dashed var(--vb-washi-border);
+}
+
+/* Japanese Typography Utilities */
+.vb-kanji-title {
+    font-family: var(--vb-font-serif);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--vb-text-sumi);
+}
+
+.vb-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    font-size: 0.82rem;
+    font-family: var(--vb-font-mono);
+    font-weight: 600;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.vb-tag--vermilion {
+    background: var(--vb-vermilion-light);
+    color: var(--vb-vermilion);
+    border: 1px solid rgba(216, 74, 56, 0.2);
+}
+
+.vb-tag--matcha {
+    background: var(--vb-matcha-light);
+    color: var(--vb-matcha);
+    border: 1px solid rgba(44, 94, 67, 0.2);
+}
+
+.vb-tag--indigo {
+    background: var(--vb-indigo-light);
+    color: var(--vb-indigo);
+    border: 1px solid rgba(30, 58, 95, 0.2);
+}
+
+.vb-tag--sakura {
+    background: var(--vb-sakura);
+    color: var(--vb-sakura-deep);
+    border: 1px solid rgba(229, 115, 142, 0.25);
+}
+
+/* Japanese Hanko / Seal Stamp */
+.vb-hanko {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--vb-vermilion);
+    color: var(--vb-vermilion);
+    border-radius: 4px;
+    font-family: var(--vb-font-serif);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+    transform: rotate(-4deg);
+    flex-shrink: 0;
+    background: rgba(216, 74, 56, 0.04);
+}
+
+/* ==========================================================================
+   Hero Section & Mascot
+   ========================================================================== */
+
+.vb-hero {
+    padding: 40px 0 70px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.vb-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+}
+
+@media (max-width: 960px) {
+    .vb-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+.vb-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 960px) {
+    .vb-hero-content {
+        align-items: center;
+    }
+}
+
+.vb-eyebrow-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.vb-hero-hook {
+    font-family: var(--vb-font-serif);
+    font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.18;
+    color: var(--vb-text-sumi);
+    letter-spacing: -0.03em;
+}
+
+.vb-hero-hook .vb-highlight {
+    color: var(--vb-vermilion);
+    position: relative;
+    white-space: nowrap;
+}
+
+.vb-hero-hook .vb-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--vb-sakura);
+    z-index: -1;
+    border-radius: 4px;
+}
+
+.vb-hero-subtext {
+    font-size: 1.15rem;
+    color: var(--vb-text-muted);
+    max-width: 540px;
+    line-height: 1.6;
+}
+
+/* Mascot Bento-kun Speech Callout */
+.vb-mascot-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--vb-washi-surface);
+    padding: 10px 18px 10px 12px;
+    border-radius: 999px;
+    border: 1.5px solid var(--vb-washi-border);
+    box-shadow: var(--vb-shadow-soft);
+    max-width: fit-content;
+}
+
+.vb-mascot-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--vb-shiba-cream);
+    border: 1.5px solid var(--vb-shiba-tan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.vb-mascot-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--vb-indigo);
+}
+
+.vb-mascot-text span {
+    color: var(--vb-vermilion);
+}
+
+/* CTAs */
+.vb-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+@media (max-width: 960px) {
+    .vb-cta-group {
+        justify-content: center;
+    }
+}
+
+.vb-btn-appstore {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--vb-vermilion);
+    color: #FFFFFF !important;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 24px -6px rgba(216, 74, 56, 0.4);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+}
+
+.vb-btn-appstore:hover {
+    background: var(--vb-vermilion-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -6px rgba(216, 74, 56, 0.5);
+}
+
+.vb-btn-appstore svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.vb-btn-sub {
+    font-size: 0.85rem;
+    color: var(--vb-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.vb-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--vb-washi-surface);
+    color: var(--vb-indigo) !important;
+    padding: 13px 22px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    border: 1.5px solid var(--vb-washi-border);
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.vb-btn-secondary:hover {
+    background: #FAF7F0;
+    border-color: var(--vb-indigo);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Device Showcase & Interactive Widget Toggle
+   ========================================================================== */
+
+.vb-showcase-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Switcher Tabs (Lock Screen Widget vs In-App SRS) */
+.vb-tab-control {
+    display: inline-flex;
+    background: #EAE3D5;
+    padding: 4px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.vb-tab-btn {
+    border: none;
+    background: transparent;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--vb-text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.vb-tab-btn.is-active {
+    background: var(--vb-washi-surface);
+    color: var(--vb-indigo);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Simulated iPhone Lock Screen Frame */
+.vb-phone-mockup {
+    width: 290px;
+    height: 590px;
+    background: #0D1117;
+    border-radius: 46px;
+    border: 8px solid #232931;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dynamic Island */
+.vb-dynamic-island {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 24px;
+    background: #000000;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+/* Lock Screen View */
+.vb-lockscreen-view {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, #1C273A 0%, #0F1722 100%);
+    color: #FFFFFF;
+    padding: 44px 18px 24px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.vb-lock-clock {
+    font-family: var(--vb-font-sans);
+    font-size: 3.8rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin: 8px 0 2px 0;
+    color: #F1F5F9;
+}
+
+.vb-lock-date {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* Simulated iOS 18 Rectangular Lock Screen Widget */
+.vb-widget-sim {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    padding: 12px 14px;
+    margin-top: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.vb-widget-sim-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #CBD5E1;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.vb-widget-sim-badge {
+    background: rgba(216, 74, 56, 0.85);
+    color: #FFFFFF;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.62rem;
+    font-weight: 700;
+}
+
+.vb-widget-sim-body {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 2px;
+}
+
+.vb-widget-sim-kanji {
+    font-family: var(--vb-font-serif);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.vb-widget-sim-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.vb-widget-sim-reading {
+    font-size: 0.78rem;
+    color: #E2E8F0;
+    font-weight: 500;
+}
+
+.vb-widget-sim-meaning {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.vb-widget-sim-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.62rem;
+    color: #94A3B8;
+    margin-top: 2px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 4px;
+}
+
+/* Bottom Lock Icons */
+.vb-lock-actions {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.vb-lock-circle-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+/* In-App Carousel Inside Phone */
+.vb-app-view {
+    height: 100%;
+    width: 100%;
+    background: var(--vb-washi-bg);
+    display: none;
+    position: relative;
+}
+
+.vb-app-view.is-active {
+    display: block;
+}
+
+.vb-app-view img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   Interactive Web Flashcard Demo
+   ========================================================================== */
+
+.vb-demo-section {
+    background: linear-gradient(180deg, #FAF6EE 0%, #F5EFE3 100%);
+    border-top: 1px solid var(--vb-washi-border);
+    border-bottom: 1px solid var(--vb-washi-border);
+    padding: 80px 0;
+}
+
+.vb-demo-container {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vb-demo-card-scene {
+    width: 100%;
+    height: 380px;
+    perspective: 1000px;
+    margin: 32px 0 20px 0;
+    cursor: pointer;
+}
+
+.vb-demo-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-radius: 24px;
+}
+
+.vb-demo-card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.vb-demo-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 24px;
+    background: var(--vb-washi-surface);
+    border: 2px solid var(--vb-washi-border);
+    box-shadow: var(--vb-shadow-card);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.vb-demo-face--back {
+    transform: rotateY(180deg);
+    background: #FFFDF9;
+    border-color: #E2D7C5;
+}
+
+.vb-demo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vb-demo-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.vb-demo-kanji-large {
+    font-family: var(--vb-font-serif);
+    font-size: 5.5rem;
+    font-weight: 800;
+    color: var(--vb-text-sumi);
+    line-height: 1;
+}
+
+.vb-demo-reading-prompt {
+    font-size: 1.1rem;
+    color: var(--vb-text-muted);
+    font-weight: 500;
+}
+
+.vb-demo-flip-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--vb-text-muted);
+    background: var(--vb-washi-surface-subtle);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* Card Back Contents */
+.vb-demo-back-kanji {
+    font-family: var(--vb-font-serif);
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--vb-vermilion);
+    line-height: 1;
+}
+
+.vb-demo-furigana {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--vb-text-sumi);
+}
+
+.vb-demo-romaji {
+    font-family: var(--vb-font-mono);
+    font-size: 0.95rem;
+    color: var(--vb-text-muted);
+}
+
+.vb-demo-meaning {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--vb-indigo);
+    margin-top: 4px;
+}
+
+.vb-demo-example {
+    background: var(--vb-washi-surface-subtle);
+    border-left: 3px solid var(--vb-vermilion);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: left;
+    color: var(--vb-text-sumi);
+}
+
+.vb-demo-audio-btn {
+    border: none;
+    background: var(--vb-indigo-light);
+    color: var(--vb-indigo);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.vb-demo-audio-btn:hover {
+    background: var(--vb-indigo);
+    color: #FFFFFF;
+    transform: scale(1.08);
+}
+
+/* SRS Answer Rating Buttons */
+.vb-srs-button-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.vb-srs-btn {
+    border: 1px solid var(--vb-washi-border);
+    background: var(--vb-washi-surface);
+    padding: 10px 4px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.vb-srs-btn:hover {
+    transform: translateY(-2px);
+}
+
+.vb-srs-btn--again { color: #D84A38; }
+.vb-srs-btn--again:hover { background: #FDEEEB; border-color: #D84A38; }
+
+.vb-srs-btn--hard { color: #E59846; }
+.vb-srs-btn--hard:hover { background: #FFF7ED; border-color: #E59846; }
+
+.vb-srs-btn--good { color: #2C5E43; }
+.vb-srs-btn--good:hover { background: #EBF4EF; border-color: #2C5E43; }
+
+.vb-srs-btn--easy { color: #1E3A5F; }
+.vb-srs-btn--easy:hover { background: #EEF4FA; border-color: #1E3A5F; }
+
+.vb-srs-time {
+    font-size: 0.72rem;
+    font-family: var(--vb-font-mono);
+    opacity: 0.75;
+}
+
+/* Next / Prev Controls */
+.vb-demo-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 14px;
+}
+
+.vb-demo-counter {
+    font-family: var(--vb-font-mono);
+    font-size: 0.9rem;
+    color: var(--vb-text-muted);
+}
+
+/* ==========================================================================
+   Core Pillars / Bento Grid
+   ========================================================================== */
+
+.vb-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.vb-bento-card {
+    background: var(--vb-washi-surface);
+    border: 1.5px solid var(--vb-washi-border);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: var(--vb-shadow-soft);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.vb-bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--vb-shadow-card);
+    border-color: #D84A38;
+}
+
+.vb-bento-card--8 { grid-column: span 8; }
+.vb-bento-card--4 { grid-column: span 4; }
+.vb-bento-card--6 { grid-column: span 6; }
+.vb-bento-card--12 { grid-column: span 12; }
+
+@media (max-width: 900px) {
+    .vb-bento-card--8,
+    .vb-bento-card--4,
+    .vb-bento-card--6,
+    .vb-bento-card--12 {
+        grid-column: span 12;
+    }
+}
+
+.vb-bento-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.vb-bento-card h3 {
+    font-family: var(--vb-font-serif);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--vb-text-sumi);
+    margin-bottom: 12px;
+    line-height: 1.25;
+}
+
+.vb-bento-card p {
+    color: var(--vb-text-muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   SEO Subpages Hub / Guides Section
+   ========================================================================== */
+
+.vb-guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .vb-guides-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.vb-guide-card {
+    background: var(--vb-washi-surface);
+    border: 1.5px solid var(--vb-washi-border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--vb-shadow-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.vb-guide-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--vb-vermilion);
+    box-shadow: var(--vb-shadow-card);
+}
+
+.vb-guide-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+.vb-guide-title {
+    font-family: var(--vb-font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--vb-text-sumi);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.vb-guide-excerpt {
+    color: var(--vb-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
+}
+
+.vb-guide-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--vb-vermilion);
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   Subpage / Deep Dive Layouts (Widgets, JLPT N5, Anime)
+   ========================================================================== */
+
+.vb-subpage-header {
+    background: linear-gradient(180deg, #F9F4EB 0%, var(--vb-washi-bg) 100%);
+    padding: 48px 0 32px 0;
+    border-bottom: 1px solid var(--vb-washi-border);
+}
+
+.vb-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--vb-text-muted);
+    margin-bottom: 18px;
+}
+
+.vb-breadcrumb a {
+    color: var(--vb-indigo);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.vb-subpage-title {
+    font-family: var(--vb-font-serif);
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    font-weight: 800;
+    color: var(--vb-text-sumi);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.vb-subpage-lead {
+    font-size: 1.15rem;
+    color: var(--vb-text-muted);
+    max-width: 760px;
+    line-height: 1.65;
+}
+
+/* Step-by-Step Guide Blocks */
+.vb-step-card {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    background: var(--vb-washi-surface);
+    border: 1.5px solid var(--vb-washi-border);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: var(--vb-shadow-soft);
+}
+
+@media (max-width: 640px) {
+    .vb-step-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+.vb-step-number {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--vb-vermilion-light);
+    color: var(--vb-vermilion);
+    font-family: var(--vb-font-serif);
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(216, 74, 56, 0.2);
+}
+
+.vb-step-content h3 {
+    font-family: var(--vb-font-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--vb-text-sumi);
+    margin-bottom: 8px;
+}
+
+/* Searchable Kanji Grid */
+.vb-kanji-search-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.vb-search-input {
+    flex: 1;
+    min-width: 260px;
+    padding: 14px 20px;
+    border-radius: 14px;
+    border: 1.5px solid var(--vb-washi-border);
+    background: var(--vb-washi-surface);
+    font-size: 1rem;
+    font-family: var(--vb-font-sans);
+    color: var(--vb-text-sumi);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.vb-search-input:focus {
+    border-color: var(--vb-vermilion);
+    box-shadow: 0 0 0 3px rgba(216, 74, 56, 0.12);
+}
+
+.vb-filter-pill {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1.5px solid var(--vb-washi-border);
+    background: var(--vb-washi-surface);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--vb-text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.vb-filter-pill.is-active,
+.vb-filter-pill:hover {
+    background: var(--vb-vermilion);
+    color: #FFFFFF;
+    border-color: var(--vb-vermilion);
+}
+
+.vb-kanji-table-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.vb-kanji-card {
+    background: var(--vb-washi-surface);
+    border: 1.5px solid var(--vb-washi-border);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: var(--vb-shadow-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.vb-kanji-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--vb-vermilion);
+    box-shadow: var(--vb-shadow-card);
+}
+
+.vb-kanji-char {
+    font-family: var(--vb-font-serif);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--vb-vermilion);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.vb-kanji-meta {
+    font-size: 0.82rem;
+    color: var(--vb-text-muted);
+    margin-bottom: 6px;
+}
+
+.vb-kanji-meaning {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--vb-text-sumi);
+    margin-bottom: 10px;
+}
+
+.vb-kanji-readings {
+    background: var(--vb-washi-surface-subtle);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+/* Anime Word Cards */
+.vb-anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.vb-anime-card {
+    background: var(--vb-washi-surface);
+    border: 1.5px solid var(--vb-washi-border);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--vb-shadow-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.vb-anime-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--vb-indigo);
+    box-shadow: var(--vb-shadow-card);
+}
+
+.vb-anime-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.vb-anime-kanji {
+    font-family: var(--vb-font-serif);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--vb-text-sumi);
+    line-height: 1.1;
+}
+
+.vb-anime-furigana {
+    font-size: 1rem;
+    color: var(--vb-vermilion);
+    font-weight: 600;
+}
+
+.vb-anime-meaning {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--vb-indigo);
+    margin: 8px 0;
+}
+
+.vb-anime-context {
+    background: #FAF6EE;
+    border-left: 3px solid var(--vb-matcha);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.86rem;
+    color: var(--vb-text-sumi);
+    margin-top: 10px;
+}
+
+/* CTA Banner at Bottom of Subpages */
+.vb-cta-banner {
+    background: linear-gradient(135deg, #1E3A5F 0%, #13243B 100%);
+    border-radius: 28px;
+    padding: 48px 40px;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 64px 0 32px 0;
+    box-shadow: var(--vb-shadow-elevated);
+    position: relative;
+    overflow: hidden;
+}
+
+.vb-cta-banner h2 {
+    font-family: var(--vb-font-serif);
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.vb-cta-banner p {
+    font-size: 1.1rem;
+    color: #CBD5E1;
+    max-width: 600px;
+    margin: 0 auto 28px auto;
+}
+
+/* Bento-kun Mascot Shiba SVG Helper */
+.vb-shiba-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}

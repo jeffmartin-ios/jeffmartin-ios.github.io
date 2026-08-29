@@ -6,37 +6,34 @@ document.addEventListener('DOMContentLoaded', () => {
         return lang === 'ja' ? 'ja' : 'en';
     }
 
+    function getRelativeDepthPrefix() {
+        let path = window.location.pathname;
+        if (typeof window.getPbSiteBase === 'function') {
+            const base = window.getPbSiteBase();
+            if (base && path.startsWith(base)) {
+                path = path.slice(base.length);
+            }
+        }
+        const segments = path.split('/').filter(s => s && s !== 'index.html');
+        const depth = segments.length;
+        if (depth === 0) return '';
+        let prefix = '';
+        for (let i = 0; i < depth; i++) {
+            prefix += '../';
+        }
+        return prefix;
+    }
+
     function isNestedPath() {
-        if (typeof window.getPbSiteBase !== 'function') {
-            const p = window.location.pathname;
-            return p.includes('/spent-today') ||
-                p.includes('/privacy') ||
-                p.includes('/inventory') ||
-                p.includes('/camerapouch') ||
-                p.includes('/habit-habit') ||
-                p.includes('/simulatedfilm') ||
-                p.includes('/camerashelf') ||
-                p.includes('/pattern-projects') ||
-                p.includes('/recipe-mini') ||
-                p.includes('/vocab-bento') ||
-                p.includes('/updates');
-        }
-        let rest = window.location.pathname;
-        const base = window.getPbSiteBase();
-        if (base && rest.startsWith(base)) {
-            rest = rest.slice(base.length);
-            if (!rest || rest.charAt(0) !== '/') rest = '/' + (rest || '');
-        }
-        if (rest.charAt(0) !== '/') rest = '/' + rest;
-        return /^\/(spent-today|privacy|inventory|camerapouch|habit-habit|simulatedfilm|camerashelf|pattern-projects|recipe-mini|vocab-bento|updates)(\/|$)/.test(rest);
+        return getRelativeDepthPrefix().length > 0;
     }
 
     function langBasePath() {
-        return isNestedPath() ? '../' : '';
+        return getRelativeDepthPrefix();
     }
 
     function sharedBasePath() {
-        return isNestedPath() ? '../shared/' : 'shared/';
+        return getRelativeDepthPrefix() + 'shared/';
     }
 
     async function loadTranslations(lang) {
