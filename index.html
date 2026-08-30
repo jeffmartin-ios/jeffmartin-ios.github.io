@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- GitHub project Pages: set content="/your-repo-name" if auto-detection fails -->
     <meta name="pb-site-base" content="">
-    <title>Pandesal Bytes — Independent iOS software</title>
+    <title>Pandesal Bytes — Independent software studio</title>
+    <link rel="icon" type="image/jpeg" href="assets/pb-logo.jpeg">
+    <link rel="apple-touch-icon" href="assets/pb-logo.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,12 +20,45 @@
     <div id="hero-placeholder" class="header-spacer"></div>
 
     <section class="hero-section hero-section--home">
-        <div class="container hero-home-inner">
-            <p class="site-tagline mono-eyebrow" data-i18n-key="site.tagline">iOS Software Studio <span class="tagline-sep">/</span> 日本の日常を豊かにするiOSアプリ</p>
-            <h1 class="hero-title hero-title--home" data-i18n-key="hero.title">Pandesal Bytes</h1>
-            <p class="hero-subtitle hero-subtitle--home" data-i18n-key="hero.subtitle-subfree">
-                High value, subscription-free software solving everyday problems for users in Japan. precision-built, privacy-first, and designed with minimal futuristic aesthetics.
-            </p>
+        <div class="container hero-home-container">
+            <div class="hero-home-content">
+                <div class="hero-badge-row">
+                    <span class="hero-pill-badge" data-i18n-key="hero.badge.crafted">Carefully Crafted</span>
+                    <span class="hero-pill-badge hero-pill-badge--accent" data-i18n-key="hero.badge.subfree">Subscription-Free</span>
+                    <span class="hero-pill-badge" data-i18n-key="hero.badge.privacy">Privacy First</span>
+                </div>
+                <h1 class="hero-title hero-title--home" data-i18n-key="hero.title">Pandesal Bytes</h1>
+                <p class="site-tagline mono-eyebrow" data-i18n-key="site.tagline">Independent software studio <span class="tagline-sep">/</span> インディーズソフトウェア</p>
+                <p class="hero-subtitle hero-subtitle--home" data-i18n-key="hero.subtitle-subfree">
+                    High value, subscription-free software solving everyday problems. Precision-built, privacy-first, and designed with minimal aesthetics.
+                </p>
+                
+                <div class="hero-quick-nav" aria-label="Quick Navigation">
+                    <a href="#photography" class="hero-jump-chip">
+                        <span class="hero-jump-dot"></span>
+                        <span data-i18n-key="hero.jump.photo">Photography</span>
+                        <span class="hero-jump-count">4</span>
+                    </a>
+                    <a href="#productivity" class="hero-jump-chip">
+                        <span class="hero-jump-dot"></span>
+                        <span data-i18n-key="hero.jump.prod">Productivity</span>
+                        <span class="hero-jump-count">8</span>
+                    </a>
+                    <a href="#about" class="hero-jump-chip">
+                        <span class="hero-jump-dot"></span>
+                        <span data-i18n-key="hero.jump.values">Principles</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-home-visual" aria-hidden="true">
+                <div class="hero-mascot-card">
+                    <div class="hero-mascot-glow"></div>
+                    <div class="hero-mascot-frame">
+                        <img src="assets/pb-logo.jpeg" alt="Pandesal Bytes Mascot" class="hero-mascot-img">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -42,10 +77,10 @@
                         <div>
                             <div class="app-card-header">
                                 <div class="app-icon-placeholder camera-pouch-icon">
-                                    <img src="assets/camerapouch/icon.png" alt="Camera Pouch App Icon" class="app-icon-image">
+                                    <img src="assets/camerapouch/icon.png" alt="Camera Plan App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title" data-i18n-key="app.camerapouch.title">Camera Plan</h2>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.camerapouch.title">Camera Plan</h3>
                                     <p class="app-card-description" data-i18n-key="app.camerapouch.description">Your all-in-one photoshoot planner, sun tracker, and shot list tool.</p>
                                 </div>
                             </div>
@@ -63,8 +98,8 @@
                                 <div class="app-icon-placeholder app-icon-placeholder--mint">
                                     <img src="assets/simulatedfilm/icon.png" alt="Simulated Film App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title" data-i18n-key="app.simulated-film.title">Simulated Film</h2>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.simulated-film.title">Simulated Film</h3>
                                     <p class="app-card-description" data-i18n-key="app.simulated-film.description">Manage and share your Fujifilm & Ricoh film recipes.</p>
                                 </div>
                             </div>
@@ -82,8 +117,8 @@
                                 <div class="app-icon-placeholder camera-shelf-icon">
                                     <img src="assets/camerashelf/icon.png" alt="Camera Shelf App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title" data-i18n-key="app.camerashelf.title">Camera Shelf</h2>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.camerashelf.title">Camera Shelf</h3>
                                     <p class="app-card-description" data-i18n-key="app.camerashelf.description">Track and organize your camera gear collection and kits.</p>
                                 </div>
                             </div>
@@ -101,9 +136,9 @@
                                 <div class="app-icon-placeholder app-icon-placeholder--neutral">
                                     <img src="assets/frames/icon.png" alt="Slideshow Frames App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title">Slideshow Frames</h2>
-                                    <p class="app-card-description">Transform your photos into animated slideshows with beautiful transitions and frames.</p>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.slideshow-frames.title">Slideshow Frames</h3>
+                                    <p class="app-card-description" data-i18n-key="app.slideshow-frames.description">Transform your photos into animated slideshows with beautiful transitions and frames.</p>
                                 </div>
                             </div>
                         </div>
@@ -130,8 +165,8 @@
                                 <div class="app-icon-placeholder">
                                     <img src="assets/yen/icon.png" alt="Spent Today App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title" data-i18n-key="app.spent-today.title">Spent Today</h2>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.spent-today.title">Spent Today</h3>
                                     <p class="app-card-description" data-i18n-key="app.spent-today.description">Simple, beautiful expense tracking for your daily needs.</p>
                                 </div>
                             </div>
@@ -149,8 +184,8 @@
                                 <div class="app-icon-placeholder inventory-stack-icon">
                                     <img src="assets/fukuro/icon.png" alt="My Inventory Stack App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title" data-i18n-key="app.inventory.title">My Inventory Stack</h2>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.inventory.title">My Inventory Stack</h3>
                                     <p class="app-card-description" data-i18n-key="app.inventory.description">Smart inventory & business tracking for small businesses and collectors.</p>
                                 </div>
                             </div>
@@ -168,9 +203,9 @@
                                 <div class="app-icon-placeholder app-icon-placeholder--neutral">
                                     <img src="assets/kirei/icon.png" alt="ArchiveShelf App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title">ArchiveShelf</h2>
-                                    <p class="app-card-description">Track valuables, warranties, and receipts with a private home inventory built for peace of mind.</p>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.archiveshelf.title">ArchiveShelf</h3>
+                                    <p class="app-card-description" data-i18n-key="app.archiveshelf.description">Track valuables, warranties, and receipts with a private home inventory built for peace of mind.</p>
                                 </div>
                             </div>
                         </div>
@@ -187,8 +222,8 @@
                                 <div class="app-icon-placeholder app-icon-placeholder--neutral">
                                     <img src="assets/horizons/icon.png" alt="Habit Habit App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title" data-i18n-key="app.habit-habit.title">Habit Habit</h2>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.habit-habit.title">Habit Habit</h3>
                                     <p class="app-card-description" data-i18n-key="app.habit-habit.description">Build the life you want with simple, satisfying habit tracking.</p>
                                 </div>
                             </div>
@@ -206,8 +241,8 @@
                                 <div class="app-icon-placeholder pattern-projects-icon">
                                     <img src="assets/stitch/icon.png" alt="Pattern Projects App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title" data-i18n-key="app.pattern-projects.title">Pattern Projects</h2>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.pattern-projects.title">Pattern Projects</h3>
                                     <p class="app-card-description" data-i18n-key="app.pattern-projects.description">Save and track your sewing, knitting, and other craft projects.</p>
                                 </div>
                             </div>
@@ -225,8 +260,8 @@
                                 <div class="app-icon-placeholder recipe-mini-icon">
                                     <img src="assets/pagkain/icon.png" onerror="this.style.display='none';" alt="Recipe Mini App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title" data-i18n-key="app.recipe-mini.title">Recipe Mini</h2>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.recipe-mini.title">Recipe Mini</h3>
                                     <p class="app-card-description" data-i18n-key="app.recipe-mini.description">Your personal cookbook, meal planner, and shopping assistant.</p>
                                 </div>
                             </div>
@@ -244,8 +279,8 @@
                                 <div class="app-icon-placeholder vocab-bento-icon">
                                     <img src="assets/benkyo/icon.png" alt="Vocab Bento App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title" data-i18n-key="app.vocab-bento.title">Vocab Bento</h2>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.vocab-bento.title">Vocab Bento</h3>
                                     <p class="app-card-description" data-i18n-key="app.vocab-bento.description">Mindful Japanese SRS flashcards with hourly Lock Screen Kanji widgets.</p>
                                 </div>
                             </div>
@@ -263,9 +298,9 @@
                                 <div class="app-icon-placeholder app-icon-placeholder--neutral">
                                     <img src="assets/bocchi/icon.png" alt="OS-39 App Icon" class="app-icon-image">
                                 </div>
-                                <div>
-                                    <h2 class="app-card-title">OS-39</h2>
-                                    <p class="app-card-description">Hi-res offline music player with a visualizer, EQ, and on-device recommendations.</p>
+                                <div class="app-card-meta">
+                                    <h3 class="app-card-title" data-i18n-key="app.os39.title">OS-39</h3>
+                                    <p class="app-card-description" data-i18n-key="app.os39.description">Hi-res offline music player with a visualizer, EQ, and on-device recommendations.</p>
                                 </div>
                             </div>
                         </div>
@@ -292,36 +327,44 @@
         <section id="about" class="page-section about-section text-section">
             <h2 class="section-title section-title--about" data-i18n-key="about.title">High Value. No Subscriptions.</h2>
             <p class="section-subtitle" data-i18n-key="about.subtitle">
-                We are an iOS software studio dedicated to solving everyday problems for users in Japan. We believe in providing immense utility without recurring fees. Built with careful craftsmanship, stark aesthetics, and deep respect for your privacy.
+                We are an independent software studio dedicated to solving everyday problems. We believe in providing immense utility without recurring fees. Built with careful craftsmanship, stark aesthetics, and deep respect for your privacy.
             </p>
         </section>
 
         <section class="page-section" aria-label="Principles">
             <div class="commitment-bento">
                 <div class="commitment-bento-cell">
-                    <div class="commitment-bento-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <div class="commitment-bento-icon-wrap" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
                     </div>
                     <h3 data-i18n-key="commitment.privacy.title">Privacy First</h3>
                     <p data-i18n-key="commitment.privacy.description">We build our apps to be private by design. We don't collect or sell your personal data. Ever.</p>
                 </div>
                 <div class="commitment-bento-cell">
-                    <div class="commitment-bento-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <div class="commitment-bento-icon-wrap" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                        </svg>
                     </div>
                     <h3 data-i18n-key="commitment.distractions.title">No Distractions</h3>
                     <p data-i18n-key="commitment.distractions.description">You won't find ads, trackers, or unnecessary notifications in our software.</p>
                 </div>
                 <div class="commitment-bento-cell">
-                    <div class="commitment-bento-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <div class="commitment-bento-icon-wrap" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5v1.409l4.242 4.243" />
+                        </svg>
                     </div>
                     <h3 data-i18n-key="commitment.longevity.title">Built to Last</h3>
                     <p data-i18n-key="commitment.longevity.description">We focus on quality and long-term support, ensuring our apps remain reliable and useful for years to come.</p>
                 </div>
                 <div class="commitment-bento-cell">
-                    <div class="commitment-bento-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <div class="commitment-bento-icon-wrap" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+                        </svg>
                     </div>
                     <h3 data-i18n-key="commitment.subscriptions.title">Own Your Apps</h3>
                     <p data-i18n-key="commitment.subscriptions.description">Our apps are free to use with powerful core features. Premium access is just a one-time purchase away—no subscriptions.</p>

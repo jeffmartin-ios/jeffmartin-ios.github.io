@@ -61,12 +61,23 @@
             var newHref = pbUrl(pathPart || '/') + hash;
             a.setAttribute('href', newHref);
         });
+        root.querySelectorAll('img[src^="/"]').forEach(function (img) {
+            var src = img.getAttribute('src');
+            if (!src || src.indexOf('//') === 0) return;
+            if (base && src.indexOf(base + '/') === 0) return;
+            if (base && src === base) return;
+            img.setAttribute('src', pbUrl(src));
+        });
     }
 
     function pbApplyDataPbLinks() {
         document.querySelectorAll('a[data-pb]').forEach(function (a) {
             var p = a.getAttribute('data-pb');
             if (p) a.setAttribute('href', pbUrl(p));
+        });
+        document.querySelectorAll('img[data-pb]').forEach(function (img) {
+            var p = img.getAttribute('data-pb');
+            if (p) img.setAttribute('src', pbUrl(p));
         });
     }
 
