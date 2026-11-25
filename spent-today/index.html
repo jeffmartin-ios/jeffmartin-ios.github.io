@@ -4,86 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="pb-site-base" content="">
-    <title>Spent Today - Simple Daily Budgeting</title>
-    
-    <!-- Smart App Banner for iOS -->
+    <title>Spent Today — Mindful Daily Budgeting &amp; Travel Envelopes | Pandesal Bytes</title>
+    <meta name="description" content="Mindful daily expense tracking with Needs vs. Wants tags, flexible daily limits, no-spend streaks, and multi-currency travel envelopes. 100% private.">
     <meta name="apple-itunes-app" content="app-id=6754225263">
-
+    <link rel="icon" type="image/jpeg" href="../assets/pb-logo.jpeg">
+    <link rel="apple-touch-icon" href="../assets/yen/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
 </head>
 <body>
 
-    <!-- This div will be populated by ../shared/header.html -->
     <div id="header-placeholder"></div>
-    
-    <!-- A simple spacer for the fixed header -->
-    <div style="height: 64px;"></div>
 
     <main>
-        <!-- Carousel Hero -->
         <section class="hero-carousel hero-section">
             <div class="container">
-                <h1 class="hero-title" data-i18n-key="st.hero.title">Spent Today</h1>
-                <h3 class="hero-subtitle" data-i18n-key="st.hero.subtitle">Your Daily Budget App</h3>
-                
+                <div class="product-hero-header">
+                    <div class="product-hero-icon">
+                        <img src="../assets/yen/icon.png" alt="Spent Today App Icon">
+                    </div>
+                    <div class="platform-pills" data-pb-product-pills="spent-today"></div>
+                    <h1 class="hero-title" data-i18n-key="st.hero.title">Spent Today</h1>
+                    <p class="hero-subtitle" data-i18n-key="st.hero.subtitle">Mindful daily expense tracking, Needs vs. Wants clarity, and multi-currency travel envelopes.</p>
+                </div>
+
                 <div class="hero-carousel-wrapper">
-                    <!-- Phone Frame -->
                     <div class="phone-frame">
                         <div class="phone-screen">
                             <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="../assets/yen/home-screenshot.png" alt="Spent Today App Screenshot 1" class="app-screenshot">
+                                    <img src="../assets/yen/1-today-view.png" alt="Spent Today Daily Overview" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/yen/set-limit-screenshot.png" alt="Spent Today App Screenshot 2" class="app-screenshot">
+                                    <img src="../assets/yen/2-needs-vs-wants.png" alt="Spent Today Needs vs Wants Breakdown" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/yen/insights-screenshot.png" alt="Spent Today App Screenshot 3" class="app-screenshot">
+                                    <img src="../assets/yen/3-daily-limits.png" alt="Spent Today Flexible Daily Spend Limits" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/yen/widgets-screenshot.png" alt="Spent Today App Screenshot 4" class="app-screenshot">
+                                    <img src="../assets/yen/4-no-spend-streaks.png" alt="Spent Today No-Spend Day Streaks" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/yen/5-history-view.png" alt="Spent Today Weekly and Monthly Trends" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/yen/6-transactions-view.png" alt="Spent Today Searchable Transaction History" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/yen/7-trips-view.png" alt="Spent Today Travel Budget Envelopes" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/yen/8-trip-detail-view.png" alt="Spent Today Multi-Currency Conversion" class="app-screenshot">
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <!-- Carousel Dots -->
                     <div id="carousel-dots" class="carousel-dots"></div>
-                    <!-- CTA Button -->
-                    <a href="https://apps.apple.com/us/app/spent-today/id6754225263" target="_" class="app-store-button" data-i18n-key="st.download">
-                        Download on the App Store
-                    </a>
+                    <div data-pb-product-actions="spent-today">
+                        <a href="https://apps.apple.com/us/app/spent-today/id6754225263" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="st.download">
+                            Download on the App Store
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
         <section id="features" class="page-section">
-             <div class="container">
-                     <div class="text-section" style="padding: 0 0 48px 0;">
-                     <h2 class="section-title" data-i18n-key="st.features.title">Minimal & Simple Daily Budgeting</h2>
-                     <p class="section-subtitle" data-i18n-key="st.features.subtitle">Track your daily spending without the clutter.</p>
-                 </div>
-                 <div class="features-grid">
-                     <div class="feature-item">
-                        <h3 data-i18n-key="st.feature1.title">Quick Add</h3>
-                        <p data-i18n-key="st.feature1.description">Quickly add transactions from the home screen, widget, or Apple Watch app.</p>
-                     </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="st.feature2.title">Weekly View</h3>
-                        <p data-i18n-key="st.feature2.description">See your total spending for the current week at a glance.</p>
-                     </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="st.feature3.title">Monthly View</h3>
-                        <p data-i18n-key="st.feature3.description">Review your monthly budget to understand your spending habits.</p>
-                     </div>
-                 </div>
-             </div>
+            <div class="container">
+                <div class="text-section" style="padding: 0 0 48px 0;">
+                    <h2 class="section-title" data-i18n-key="st.features.title">Spend Less. Save More. Zero Bank Logins.</h2>
+                    <p class="section-subtitle" data-i18n-key="st.features.subtitle">Designed around calm daily awareness rather than overwhelming spreadsheets.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3 data-i18n-key="st.feature1.title">Needs vs. Wants</h3>
+                        <p data-i18n-key="st.feature1.description">Classify purchases as essential or discretionary in one tap and calculate realistic daily limits from your income.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="st.feature2.title">Streaks &amp; Clear Trends</h3>
+                        <p data-i18n-key="st.feature2.description">Celebrate consecutive zero-spend days and review clean weekly and monthly spending charts at a glance.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="st.feature3.title">Travel &amp; Multi-Currency</h3>
+                        <p data-i18n-key="st.feature3.description">Create dedicated trip envelopes, log expenses in local currencies abroad with live conversion, and export trip recaps.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- FAQ Section -->
+        <section class="page-section" style="padding-top: 0;">
+            <div class="container">
+                <div class="feature-showcase card-style">
+                    <div class="feature-showcase-text">
+                        <h3 data-i18n-key="st.showcase.title">Dedicated Travel Envelopes Abroad</h3>
+                        <p data-i18n-key="st.showcase.body">Keep vacation or business trip budgets separate from everyday expenses. Record local-currency purchases on the go, track prepaid bookings, and stay comfortably within your daily travel allowance.</p>
+                    </div>
+                    <div class="feature-showcase-image-wrapper">
+                        <img src="../assets/yen/7-trips-view.png" alt="Spent Today Travel Envelopes" class="feature-showcase-image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="faq" class="page-section faq-section">
             <div class="container faq-content">
                 <div class="text-section" style="padding: 0 0 40px 0;">
@@ -91,76 +115,52 @@
                 </div>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <h3 data-i18n-key="st.faq1.title">Is my data private?</h3>
-                        <p data-i18n-key="st.faq1.description">Yes. All your data is stored securely on your device and in your private iCloud account. We never see or have access to your financial information.</p>
+                        <h3 data-i18n-key="st.faq1.title">Is my financial data private?</h3>
+                        <p data-i18n-key="st.faq1.description">Yes. No bank account connections are required. All entries remain on your device and sync privately via your personal iCloud account.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="st.faq2.title">Do I need a subscription?</h3>
-                        <p data-i18n-key="st.faq2.description">No. We believe in owning your software. Spent Today offers powerful core features for free, and a single one-time purchase for premium access. No subscriptions, ever.</p>
+                        <h3 data-i18n-key="st.faq2.title">What is included for free?</h3>
+                        <p data-i18n-key="st.faq2.description">Daily expense tracking, Needs vs. Wants classification, and core daily budget limits are free to use, with optional Premium plans unlocking extended analytics and unlimited travel envelopes.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="st.faq3.title">Can I export my data?</h3>
-                        <p data-i18n-key="st.faq3.description">Yes, you can export your transaction history as a CSV file from the settings menu at any time.</p>
+                        <h3 data-i18n-key="st.faq3.title">Can I export my transaction history?</h3>
+                        <p data-i18n-key="st.faq3.description">Yes, you can search, filter by date, and export your full history or individual trip recaps to CSV anytime.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- This div will be populated by ../shared/footer.html -->
     <div id="footer-placeholder"></div>
 
     <script src="../shared/paths.js"></script>
+    <script src="../shared/products.js"></script>
     <script src="../shared/scripts.js" defer></script>
     <script>
-        // Page-specific script for Carousel
         document.addEventListener('DOMContentLoaded', () => {
-            // A short delay to ensure the main script has loaded the header
             setTimeout(() => {
                 const track = document.querySelector('.carousel-track');
                 if (!track) return;
-                
                 const slides = Array.from(track.children);
                 const dotsNav = document.getElementById('carousel-dots');
                 let currentIndex = 0;
                 let slideInterval;
-
                 if (slides.length > 0 && dotsNav) {
-                    // Create dots
                     slides.forEach((_, i) => {
                         const dot = document.createElement('button');
                         dot.className = 'carousel-dot';
-                        dot.addEventListener('click', () => {
-                            goToSlide(i);
-                            resetInterval();
-                        });
+                        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                        dot.addEventListener('click', () => { goToSlide(i); resetInterval(); });
                         dotsNav.appendChild(dot);
                     });
                     const dots = Array.from(dotsNav.children);
-
                     const goToSlide = (index) => {
                         track.style.transform = `translateX(-${index * 100}%)`;
-                        dots.forEach((dot, i) => {
-                            dot.classList.toggle('active', i === index);
-                        });
+                        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
                         currentIndex = index;
                     };
-
-                    const nextSlide = () => {
-                        const nextIndex = (currentIndex + 1) % slides.length;
-                        goToSlide(nextIndex);
-                    };
-                    
-                    const startInterval = () => {
-                        slideInterval = setInterval(nextSlide, 3000);
-                    };
-
-                    const resetInterval = () => {
-                        clearInterval(slideInterval);
-                        startInterval();
-                    };
-
-                    // Initialize
+                    const startInterval = () => { slideInterval = setInterval(() => goToSlide((currentIndex + 1) % slides.length), 3400); };
+                    const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
                     goToSlide(0);
                     startInterval();
                 }
@@ -169,4 +169,3 @@
     </script>
 </body>
 </html>
-

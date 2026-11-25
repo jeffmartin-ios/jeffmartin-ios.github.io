@@ -4,72 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="pb-site-base" content="">
-    <title>ArchiveShelf - Home Inventory</title>
-
-    <!-- Smart App Banner for iOS -->
+    <title>ArchiveShelf — Home &amp; Asset Inventory | Pandesal Bytes</title>
+    <meta name="description" content="Track valuables, warranties, receipts, and nested room hierarchies with ArchiveShelf — private iOS asset cataloging with insurance-ready PDF reports.">
     <meta name="apple-itunes-app" content="app-id=6756975449">
-
+    <link rel="icon" type="image/jpeg" href="../assets/pb-logo.jpeg">
+    <link rel="apple-touch-icon" href="../assets/archiveshelf/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
 </head>
 <body>
 
     <div id="header-placeholder"></div>
-    <div style="height: 64px;"></div>
 
     <main>
-        <section class="hero-section">
-            <div class="container text-section">
-                <div class="app-icon-placeholder app-icon-placeholder--neutral" style="margin: 0 auto 20px auto; width: 84px; height: 84px;">
-                    <img src="../assets/kirei/icon.png" alt="ArchiveShelf App Icon" class="app-icon-image">
+        <section class="hero-carousel hero-section">
+            <div class="container">
+                <div class="product-hero-header">
+                    <div class="product-hero-icon">
+                        <img src="../assets/archiveshelf/icon.png" alt="ArchiveShelf App Icon">
+                    </div>
+                    <div class="platform-pills" data-pb-product-pills="archiveshelf"></div>
+                    <h1 class="hero-title" data-i18n-key="as.hero.title">ArchiveShelf</h1>
+                    <p class="hero-subtitle" data-i18n-key="as.hero.subtitle">Private home and studio asset inventory with room hierarchies, warranty alerts, and PDF reports.</p>
                 </div>
-                <h1 class="hero-title">ArchiveShelf</h1>
-                <h3 class="hero-subtitle">Home inventory and asset organization, privacy-first and beautifully simple.</h3>
-                <a href="https://apps.apple.com/us/app/archiveshelf-home-inventory/id6756975449" target="_blank" rel="noopener" class="app-store-button" style="margin-top: 20px; display: inline-block;">
-                    Download on the App Store
-                </a>
+
+                <div class="hero-carousel-wrapper">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="carousel-track">
+                                <div class="carousel-slide">
+                                    <img src="../assets/archiveshelf/1-home.png" alt="ArchiveShelf Overview Dashboard" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/archiveshelf/2-folders.png" alt="ArchiveShelf Rooms and Storage Boxes" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/archiveshelf/3-folder-detail.png" alt="ArchiveShelf Nested Subfolders and Kits" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/archiveshelf/4-item-detail.png" alt="ArchiveShelf Item Warranties and Serial Numbers" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/archiveshelf/5-insights.png" alt="ArchiveShelf Portfolio Valuation Analytics" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/archiveshelf/6-item-export-pdf.png" alt="ArchiveShelf Automatic Backups and PDF Reports" class="app-screenshot">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="carousel-dots" class="carousel-dots"></div>
+                    <div data-pb-product-actions="archiveshelf">
+                        <a href="https://apps.apple.com/us/app/archiveshelf-home-inventory/id6756975449" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="platform.ios.cta">
+                            Download on the App Store
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="page-section">
             <div class="container">
                 <div class="text-section" style="padding: 0 0 48px 0;">
-                    <h2 class="section-title">Everything You Need to Catalog Your Home</h2>
-                    <p class="section-subtitle">Track valuables, receipts, warranties, and lending history in one organized app.</p>
+                    <h2 class="section-title" data-i18n-key="as.features.title">Everything You Own, Structured with Precision</h2>
+                    <p class="section-subtitle" data-i18n-key="as.features.subtitle">Catalog household belongings, tech workstations, collectibles, and moving boxes with complete peace of mind.</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature-item">
-                        <h3>Detailed Asset Tracking</h3>
-                        <p>Log brands, serial numbers, purchase details, condition, and notes to keep complete records of your items.</p>
+                        <h3 data-i18n-key="as.feature1.title">Nested Rooms &amp; Kits</h3>
+                        <p data-i18n-key="as.feature1.body">Organize belongings by room, storage container, or moving box with nested subfolders and linked equipment kits.</p>
                     </div>
                     <div class="feature-item">
-                        <h3>Receipts & Warranties</h3>
-                        <p>Attach receipts to each item and track warranty expiration so coverage reminders are always within reach.</p>
+                        <h3 data-i18n-key="as.feature2.title">Warranties, Serials &amp; Valuations</h3>
+                        <p data-i18n-key="as.feature2.body">Store purchase prices, current valuations across currencies, serial numbers, high-res receipts, and warranty expiration reminders.</p>
                     </div>
                     <div class="feature-item">
-                        <h3>Insurance-Ready Reports</h3>
-                        <p>Generate professional PDF reports with photos and records to support claims, planning, and documentation.</p>
+                        <h3 data-i18n-key="as.feature3.title">Auto-Backups &amp; PDF Manifests</h3>
+                        <p data-i18n-key="as.feature3.body">Schedule automatic local snapshots and export clean, photo-rich PDF and CSV reports ready for insurance or relocation.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="page-section" style="padding-top: 0;">
-            <div class="container">
+            <div class="container" style="display: flex; flex-direction: column; gap: 32px;">
                 <div class="feature-showcase card-style">
                     <div class="feature-showcase-text">
-                        <h3>Built for Real-World Organization</h3>
-                        <p>ArchiveShelf helps collectors, homeowners, and organizers keep a clean inventory with folders, search, and item-level details.</p>
-
-                        <h3 style="margin-top: 18px;">Privacy by Design</h3>
-                        <p>Your inventory data stays on your device and in your private account. No ads, no trackers, no data collection.</p>
+                        <h3 data-i18n-key="as.showcase1.title">Portfolio Value &amp; Deep Analytics</h3>
+                        <p data-i18n-key="as.showcase1.body">Compare total current valuation against original purchase cost and inspect custom field distributions at a glance.</p>
+                        <h3 data-i18n-key="as.showcase1.sub">Private by Design</h3>
+                        <p data-i18n-key="as.showcase1.subbody">Your household and asset catalog never touches external servers—stored locally on your iPhone with optional personal iCloud sync.</p>
                     </div>
                     <div class="feature-showcase-image-wrapper">
-                        <div class="app-icon-placeholder inventory-stack-icon" style="width: 180px; height: 180px; margin: 0 auto;">
-                            <img src="../assets/kirei/icon.png" alt="ArchiveShelf icon detail" class="app-icon-image">
-                        </div>
+                        <img src="../assets/archiveshelf/5-insights.png" alt="ArchiveShelf Valuation Analytics" class="feature-showcase-image" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -78,20 +107,20 @@
         <section class="page-section faq-section">
             <div class="container faq-content">
                 <div class="text-section" style="padding: 0 0 40px 0;">
-                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <h2 class="section-title" data-i18n-key="as.faq.title">Frequently Asked Questions</h2>
                 </div>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <h3>What can I track in ArchiveShelf?</h3>
-                        <p>You can organize household assets, collectibles, receipts, warranty dates, and lending records with custom folders and notes.</p>
+                        <h3 data-i18n-key="as.faq1.title">What can I track in ArchiveShelf?</h3>
+                        <p data-i18n-key="as.faq1.body">Household electronics, appliances, collectibles, furniture, moving boxes, warranty expirations, serial numbers, and receipts across multiple currencies.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Can I use it for insurance prep?</h3>
-                        <p>Yes. ArchiveShelf supports report workflows suitable for insurance and estate documentation.</p>
+                        <h3 data-i18n-key="as.faq2.title">Can I export reports for insurance or moving?</h3>
+                        <p data-i18n-key="as.faq2.body">Yes. ArchiveShelf generates structured PDF and CSV reports complete with item photos, valuations, and serial records.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Does ArchiveShelf collect my personal data?</h3>
-                        <p>No. According to its App Store listing, ArchiveShelf does not collect data from the app.</p>
+                        <h3 data-i18n-key="as.faq3.title">Does ArchiveShelf collect my personal data?</h3>
+                        <p data-i18n-key="as.faq3.body">Never. ArchiveShelf collects zero personal or behavioral data. Everything remains on your device and in your private iCloud storage.</p>
                     </div>
                 </div>
             </div>
@@ -101,6 +130,38 @@
     <div id="footer-placeholder"></div>
 
     <script src="../shared/paths.js"></script>
+    <script src="../shared/products.js"></script>
     <script src="../shared/scripts.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const track = document.querySelector('.carousel-track');
+                if (!track) return;
+                const slides = Array.from(track.children);
+                const dotsNav = document.getElementById('carousel-dots');
+                let currentIndex = 0;
+                let slideInterval;
+                if (slides.length > 0 && dotsNav) {
+                    slides.forEach((_, i) => {
+                        const dot = document.createElement('button');
+                        dot.className = 'carousel-dot';
+                        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                        dot.addEventListener('click', () => { goToSlide(i); resetInterval(); });
+                        dotsNav.appendChild(dot);
+                    });
+                    const dots = Array.from(dotsNav.children);
+                    const goToSlide = (index) => {
+                        track.style.transform = `translateX(-${index * 100}%)`;
+                        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+                        currentIndex = index;
+                    };
+                    const startInterval = () => { slideInterval = setInterval(() => goToSlide((currentIndex + 1) % slides.length), 3500); };
+                    const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
+                    goToSlide(0);
+                    startInterval();
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>

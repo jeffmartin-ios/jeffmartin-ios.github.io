@@ -1,89 +1,165 @@
-<!-- Shared Header HTML for Pandesal Bytes -->
-<header class="header">
+<!-- Shared Corporate Header HTML for Pandesal Bytes -->
+<header class="header" id="site-header">
     <div id="nav-bar" class="nav-bar">
         <div class="container nav-container">
             <a href="/" id="nav-logo" class="nav-logo" aria-label="Pandesal Bytes Home">
                 <div class="nav-logo-mark">
                     <img src="/assets/pb-logo.jpeg" alt="Pandesal Bytes" class="nav-logo-img">
                 </div>
-                <span class="nav-logo-text">Pandesal Bytes</span>
+                <div class="nav-logo-lockup">
+                    <span class="nav-logo-text">Pandesal Bytes</span>
+                    <span class="nav-logo-sub" data-i18n-key="nav.brand-sub">Software Studio</span>
+                </div>
             </a>
 
+            <nav class="nav-desktop" aria-label="Primary Navigation">
+                <a href="/#products" class="nav-desktop-link" data-i18n-key="nav.products">Products</a>
+                <a href="/#mission" class="nav-desktop-link" data-i18n-key="nav.mission">Mission</a>
+                <a href="/company/" class="nav-desktop-link" data-i18n-key="nav.company">Company</a>
+                <a href="/updates/" class="nav-desktop-link" data-i18n-key="nav.updates">Updates</a>
+            </nav>
+
             <div class="nav-controls">
+                <!-- Future-ready slot for external web-suite portal / account entry when enabled -->
+                <div id="pb-portal-slot" class="nav-portal-slot" hidden></div>
+
                 <div class="lang-toggle" role="group" aria-label="Language">
                     <button type="button" class="lang-toggle-btn" data-set-lang="en" aria-pressed="true">EN</button>
                     <button type="button" class="lang-toggle-btn" data-set-lang="ja" aria-pressed="false">日本語</button>
                 </div>
 
-                <button id="hamburger" class="hamburger-button" aria-label="Open menu">
-                    <span class="top"></span>
-                    <span class="middle"></span>
-                    <span class="bottom"></span>
+                <button id="hamburger" class="hamburger-button" aria-label="Open product directory" aria-expanded="false">
+                    <span class="hamburger-label" data-i18n-key="nav.all-apps">All Apps</span>
+                    <span class="hamburger-bars" aria-hidden="true">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                    </span>
                 </button>
             </div>
         </div>
     </div>
 </header>
 
-<div id="menu-overlay" class="menu-overlay">
-    <button id="close-menu" class="menu-close-button" aria-label="Close menu">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
-        </svg>
-    </button>
-
-    <div class="container menu-content">
-        <div class="menu-scroller">
-            <nav class="main-nav">
-                <div class="nav-grid">
-                    <div class="nav-col">
-                        <div class="nav-category">
-                            <div class="nav-category-header">
-                                <span class="nav-category-title" data-i18n-key="home.category.photography">Photography</span>
-                                <span class="nav-category-num">01</span>
-                            </div>
-                            <div class="nav-category-rule"></div>
-                            <a href="/camerapouch/" data-i18n-key="nav.camerapouch">Camera Pouch</a>
-                            <a href="/simulatedfilm/" data-i18n-key="nav.simulated-film">Simulated Film</a>
-                            <a href="/camerashelf/" data-i18n-key="nav.camerashelf">Camera Shelf</a>
-                            <a href="/slideshow-frames/" data-i18n-key="nav.slideshow-frames">Slideshow Frames</a>
-                        </div>
-
-                        <div class="nav-category">
-                            <div class="nav-category-header">
-                                <span class="nav-category-title" data-i18n-key="nav.studio">Studio</span>
-                                <span class="nav-category-num">03</span>
-                            </div>
-                            <div class="nav-category-rule"></div>
-                            <a href="/updates/" class="nav-link--featured" data-i18n-key="nav.blog-updates">Blog &amp; Updates</a>
-                        </div>
-                    </div>
-
-                    <div class="nav-col">
-                        <div class="nav-category">
-                            <div class="nav-category-header">
-                                <span class="nav-category-title" data-i18n-key="home.category.productivity">Productivity</span>
-                                <span class="nav-category-num">02</span>
-                            </div>
-                            <div class="nav-category-rule"></div>
-                            <a href="/spent-today/" data-i18n-key="nav.spent-today">Spent Today</a>
-                            <a href="/inventory/" data-i18n-key="nav.inventory">My Inventory Stack</a>
-                            <a href="/habit-habit/" data-i18n-key="nav.habit-habit">Habit Habit</a>
-                            <a href="/pattern-projects/" data-i18n-key="nav.pattern-projects">Pattern Projects</a>
-                            <a href="/recipe-mini/" data-i18n-key="nav.recipe-mini">Recipe Mini</a>
-                            <a href="/vocab-bento/" data-i18n-key="nav.vocab-bento">Vocab Bento</a>
-                            <a href="/os39/" data-i18n-key="nav.os39">OS-39</a>
-                        </div>
-                    </div>
+<div id="menu-overlay" class="menu-overlay" aria-hidden="true">
+    <div class="menu-backdrop" id="menu-backdrop"></div>
+    <div class="menu-panel">
+        <div class="container menu-panel-header">
+            <a href="/" class="nav-logo">
+                <div class="nav-logo-mark">
+                    <img src="/assets/pb-logo.jpeg" alt="Pandesal Bytes" class="nav-logo-img">
                 </div>
-            </nav>
+                <div class="nav-logo-lockup">
+                    <span class="nav-logo-text">Pandesal Bytes</span>
+                    <span class="nav-logo-sub" data-i18n-key="nav.brand-sub">Software Studio</span>
+                </div>
+            </a>
+            <button id="close-menu" class="menu-close-button" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
 
-        <footer class="menu-footer">
-            <div class="menu-footer-links">
-                <a href="/privacy/" data-i18n-key="footer.privacy">Privacy Policy</a>
-                <span data-i18n-key="footer.copyright">&copy; 2026 Pandesal Bytes</span>
+        <div class="container menu-content">
+            <div class="menu-scroller">
+                <nav class="main-nav" aria-label="Full Product & Company Directory">
+                    <div class="nav-grid">
+                        <div class="nav-col">
+                            <div class="nav-category">
+                                <div class="nav-category-header">
+                                    <span class="nav-category-title" data-i18n-key="home.category.productivity">Productivity &amp; Lifestyle</span>
+                                    <span class="nav-category-num">01</span>
+                                </div>
+                                <div class="nav-category-rule"></div>
+                                <div class="nav-app-links">
+                                    <a href="/spent-today/" class="nav-app-item">
+                                        <img src="/assets/yen/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.spent-today">Spent Today</span>
+                                    </a>
+                                    <a href="/inventory/" class="nav-app-item">
+                                        <img src="/assets/fukuro/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.inventory">My Inventory Stack</span>
+                                    </a>
+                                    <a href="/archiveshelf/" class="nav-app-item">
+                                        <img src="/assets/archiveshelf/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.archiveshelf">ArchiveShelf</span>
+                                    </a>
+                                    <a href="/vocab-bento/" class="nav-app-item">
+                                        <img src="/assets/benkyo/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.vocab-bento">Vocab Bento</span>
+                                    </a>
+                                    <a href="/recipe-mini/" class="nav-app-item">
+                                        <img src="/assets/pagkain/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.recipe-mini">Recipe Mini</span>
+                                    </a>
+                                    <a href="/habit-habit/" class="nav-app-item">
+                                        <img src="/assets/horizons/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.habit-habit">Habit Habit</span>
+                                    </a>
+                                    <a href="/pattern-projects/" class="nav-app-item">
+                                        <img src="/assets/stitch/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.pattern-projects">Pattern Projects</span>
+                                    </a>
+                                    <a href="/os39/" class="nav-app-item">
+                                        <img src="/assets/os39/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.os39">OS-39</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="nav-col">
+                            <div class="nav-category">
+                                <div class="nav-category-header">
+                                    <span class="nav-category-title" data-i18n-key="home.category.photography">Photography &amp; Creative</span>
+                                    <span class="nav-category-num">02</span>
+                                </div>
+                                <div class="nav-category-rule"></div>
+                                <div class="nav-app-links">
+                                    <a href="/campouch/" class="nav-app-item">
+                                        <img src="/assets/campouch/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.camerapouch">CamPouch</span>
+                                    </a>
+                                    <a href="/camerashelf/" class="nav-app-item">
+                                        <img src="/assets/camerashelf/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.camerashelf">Camera Shelf</span>
+                                    </a>
+                                    <a href="/simulatedfilm/" class="nav-app-item">
+                                        <img src="/assets/simulatedfilm/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.simulated-film">Simulated Film</span>
+                                    </a>
+                                    <a href="/slideshow-frames/" class="nav-app-item">
+                                        <img src="/assets/frames/icon.png" alt="" class="nav-app-icon">
+                                        <span data-i18n-key="nav.slideshow-frames">Slideshow Frames</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="nav-category">
+                                <div class="nav-category-header">
+                                    <span class="nav-category-title" data-i18n-key="nav.studio">Company</span>
+                                    <span class="nav-category-num">03</span>
+                                </div>
+                                <div class="nav-category-rule"></div>
+                                <div class="nav-company-links">
+                                    <a href="/company/" data-i18n-key="nav.company-overview">Company Overview</a>
+                                    <a href="/#mission" data-i18n-key="nav.mission">Mission &amp; Principles</a>
+                                    <a href="/updates/" class="nav-link--featured" data-i18n-key="nav.blog-updates">News &amp; Release Notes</a>
+                                    <a href="/privacy/" data-i18n-key="footer.privacy">Privacy Policy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </footer>
+
+            <footer class="menu-footer">
+                <div class="menu-footer-links">
+                    <span class="menu-location-pill" data-i18n-key="footer.location">Japan · Operating Worldwide</span>
+                    <span data-i18n-key="footer.copyright">&copy; 2026 Pandesal Bytes. All rights reserved.</span>
+                </div>
+            </footer>
+        </div>
     </div>
 </div>

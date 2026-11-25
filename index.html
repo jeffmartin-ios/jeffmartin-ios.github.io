@@ -1,394 +1,582 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title="meta.home.title">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- GitHub project Pages: set content="/your-repo-name" if auto-detection fails -->
     <meta name="pb-site-base" content="">
-    <title>Pandesal Bytes — Independent software studio</title>
+    <title>Pandesal Bytes — Productivity Software Studio for the Apple Ecosystem</title>
+    <meta name="description" content="Pandesal Bytes is a software studio based in Japan and operating worldwide, building high-quality productivity and creative apps for the Apple ecosystem.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pandesal Bytes — Software Studio">
+    <meta property="og:description" content="Building high-quality productivity apps for the Apple ecosystem. Based in Japan, operating worldwide.">
+    <meta property="og:image" content="https://pandesalbytes.ca/assets/pb-logo.jpeg">
     <link rel="icon" type="image/jpeg" href="assets/pb-logo.jpeg">
     <link rel="apple-touch-icon" href="assets/pb-logo.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared/styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Pandesal Bytes",
+      "url": "https://pandesalbytes.ca/",
+      "logo": "https://pandesalbytes.ca/assets/pb-logo.jpeg",
+      "description": "A software studio based in Japan and operating worldwide, building high-quality productivity apps for the Apple ecosystem."
+    }
+    </script>
 </head>
 <body class="page-home">
 
     <div id="header-placeholder"></div>
 
-    <div id="hero-placeholder" class="header-spacer"></div>
-
-    <section class="hero-section hero-section--home">
-        <div class="container hero-home-container">
-            <div class="hero-home-content">
-                <div class="hero-badge-row">
-                    <span class="hero-pill-badge" data-i18n-key="hero.badge.crafted">Carefully Crafted</span>
-                    <span class="hero-pill-badge hero-pill-badge--accent" data-i18n-key="hero.badge.subfree">Subscription-Free</span>
-                    <span class="hero-pill-badge" data-i18n-key="hero.badge.privacy">Privacy First</span>
+    <!-- Immersive Bright Corporate Hero -->
+    <section class="studio-hero">
+        <div class="container studio-hero-grid">
+            <div class="studio-hero-copy">
+                <div class="studio-hero-eyebrow-row">
+                    <span class="studio-origin-badge">
+                        <span class="studio-origin-dot" aria-hidden="true"></span>
+                        <span data-i18n-key="hero.badge.origin">Japan · Operating Worldwide</span>
+                    </span>
+                    <span class="studio-ecosystem-badge" data-i18n-key="hero.badge.ecosystem">Apple Ecosystem</span>
                 </div>
-                <h1 class="hero-title hero-title--home" data-i18n-key="hero.title">Pandesal Bytes</h1>
-                <p class="site-tagline mono-eyebrow" data-i18n-key="site.tagline">Independent software studio <span class="tagline-sep">/</span> インディーズソフトウェア</p>
-                <p class="hero-subtitle hero-subtitle--home" data-i18n-key="hero.subtitle-subfree">
-                    High value, subscription-free software solving everyday problems. Precision-built, privacy-first, and designed with minimal aesthetics.
+
+                <h1 class="studio-hero-title" data-i18n-key="hero.mission.title">
+                    High-quality productivity apps for the Apple ecosystem.
+                </h1>
+
+                <p class="studio-hero-lead" data-i18n-key="hero.mission.lead">
+                    Pandesal Bytes is a software studio based in Japan and serving users worldwide. We design and engineer focused, reliable applications for everyday productivity, business operations, and creative workflows.
                 </p>
-                
-                <div class="hero-quick-nav" aria-label="Quick Navigation">
-                    <a href="#photography" class="hero-jump-chip">
-                        <span class="hero-jump-dot"></span>
-                        <span data-i18n-key="hero.jump.photo">Photography</span>
-                        <span class="hero-jump-count">4</span>
-                    </a>
-                    <a href="#productivity" class="hero-jump-chip">
-                        <span class="hero-jump-dot"></span>
-                        <span data-i18n-key="hero.jump.prod">Productivity</span>
-                        <span class="hero-jump-count">8</span>
-                    </a>
-                    <a href="#about" class="hero-jump-chip">
-                        <span class="hero-jump-dot"></span>
-                        <span data-i18n-key="hero.jump.values">Principles</span>
-                    </a>
+
+                <div class="studio-hero-actions">
+                    <a href="#products" class="btn-primary" data-i18n-key="hero.cta.products">Explore Our Products</a>
+                    <a href="company/" data-pb="/company/" class="btn-secondary" data-i18n-key="hero.cta.company">Company Overview</a>
                 </div>
             </div>
 
-            <div class="hero-home-visual" aria-hidden="true">
-                <div class="hero-mascot-card">
-                    <div class="hero-mascot-glow"></div>
-                    <div class="hero-mascot-frame">
-                        <img src="assets/pb-logo.jpeg" alt="Pandesal Bytes Mascot" class="hero-mascot-img">
-                    </div>
+            <!-- Multi-Device Live Product Stage -->
+            <div class="hero-device-stage" aria-label="Featured iOS Applications">
+                <div class="hero-stage-halo" aria-hidden="true"></div>
+                <div class="hero-phones-trio">
+                    <a href="archiveshelf/" class="hero-device-card hero-device-card--left" aria-label="ArchiveShelf">
+                        <div class="hero-device-screen">
+                            <img src="assets/archiveshelf/1-home.png" alt="ArchiveShelf iOS Home Inventory">
+                        </div>
+                    </a>
+                    <a href="spent-today/" class="hero-device-card hero-device-card--center" aria-label="Spent Today">
+                        <div class="hero-device-screen">
+                            <img src="assets/yen/1-today-view.png" alt="Spent Today iOS Daily Expense Tracker">
+                        </div>
+                    </a>
+                    <a href="campouch/" class="hero-device-card hero-device-card--right" aria-label="CamPouch">
+                        <div class="hero-device-screen">
+                            <img src="assets/campouch/1-light.png" alt="CamPouch iOS Sun Path and Shoot Planner">
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <main class="container main-home">
-
-        <section id="photography" class="page-section page-section--tight-top">
-            <header class="section-block-head">
-                <h2 class="section-block-title" data-i18n-key="home.category.photography">Photography</h2>
-                <span class="section-block-label mono-eyebrow" aria-hidden="true">01</span>
-            </header>
-            <div class="section-block-rule" role="presentation"></div>
-
-            <div class="app-grid">
-                <a href="camerapouch/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder camera-pouch-icon">
-                                    <img src="assets/camerapouch/icon.png" alt="Camera Plan App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.camerapouch.title">Camera Plan</h3>
-                                    <p class="app-card-description" data-i18n-key="app.camerapouch.description">Your all-in-one photoshoot planner, sun tracker, and shot list tool.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="simulatedfilm/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder app-icon-placeholder--mint">
-                                    <img src="assets/simulatedfilm/icon.png" alt="Simulated Film App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.simulated-film.title">Simulated Film</h3>
-                                    <p class="app-card-description" data-i18n-key="app.simulated-film.description">Manage and share your Fujifilm & Ricoh film recipes.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="camerashelf/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder camera-shelf-icon">
-                                    <img src="assets/camerashelf/icon.png" alt="Camera Shelf App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.camerashelf.title">Camera Shelf</h3>
-                                    <p class="app-card-description" data-i18n-key="app.camerashelf.description">Track and organize your camera gear collection and kits.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="slideshow-frames/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder app-icon-placeholder--neutral">
-                                    <img src="assets/frames/icon.png" alt="Slideshow Frames App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.slideshow-frames.title">Slideshow Frames</h3>
-                                    <p class="app-card-description" data-i18n-key="app.slideshow-frames.description">Transform your photos into animated slideshows with beautiful transitions and frames.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section id="productivity" class="page-section">
-            <header class="section-block-head">
-                <h2 class="section-block-title" data-i18n-key="home.category.productivity">Productivity</h2>
-                <span class="section-block-label mono-eyebrow" aria-hidden="true">02</span>
-            </header>
-            <div class="section-block-rule" role="presentation"></div>
-
-            <div class="app-grid">
-                <a href="spent-today/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder">
-                                    <img src="assets/yen/icon.png" alt="Spent Today App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.spent-today.title">Spent Today</h3>
-                                    <p class="app-card-description" data-i18n-key="app.spent-today.description">Simple, beautiful expense tracking for your daily needs.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="inventory/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder inventory-stack-icon">
-                                    <img src="assets/fukuro/icon.png" alt="My Inventory Stack App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.inventory.title">My Inventory Stack</h3>
-                                    <p class="app-card-description" data-i18n-key="app.inventory.description">Smart inventory & business tracking for small businesses and collectors.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="archiveshelf/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder app-icon-placeholder--neutral">
-                                    <img src="assets/kirei/icon.png" alt="ArchiveShelf App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.archiveshelf.title">ArchiveShelf</h3>
-                                    <p class="app-card-description" data-i18n-key="app.archiveshelf.description">Track valuables, warranties, and receipts with a private home inventory built for peace of mind.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="habit-habit/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder app-icon-placeholder--neutral">
-                                    <img src="assets/horizons/icon.png" alt="Habit Habit App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.habit-habit.title">Habit Habit</h3>
-                                    <p class="app-card-description" data-i18n-key="app.habit-habit.description">Build the life you want with simple, satisfying habit tracking.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="pattern-projects/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder pattern-projects-icon">
-                                    <img src="assets/stitch/icon.png" alt="Pattern Projects App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.pattern-projects.title">Pattern Projects</h3>
-                                    <p class="app-card-description" data-i18n-key="app.pattern-projects.description">Save and track your sewing, knitting, and other craft projects.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="recipe-mini/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder recipe-mini-icon">
-                                    <img src="assets/pagkain/icon.png" onerror="this.style.display='none';" alt="Recipe Mini App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.recipe-mini.title">Recipe Mini</h3>
-                                    <p class="app-card-description" data-i18n-key="app.recipe-mini.description">Your personal cookbook, meal planner, and shopping assistant.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="vocab-bento/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder vocab-bento-icon">
-                                    <img src="assets/benkyo/icon.png" alt="Vocab Bento App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.vocab-bento.title">Vocab Bento</h3>
-                                    <p class="app-card-description" data-i18n-key="app.vocab-bento.description">Mindful Japanese SRS flashcards with hourly Lock Screen Kanji widgets.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="os39/" class="app-card card-style">
-                    <div class="app-card-content">
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-icon-placeholder app-icon-placeholder--neutral">
-                                    <img src="assets/bocchi/icon.png" alt="OS-39 App Icon" class="app-icon-image">
-                                </div>
-                                <div class="app-card-meta">
-                                    <h3 class="app-card-title" data-i18n-key="app.os39.title">OS-39</h3>
-                                    <p class="app-card-description" data-i18n-key="app.os39.description">Hi-res offline music player with a visualizer, EQ, and on-device recommendations.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card-cta">
-                            <span class="cta-button" data-i18n-key="app.view-app">View App</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section id="latest-updates" class="page-section latest-updates-section" hidden>
-            <header class="section-block-head">
-                <h2 class="section-block-title" data-i18n-key="home.updates.title">Latest updates</h2>
-                <span class="section-block-label mono-eyebrow" aria-hidden="true">03</span>
-            </header>
-            <div class="section-block-rule" role="presentation"></div>
-            <div id="home-posts-grid" class="updates-posts-grid"></div>
-            <div class="latest-updates-cta">
-                <a href="updates/" data-pb="/updates/" class="cta-button cta-button--outline" data-i18n-key="home.updates.cta">All updates</a>
-            </div>
-        </section>
-
-        <section id="about" class="page-section about-section text-section">
-            <h2 class="section-title section-title--about" data-i18n-key="about.title">High Value. No Subscriptions.</h2>
-            <p class="section-subtitle" data-i18n-key="about.subtitle">
-                We are an independent software studio dedicated to solving everyday problems. We believe in providing immense utility without recurring fees. Built with careful craftsmanship, stark aesthetics, and deep respect for your privacy.
-            </p>
-        </section>
-
-        <section class="page-section" aria-label="Principles">
-            <div class="commitment-bento">
-                <div class="commitment-bento-cell">
-                    <div class="commitment-bento-icon-wrap" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                        </svg>
-                    </div>
-                    <h3 data-i18n-key="commitment.privacy.title">Privacy First</h3>
-                    <p data-i18n-key="commitment.privacy.description">We build our apps to be private by design. We don't collect or sell your personal data. Ever.</p>
+    <!-- Corporate Metrics & Capabilities Strip -->
+    <section class="metrics-strip" aria-label="Studio Highlights">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-value" data-i18n-key="metrics.apps.value">12 Apps</span>
+                    <span class="metric-label" data-i18n-key="metrics.apps.label">Published on the Apple App Store</span>
                 </div>
-                <div class="commitment-bento-cell">
-                    <div class="commitment-bento-icon-wrap" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-                        </svg>
-                    </div>
-                    <h3 data-i18n-key="commitment.distractions.title">No Distractions</h3>
-                    <p data-i18n-key="commitment.distractions.description">You won't find ads, trackers, or unnecessary notifications in our software.</p>
+                <div class="metric-item">
+                    <span class="metric-value" data-i18n-key="metrics.native.value">100% Native</span>
+                    <span class="metric-label" data-i18n-key="metrics.native.label">Engineered for iOS, iPadOS &amp; iCloud</span>
                 </div>
-                <div class="commitment-bento-cell">
-                    <div class="commitment-bento-icon-wrap" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5v1.409l4.242 4.243" />
-                        </svg>
-                    </div>
-                    <h3 data-i18n-key="commitment.longevity.title">Built to Last</h3>
-                    <p data-i18n-key="commitment.longevity.description">We focus on quality and long-term support, ensuring our apps remain reliable and useful for years to come.</p>
+                <div class="metric-item">
+                    <span class="metric-value" data-i18n-key="metrics.privacy.value">Zero Tracking</span>
+                    <span class="metric-label" data-i18n-key="metrics.privacy.label">Private On-Device Data Architecture</span>
                 </div>
-                <div class="commitment-bento-cell">
-                    <div class="commitment-bento-icon-wrap" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
-                        </svg>
-                    </div>
-                    <h3 data-i18n-key="commitment.subscriptions.title">Own Your Apps</h3>
-                    <p data-i18n-key="commitment.subscriptions.description">Our apps are free to use with powerful core features. Premium access is just a one-time purchase away—no subscriptions.</p>
+                <div class="metric-item">
+                    <span class="metric-value" data-i18n-key="metrics.global.value">Japan → Global</span>
+                    <span class="metric-label" data-i18n-key="metrics.global.label">Multi-Language Support Worldwide</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Flagship Product Spotlights -->
+        <section id="flagships" class="page-section">
+            <div class="container">
+                <div class="text-section reveal-on-scroll">
+                    <span class="section-eyebrow-pill" data-i18n-key="home.spotlight.eyebrow">Flagship Suite</span>
+                    <h2 class="section-title" data-i18n-key="home.spotlight.title">Purpose-built tools for work and life.</h2>
+                    <p class="section-subtitle" data-i18n-key="home.spotlight.subtitle">
+                        Every application is thoughtfully designed around clarity, speed, and native Apple platform capabilities.
+                    </p>
+                </div>
+
+                <div class="spotlight-grid">
+                    <!-- Spotlight 1: Spent Today -->
+                    <a href="spent-today/" class="spotlight-card reveal-on-scroll">
+                        <div class="spotlight-body">
+                            <div class="spotlight-top">
+                                <div class="spotlight-app-identity">
+                                    <img src="assets/yen/icon.png" alt="Spent Today Icon" class="spotlight-icon">
+                                    <div>
+                                        <span class="spotlight-eyebrow" data-i18n-key="spotlight.st.eyebrow">Personal Finance</span>
+                                        <h3 class="spotlight-title" data-i18n-key="app.spent-today.title">Spent Today</h3>
+                                    </div>
+                                </div>
+                                <div class="platform-pills" data-pb-product-pills="spent-today"></div>
+                            </div>
+                            <p class="spotlight-desc" data-i18n-key="spotlight.st.desc">
+                                Mindful daily expense tracking with Needs vs. Wants classification, flexible daily allowances, and multi-currency travel envelopes.
+                            </p>
+                            <span class="spotlight-link"><span data-i18n-key="app.view-app">Explore Product</span> →</span>
+                        </div>
+                        <div class="spotlight-visual spotlight-visual--warm">
+                            <div class="spotlight-phone-crop">
+                                <img src="assets/yen/2-needs-vs-wants.png" alt="Spent Today Needs vs Wants Interface" loading="lazy">
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Spotlight 2: My Inventory Stack -->
+                    <a href="inventory/" class="spotlight-card reveal-on-scroll">
+                        <div class="spotlight-body">
+                            <div class="spotlight-top">
+                                <div class="spotlight-app-identity">
+                                    <img src="assets/fukuro/icon.png" alt="My Inventory Stack Icon" class="spotlight-icon">
+                                    <div>
+                                        <span class="spotlight-eyebrow" data-i18n-key="spotlight.inv.eyebrow">Business Operations</span>
+                                        <h3 class="spotlight-title" data-i18n-key="app.inventory.title">My Inventory Stack</h3>
+                                    </div>
+                                </div>
+                                <div class="platform-pills" data-pb-product-pills="inventory"></div>
+                            </div>
+                            <p class="spotlight-desc" data-i18n-key="spotlight.inv.desc">
+                                Streamlined stock control, barcode scanning, supplier purchase orders, and real-time margin analytics for small businesses and studios.
+                            </p>
+                            <span class="spotlight-link"><span data-i18n-key="app.view-app">Explore Product</span> →</span>
+                        </div>
+                        <div class="spotlight-visual spotlight-visual--slate">
+                            <div class="spotlight-phone-crop">
+                                <img src="assets/fukuro/new-1-dashboard.png" alt="My Inventory Stack Command Dashboard" loading="lazy">
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Spotlight 3: ArchiveShelf -->
+                    <a href="archiveshelf/" class="spotlight-card reveal-on-scroll">
+                        <div class="spotlight-body">
+                            <div class="spotlight-top">
+                                <div class="spotlight-app-identity">
+                                    <img src="assets/archiveshelf/icon.png" alt="ArchiveShelf Icon" class="spotlight-icon">
+                                    <div>
+                                        <span class="spotlight-eyebrow" data-i18n-key="spotlight.as.eyebrow">Asset Documentation</span>
+                                        <h3 class="spotlight-title" data-i18n-key="app.archiveshelf.title">ArchiveShelf</h3>
+                                    </div>
+                                </div>
+                                <div class="platform-pills" data-pb-product-pills="archiveshelf"></div>
+                            </div>
+                            <p class="spotlight-desc" data-i18n-key="spotlight.as.desc">
+                                Structured home and studio asset cataloging with nested room hierarchies, warranty alerts, multi-currency valuations, and PDF reports.
+                            </p>
+                            <span class="spotlight-link"><span data-i18n-key="app.view-app">Explore Product</span> →</span>
+                        </div>
+                        <div class="spotlight-visual spotlight-visual--sky">
+                            <div class="spotlight-phone-crop">
+                                <img src="assets/archiveshelf/1-home.png" alt="ArchiveShelf Asset Overview" loading="lazy">
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Spotlight 4: CamPouch -->
+                    <a href="campouch/" class="spotlight-card reveal-on-scroll">
+                        <div class="spotlight-body">
+                            <div class="spotlight-top">
+                                <div class="spotlight-app-identity">
+                                    <img src="assets/campouch/icon.png" alt="CamPouch Icon" class="spotlight-icon">
+                                    <div>
+                                        <span class="spotlight-eyebrow" data-i18n-key="spotlight.cp.eyebrow">Field &amp; Studio Production</span>
+                                        <h3 class="spotlight-title" data-i18n-key="app.camerapouch.title">CamPouch</h3>
+                                    </div>
+                                </div>
+                                <div class="platform-pills" data-pb-product-pills="campouch"></div>
+                            </div>
+                            <p class="spotlight-desc" data-i18n-key="spotlight.cp.desc">
+                                Precision sun-path tracking, interactive studio lighting diagrams, project scheduling, and on-screen signed PDF photo releases.
+                            </p>
+                            <span class="spotlight-link"><span data-i18n-key="app.view-app">Explore Product</span> →</span>
+                        </div>
+                        <div class="spotlight-visual spotlight-visual--sky">
+                            <div class="spotlight-phone-crop">
+                                <img src="assets/campouch/3-studioplan.png" alt="CamPouch Studio Lighting Planner" loading="lazy">
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- Full Product Ecosystem Directory -->
+        <section id="products" class="page-section page-section--tinted">
+            <div class="container">
+                <div class="text-section reveal-on-scroll" style="margin-bottom: 56px;">
+                    <span class="section-eyebrow-pill" data-i18n-key="home.directory.eyebrow">Product Lineup</span>
+                    <h2 class="section-title" data-i18n-key="home.directory.title">Complete Software Portfolio</h2>
+                    <p class="section-subtitle" data-i18n-key="home.directory.subtitle">
+                        Twelve specialized iOS applications spanning personal productivity, business operations, language learning, and photography workflows.
+                    </p>
+                </div>
+
+                <!-- Category 01: Productivity -->
+                <div id="productivity" class="reveal-on-scroll" style="margin-bottom: 56px;">
+                    <header class="section-block-head">
+                        <h3 class="section-block-title" data-i18n-key="home.category.productivity">Productivity &amp; Lifestyle</h3>
+                        <span class="section-block-label" aria-hidden="true">01 / 08 APPS</span>
+                    </header>
+                    <div class="section-block-rule" role="presentation"></div>
+
+                    <div class="app-grid">
+                        <a href="spent-today/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/yen/icon.png" alt="Spent Today App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.spent-today.title">Spent Today</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.spent-today.description">Mindful daily expense tracking, budgets, and multi-currency travel envelopes.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="spent-today"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="inventory/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/fukuro/icon.png" alt="My Inventory Stack App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.inventory.title">My Inventory Stack</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.inventory.description">Smart inventory, barcode scanning, suppliers, and sales tracking for businesses.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="inventory"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="archiveshelf/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/archiveshelf/icon.png" alt="ArchiveShelf App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.archiveshelf.title">ArchiveShelf</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.archiveshelf.description">Catalog valuables, warranties, receipts, and insurance-ready PDF reports privately.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="archiveshelf"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="vocab-bento/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/benkyo/icon.png" alt="Vocab Bento App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.vocab-bento.title">Vocab Bento</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.vocab-bento.description">Mindful Japanese SRS flashcards paired with hourly Lock Screen Kanji widgets.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="vocab-bento"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="recipe-mini/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/pagkain/icon.png" alt="Recipe Mini App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.recipe-mini.title">Recipe Mini</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.recipe-mini.description">Structured recipe manager, weekly meal planner, pantry tracker, and grocery list.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="recipe-mini"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="habit-habit/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/horizons/icon.png" alt="Habit Habit App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.habit-habit.title">Habit Habit</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.habit-habit.description">Consistent daily routine tracking with heatmaps, streaks, and milestone insights.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="habit-habit"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="pattern-projects/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/stitch/icon.png" alt="Pattern Projects App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.pattern-projects.title">Pattern Projects</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.pattern-projects.description">Organize sewing, knitting, and craft projects alongside material stash records.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="pattern-projects"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="os39/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/os39/icon.png" alt="OS-39 App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.os39.title">OS-39</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.os39.description">High-resolution audio player with 10-band ISO EQ, visualizers, and personal server streaming.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="os39"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 02: Photography -->
+                <div id="photography" class="reveal-on-scroll">
+                    <header class="section-block-head">
+                        <h3 class="section-block-title" data-i18n-key="home.category.photography">Photography &amp; Creative</h3>
+                        <span class="section-block-label" aria-hidden="true">02 / 04 APPS</span>
+                    </header>
+                    <div class="section-block-rule" role="presentation"></div>
+
+                    <div class="app-grid">
+                        <a href="campouch/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/campouch/icon.png" alt="CamPouch App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.camerapouch.title">CamPouch</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.camerapouch.description">Photoshoot planner, sun tracker, studio lighting diagrammer, and PDF model releases.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="campouch"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="camerashelf/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/camerashelf/icon.png" alt="Camera Shelf App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.camerashelf.title">Camera Shelf</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.camerashelf.description">Catalog camera bodies, lenses, modular shoot loadouts, pack weights, and insurance PDFs.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="camerashelf"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="simulatedfilm/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/simulatedfilm/icon.png" alt="Simulated Film App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.simulated-film.title">Simulated Film</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.simulated-film.description">Organize, preview, and share custom film simulation recipes for Fujifilm and Ricoh cameras.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="simulatedfilm"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="slideshow-frames/" class="app-card card-style">
+                            <div class="app-card-content">
+                                <div class="app-card-header">
+                                    <div class="app-icon-placeholder">
+                                        <img src="assets/frames/icon.png" alt="Slideshow Frames App Icon" class="app-icon-image">
+                                    </div>
+                                    <div class="app-card-meta">
+                                        <div class="app-card-title-row">
+                                            <h4 class="app-card-title" data-i18n-key="app.slideshow-frames.title">Slideshow Frames</h4>
+                                        </div>
+                                        <p class="app-card-description" data-i18n-key="app.slideshow-frames.description">Transform photo collections into framed 4K animated slideshows and Home Screen widgets.</p>
+                                    </div>
+                                </div>
+                                <div class="app-card-cta">
+                                    <div class="platform-pills" data-pb-product-pills="slideshow-frames"></div>
+                                    <span class="cta-button" data-i18n-key="app.view-app">Explore</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio Mission & Architectural Principles -->
+        <section id="mission" class="page-section">
+            <div class="container">
+                <div id="about" class="mission-banner reveal-on-scroll">
+                    <div>
+                        <span class="section-eyebrow-pill" data-i18n-key="mission.eyebrow">Our Mission</span>
+                        <h2 class="mission-banner-quote" data-i18n-key="mission.statement">
+                            We are a software studio that builds high-quality productivity apps for the Apple ecosystem.
+                        </h2>
+                        <p class="mission-banner-body" data-i18n-key="mission.description">
+                            Rooted in Japan and operating globally, Pandesal Bytes combines precision engineering, calm visual clarity, and strict data privacy to deliver dependable tools people rely on every day.
+                        </p>
+                    </div>
+                    <div class="mission-banner-aside">
+                        <a href="company/" data-pb="/company/" class="btn-secondary" data-i18n-key="mission.cta.company">View Company Profile →</a>
+                    </div>
+                </div>
+
+                <div class="commitment-bento reveal-on-scroll">
+                    <div class="commitment-bento-cell">
+                        <div class="commitment-bento-icon-wrap" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n-key="commitment.apple.title">Apple Ecosystem Native</h3>
+                        <p data-i18n-key="commitment.apple.description">Engineered specifically for iOS and iPadOS standards—integrating fluid gestures, Lock Screen widgets, and private iCloud synchronization.</p>
+                    </div>
+                    <div class="commitment-bento-cell">
+                        <div class="commitment-bento-icon-wrap" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n-key="commitment.privacy.title">Privacy by Architecture</h3>
+                        <p data-i18n-key="commitment.privacy.description">Customer data stays on the user's device and personal iCloud account. Zero advertising SDKs, zero third-party trackers, zero data resale.</p>
+                    </div>
+                    <div class="commitment-bento-cell">
+                        <div class="commitment-bento-icon-wrap" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n-key="commitment.longevity.title">Uncompromising Quality</h3>
+                        <p data-i18n-key="commitment.longevity.description">Guided by attentive craftsmanship and continuous refinement so every workflow feels calm, intuitive, and dependable over years of use.</p>
+                    </div>
+                    <div class="commitment-bento-cell">
+                        <div class="commitment-bento-icon-wrap" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n-key="commitment.experience.title">Distraction-Free Experience</h3>
+                        <p data-i18n-key="commitment.experience.description">Every application offers generous core functionality free of advertisements or clutter, backed by continuous updates and flexible Pro tiers for advanced workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Studio News & Release Notes -->
+        <section id="latest-updates" class="page-section page-section--tight-top latest-updates-section" hidden>
+            <div class="container">
+                <header class="section-block-head">
+                    <h2 class="section-block-title" data-i18n-key="home.updates.title">News &amp; Release Notes</h2>
+                    <span class="section-block-label" aria-hidden="true">UPDATES</span>
+                </header>
+                <div class="section-block-rule" role="presentation"></div>
+                <div id="home-posts-grid" class="updates-posts-grid"></div>
+                <div class="latest-updates-cta">
+                    <a href="updates/" data-pb="/updates/" class="cta-button cta-button--outline" data-i18n-key="home.updates.cta">All News &amp; Updates →</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <div id="footer-placeholder"></div>
 
     <script src="shared/paths.js"></script>
+    <script src="shared/products.js"></script>
     <script src="shared/scripts.js" defer></script>
-
     <script>
-        const PRODUCT_NAMES_HOME = {
-            'camerashelf': 'Camera Shelf', 'camerapouch': 'Camera Pouch',
-            'simulatedfilm': 'Simulated Film', 'spent-today': 'Spent Today',
-            'inventory': 'My Inventory Stack', 'archiveshelf': 'ArchiveShelf', 'habit-habit': 'Habit Habit',
-            'pattern-projects': 'Pattern Projects', 'recipe-mini': 'Recipe Mini',
-            'vocab-bento': 'Vocab Bento', 'slideshow-frames': 'Slideshow Frames',
-            'os39': 'OS-39',
-        };
-
         function formatDateHome(dateStr, lang) {
             const loc = lang === 'ja' ? 'ja-JP' : 'en-US';
             return new Date(dateStr + 'T12:00:00').toLocaleDateString(loc, { year: 'numeric', month: 'long', day: 'numeric' });
@@ -401,6 +589,7 @@
 
             const tr = translations || {};
             const readMore = tr['home.updates.readmore'] || 'Read more →';
+            const nameMap = window.PB_PRODUCT_NAMES || {};
 
             try {
                 const postsUrl = typeof pbUrl === 'function' ? pbUrl('/updates/posts.json') : 'updates/posts.json';
@@ -411,7 +600,7 @@
                 grid.innerHTML = '';
                 posts.slice(0, 3).forEach(post => {
                     const tagHTML = post.tags.map(t =>
-                        `<span class="post-tag">${PRODUCT_NAMES_HOME[t] || t}</span>`
+                        `<span class="post-tag">${nameMap[t] || t}</span>`
                     ).join('');
                     const card = document.createElement('a');
                     const postPath = typeof pbUrl === 'function'
@@ -426,7 +615,7 @@
                                     <span class="post-date">${formatDateHome(post.date, lang)}</span>
                                     ${tagHTML ? `<div class="post-tags">${tagHTML}</div>` : ''}
                                 </div>
-                                <h2 class="post-card-title">${post.title}</h2>
+                                <h3 class="post-card-title">${post.title}</h3>
                                 <p class="post-card-excerpt">${post.excerpt}</p>
                             </div>
                             <span class="post-read-more">${readMore}</span>
@@ -441,6 +630,5 @@
             loadLatestUpdates(translations, lang);
         };
     </script>
-
 </body>
 </html>

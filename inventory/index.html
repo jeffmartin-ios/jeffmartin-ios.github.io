@@ -4,120 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="pb-site-base" content="">
-    <title>My Inventory Stack - Inventory Management</title>
-    
-    <!-- Smart App Banner for iOS -->
+    <title>My Inventory Stack — Smart Inventory &amp; Business Operations | Pandesal Bytes</title>
+    <meta name="description" content="Control stock levels, scan barcodes, manage suppliers and purchase orders, and track sales margins on iPhone & iPad with My Inventory Stack.">
     <meta name="apple-itunes-app" content="app-id=6755137430">
-
+    <link rel="icon" type="image/jpeg" href="../assets/pb-logo.jpeg">
+    <link rel="apple-touch-icon" href="../assets/fukuro/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
 </head>
 <body>
 
-    <!-- This div will be populated by ../shared/header.html -->
     <div id="header-placeholder"></div>
-    
-    <!-- A simple spacer for the fixed header -->
-    <div style="height: 64px;"></div>
 
     <main>
-        <!-- Carousel Hero -->
         <section class="hero-carousel hero-section">
             <div class="container">
-                <h1 class="hero-title" data-i18n-key="inv.hero.title">My Inventory Stack</h1>
-                <h3 class="hero-subtitle" data-i18n-key="inv.hero.subtitle">Smart Inventory & Business Tracking</h3>
-                
+                <div class="product-hero-header">
+                    <div class="product-hero-icon">
+                        <img src="../assets/fukuro/icon.png" alt="My Inventory Stack App Icon">
+                    </div>
+                    <div class="platform-pills" data-pb-product-pills="inventory"></div>
+                    <h1 class="hero-title" data-i18n-key="inv.hero.title">My Inventory Stack</h1>
+                    <p class="hero-subtitle" data-i18n-key="inv.hero.subtitle">Smart Inventory, Barcode Scanning &amp; Business Operations</p>
+                </div>
+
                 <div class="hero-carousel-wrapper">
-                    <!-- Phone Frame -->
                     <div class="phone-frame">
                         <div class="phone-screen">
                             <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="../assets/fukuro/1-dashboard-home.png" alt="Inventory App Screenshot 1" class="app-screenshot">
+                                    <img src="../assets/fukuro/new-1-dashboard.png" alt="My Inventory Stack Command Centre Dashboard" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/fukuro/2-inventory.png" alt="Inventory App Screenshot 2" class="app-screenshot">
+                                    <img src="../assets/fukuro/new-2-inventory.png" alt="My Inventory Stack Item Management and Barcodes" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/fukuro/3-itemdetail.png" alt="Inventory App Screenshot 3" class="app-screenshot">
+                                    <img src="../assets/fukuro/new-3-sales.png" alt="My Inventory Stack Sales and Automatic Stock Depletion" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/fukuro/4-business-home.png" alt="Inventory App Screenshot 4" class="app-screenshot">
+                                    <img src="../assets/fukuro/new-4-business.png" alt="My Inventory Stack Suppliers and Purchase Orders" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/fukuro/5-business-insights.png" alt="Inventory App Screenshot 5" class="app-screenshot">
+                                    <img src="../assets/fukuro/new-5-insights.png" alt="My Inventory Stack Revenue and Margin Analytics" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/fukuro/6-business-suppliers.png" alt="Inventory App Screenshot 6" class="app-screenshot">
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="../assets/fukuro/7-business-sales.png" alt="Inventory App Screenshot 7" class="app-screenshot">
+                                    <img src="../assets/fukuro/new-6-categories.png" alt="My Inventory Stack Custom Categories and Subcategories" class="app-screenshot">
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <!-- Carousel Dots -->
                     <div id="carousel-dots" class="carousel-dots"></div>
-                    <!-- CTA Button -->
-                    <a href="https://apps.apple.com/us/app/my-inventory-stack/id6755137430" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="inv.download">
-                        Download on the App Store
-                    </a>
+                    <div data-pb-product-actions="inventory">
+                        <a href="https://apps.apple.com/us/app/my-inventory-stack/id6755137430" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="inv.download">
+                            Download on the App Store
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
         <section id="features" class="page-section">
-             <div class="container">
-                     <div class="text-section" style="padding: 0 0 48px 0;">
-                     <h2 class="section-title" data-i18n-key="inv.features.title">All-in-One Inventory Management</h2>
-                     <p class="section-subtitle" data-i18n-key="inv.features.subtitle">Perfect for small businesses and serious collectors.</p>
-                 </div>
-                 <div class="features-grid">
-                     <div class="feature-item">
-                        <h3 data-i18n-key="inv.feature1.title">Smart Dashboard</h3>
-                        <p data-i18n-key="inv.feature1.body">See low-stock items and reminders at a glance so you always know what needs attention.</p>
-                     </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="inv.feature2.title">Detailed Tracking</h3>
-                        <p data-i18n-key="inv.feature2.body">Track items by quantity, cost, SKU/UPC, and category. Calculate margins and sale prices.</p>
-                     </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="inv.feature3.title">Business Insights</h3>
-                        <p data-i18n-key="inv.feature3.body">Manage suppliers, track purchase orders, and view sales insights with weekly revenue trends.</p>
-                     </div>
-                 </div>
-             </div>
-        </section>
-
-        <!-- [NEW] Business Features Section -->
-        <section id="business" class="page-section" style="padding-top: 0;">
             <div class="container">
                 <div class="text-section" style="padding: 0 0 48px 0;">
-                    <h2 class="section-title" data-i18n-key="inv.biz.title">Built for Your Business</h2>
-                    <p class="section-subtitle" data-i18n-key="inv.biz.subtitle">Unlock powerful tools to manage your small business or side hustle, all for a single one-time price.</p>
+                    <h2 class="section-title" data-i18n-key="inv.features.title">All-in-One Inventory Control</h2>
+                    <p class="section-subtitle" data-i18n-key="inv.features.subtitle">Engineered for independent retailers, studios, pop-up shops, and serious collectors.</p>
                 </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3 data-i18n-key="inv.feature1.title">Command Dashboard</h3>
+                        <p data-i18n-key="inv.feature1.body">Monitor total inventory value, low-stock alerts, out-of-stock counts, and quick barcode scan actions in real time.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="inv.feature2.title">SKUs, Barcodes &amp; Categories</h3>
+                        <p data-i18n-key="inv.feature2.body">Catalog items with photos, SKUs/UPCs, barcode scanning, cost/margin calculations, and nested custom categories.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="inv.feature3.title">Sales, Suppliers &amp; POs</h3>
+                        <p data-i18n-key="inv.feature3.body">Record sales with automatic stock depletion, manage suppliers and purchase orders, and inspect clear financial charts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="business" class="page-section" style="padding-top: 0;">
+            <div class="container">
                 <div class="feature-showcase card-style">
                     <div class="feature-showcase-text">
-                        <h3 data-i18n-key="inv.biz.feature1.title">Manage Operations</h3>
-                        <p data-i18n-key="inv.biz.feature1.body">Track suppliers, create purchase orders, and record sales. See your weekly revenue and quantity trends to make smarter decisions.</p>
-                        
-                        <h3 data-i18n-key="inv.biz.feature2.title">Stop Paying Subscriptions</h3>
+                        <h3 data-i18n-key="inv.biz.feature1.title">Built for Growing Operations</h3>
+                        <p data-i18n-key="inv.biz.feature1.body">Track suppliers, generate purchase orders, manage multiple locations, and review revenue and profit margins without enterprise complexity.</p>
+
+                        <h3 data-i18n-key="inv.biz.feature2.title">Scales With Your Business</h3>
                         <p data-i18n-key="inv.biz.feature2.body">
-                            Other inventory apps charge $25/month or more. That's $300 a year, every year. My Inventory Stack gives you powerful business tools for a <strong>one-time purchase.</strong>
+                            Start cataloging your stock immediately for free, and unlock full Business Hub workflows—suppliers, purchase orders, and financial analytics—as your operations expand.
                         </p>
                     </div>
                     <div class="feature-showcase-image-wrapper">
-                        <img src="../assets/fukuro/4-business-home.png" alt="Business Dashboard Screenshot" class="feature-showcase-image">
+                        <img src="../assets/fukuro/new-4-business.png" alt="My Inventory Stack Business Hub" class="feature-showcase-image" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
         <section id="faq" class="page-section faq-section">
             <div class="container faq-content">
                 <div class="text-section" style="padding: 0 0 40px 0;">
@@ -125,76 +114,52 @@
                 </div>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <h3 data-i18n-key="inv.faq1.title">Is this a one-time purchase?</h3>
-                        <p data-i18n-key="inv.faq1.body">Yes. Just like our other apps, My Inventory Stack features core functionality for free, with a single one-time purchase for premium business features. No subscriptions.</p>
+                        <h3 data-i18n-key="inv.faq1.title">Can I export inventory reports and backups?</h3>
+                        <p data-i18n-key="inv.faq1.body">Yes. Export structured CSV spreadsheets and clean PDF inventory summaries anytime for accounting, audits, or team handoffs.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="inv.faq2.title">Does this sync across devices?</h3>
-                        <p data-i18n-key="inv.faq2.body">Absolutely. All your data is stored securely in your private iCloud account, allowing it to sync seamlessly and privately across your iPhone and iPad.</p>
+                        <h3 data-i18n-key="inv.faq2.title">Does it sync across iPhone and iPad?</h3>
+                        <p data-i18n-key="inv.faq2.body">Yes. All records are stored privately in your personal iCloud account for seamless synchronization across your iPhone and iPad.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="inv.faq3.title">Can I track sales?</h3>
-                        <p data-i18n-key="inv.faq3.body">Yes, the premium Business module allows you to add sales, manage suppliers, and create purchase orders, giving you a complete overview of your operations.</p>
+                        <h3 data-i18n-key="inv.faq3.title">Does recording a sale update stock automatically?</h3>
+                        <p data-i18n-key="inv.faq3.body">Yes. Logging a sale automatically deducts item quantities, triggers low-stock alerts when needed, and updates your profit analytics.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- This div will be populated by ../shared/footer.html -->
     <div id="footer-placeholder"></div>
 
     <script src="../shared/paths.js"></script>
+    <script src="../shared/products.js"></script>
     <script src="../shared/scripts.js" defer></script>
     <script>
-        // Page-specific script for Carousel
         document.addEventListener('DOMContentLoaded', () => {
-            // A short delay to ensure the main script has loaded the header
             setTimeout(() => {
                 const track = document.querySelector('.carousel-track');
                 if (!track) return;
-                
                 const slides = Array.from(track.children);
                 const dotsNav = document.getElementById('carousel-dots');
                 let currentIndex = 0;
                 let slideInterval;
-
                 if (slides.length > 0 && dotsNav) {
-                    // Create dots
                     slides.forEach((_, i) => {
                         const dot = document.createElement('button');
                         dot.className = 'carousel-dot';
-                        dot.addEventListener('click', () => {
-                            goToSlide(i);
-                            resetInterval();
-                        });
+                        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                        dot.addEventListener('click', () => { goToSlide(i); resetInterval(); });
                         dotsNav.appendChild(dot);
                     });
                     const dots = Array.from(dotsNav.children);
-
                     const goToSlide = (index) => {
                         track.style.transform = `translateX(-${index * 100}%)`;
-                        dots.forEach((dot, i) => {
-                            dot.classList.toggle('active', i === index);
-                        });
+                        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
                         currentIndex = index;
                     };
-
-                    const nextSlide = () => {
-                        const nextIndex = (currentIndex + 1) % slides.length;
-                        goToSlide(nextIndex);
-                    };
-                    
-                    const startInterval = () => {
-                        slideInterval = setInterval(nextSlide, 3500); // A bit slower for more slides
-                    };
-
-                    const resetInterval = () => {
-                        clearInterval(slideInterval);
-                        startInterval();
-                    };
-
-                    // Initialize
+                    const startInterval = () => { slideInterval = setInterval(() => goToSlide((currentIndex + 1) % slides.length), 3500); };
+                    const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
                     goToSlide(0);
                     startInterval();
                 }

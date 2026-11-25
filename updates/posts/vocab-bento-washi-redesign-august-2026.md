@@ -58,8 +58,8 @@ Plus, the **Study Insights** tab now greets you with a daily Japanese proverb se
 
 ---
 
-### 🍙 Pay Once, Keep Forever
+### 🍙 Private & Distraction-Free
 
-As always, Vocab Bento has **no recurring subscriptions, no ads, and no user tracking**. 
+As always, Vocab Bento works 100% offline with **no ads and no user tracking**. 
 
 Grab the update on the [App Store](https://apps.apple.com/app/id6756253698) and let us know what you think!

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 path = path.slice(base.length);
             }
         }
-        const segments = path.split('/').filter(s => s && s !== 'index.html');
+        const segments = path.split('/').filter(s => s && s !== 'index.html' && !s.endsWith('.html'));
         const depth = segments.length;
         if (depth === 0) return '';
         let prefix = '';
@@ -24,16 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return prefix;
     }
 
-    function isNestedPath() {
-        return getRelativeDepthPrefix().length > 0;
-    }
-
     function langBasePath() {
         return getRelativeDepthPrefix();
     }
 
     function sharedBasePath() {
         return getRelativeDepthPrefix() + 'shared/';
+    }
+
+    function ensureProductsRegistry() {
+        if (window.PB_PRODUCTS) return Promise.resolve();
+        return new Promise((resolve) => {
+            const script = document.createElement('script');
+            script.src = `${sharedBasePath()}products.js`;
+            script.onload = () => resolve();
+            script.onerror = () => resolve();
+            document.head.appendChild(script);
+        });
     }
 
     async function loadTranslations(lang) {
@@ -54,12 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateAllText() {
+        if (typeof window.pbHydratePlatformContainers === 'function') {
+            window.pbHydratePlatformContainers(translations);
+        }
         document.querySelectorAll('[data-i18n-key]').forEach(element => {
             const key = element.getAttribute('data-i18n-key');
             if (translations[key]) {
                 element.innerHTML = translations[key];
             }
         });
+        const titleKey = document.documentElement.getAttribute('data-i18n-title') || document.body.getAttribute('data-i18n-title');
+        if (titleKey && translations[titleKey]) {
+            document.title = translations[titleKey];
+        }
     }
 
     function applyDocumentLang(lang) {
@@ -76,14 +90,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function notifyTranslationListeners() {
+        window.__pbTranslations = translations;
+        window.__pbLang = currentLang;
         if (typeof window.onPandesalTranslationsReady === 'function') {
             window.onPandesalTranslationsReady(translations, currentLang);
         }
     }
 
+    function highlightCurrentNav() {
+        const pathname = window.location.pathname;
+        document.querySelectorAll('.nav-desktop-link').forEach(link => {
+            const href = link.getAttribute('href') || '';
+            if (href.includes('/company/') && pathname.includes('/company')) {
+                link.classList.add('is-current');
+            } else if (href.includes('/updates/') && pathname.includes('/updates')) {
+                link.classList.add('is-current');
+            }
+        });
+    }
+
+    function setupScrollHeaderAndReveal() {
+        const header = document.getElementById('site-header') || document.querySelector('.header');
+        if (header) {
+            const onScroll = () => {
+                header.classList.toggle('is-scrolled', window.scrollY > 12);
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        }
+
+        const revealTargets = document.querySelectorAll('.reveal-on-scroll');
+        if (revealTargets.length && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+            revealTargets.forEach(el => observer.observe(el));
+        } else {
+            revealTargets.forEach(el => el.classList.add('is-visible'));
+        }
+    }
+
     const loadComponents = async () => {
         const savedRaw = localStorage.getItem('userLanguage');
-        const browserLang = navigator.language.split('-')[0];
+        const browserLang = (navigator.language || 'en').split('-')[0];
         let initialLang = 'en';
         if (savedRaw) {
             initialLang = normalizeLang(savedRaw);
@@ -94,7 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
             initialLang = 'ja';
         }
 
-        await loadTranslations(initialLang);
+        await Promise.all([
+            ensureProductsRegistry(),
+            loadTranslations(initialLang)
+        ]);
         applyDocumentLang(currentLang);
 
         const headerPlaceholder = document.getElementById('header-placeholder');
@@ -119,12 +176,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.pbPatchInternalLinks(document.body);
                 }
                 initializeHeader();
+                highlightCurrentNav();
                 updateAllText();
                 applyDocumentLang(currentLang);
+                setupScrollHeaderAndReveal();
                 notifyTranslationListeners();
             }, 0);
         } catch (error) {
             console.error('Error loading components:', error);
+            updateAllText();
+            setupScrollHeaderAndReveal();
+            notifyTranslationListeners();
         }
     };
 
@@ -132,22 +194,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const hamburger = document.getElementById('hamburger');
         const menuOverlay = document.getElementById('menu-overlay');
         const closeMenuButton = document.getElementById('close-menu');
+        const menuBackdrop = document.getElementById('menu-backdrop');
 
-        const toggleMenu = () => {
-            if (hamburger && menuOverlay) {
-                hamburger.classList.toggle('active');
-                menuOverlay.classList.toggle('active');
-                document.body.style.overflow = menuOverlay.classList.contains('active') ? 'hidden' : '';
-            }
+        const setMenuOpen = (open) => {
+            if (!hamburger || !menuOverlay) return;
+            hamburger.classList.toggle('active', open);
+            hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            menuOverlay.classList.toggle('active', open);
+            menuOverlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+            document.body.style.overflow = open ? 'hidden' : '';
         };
 
-        if (hamburger && menuOverlay && closeMenuButton) {
-            hamburger.addEventListener('click', toggleMenu);
-            closeMenuButton.addEventListener('click', toggleMenu);
+        if (hamburger && menuOverlay) {
+            hamburger.addEventListener('click', () => {
+                setMenuOpen(!menuOverlay.classList.contains('active'));
+            });
+            if (closeMenuButton) {
+                closeMenuButton.addEventListener('click', () => setMenuOpen(false));
+            }
+            if (menuBackdrop) {
+                menuBackdrop.addEventListener('click', () => setMenuOpen(false));
+            }
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
+                    setMenuOpen(false);
+                }
+            });
             menuOverlay.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (menuOverlay.classList.contains('active')) {
-                        toggleMenu();
+                        setMenuOpen(false);
                     }
                 });
             });

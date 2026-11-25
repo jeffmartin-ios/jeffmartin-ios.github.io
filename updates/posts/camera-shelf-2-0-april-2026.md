@@ -1,6 +1,6 @@
 Version 2.0 is officially here, and it brings a massive overhaul to the UI along with countless enhancements and new functionalities you’ve been asking for! 
 
-Check out the full rundown of what’s new below. *As a special bonus for a limited time, you can also enjoy a lifetime unlock of Camera Shelf Pro at 50% off!*
+Check out the full rundown of what’s new in Camera Shelf 2.0 below.
 
 ### 🎨 A Complete UI Overhaul & General Polish
 We've significantly upgraded the visual experience and functionality across the board:
@@ -22,4 +22,4 @@ Your gear is now accessible right from your iOS Home Screen!
 ### 🌗 Themes Your Way
 We’ve fully enhanced our theme engine. You can now choose specifically between Dark Mode (default), Light Mode, or System (which automatically follows your iPhone's current theme).
 
-**Enjoy the update!** If you love the changes, a glowing review on the App Store goes a very long way for our indie studio.
+**Enjoy the update!** If you appreciate the new workflow improvements, leaving a review on the App Store helps support continued development across our studio.

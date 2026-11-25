@@ -4,89 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="pb-site-base" content="">
-    <title>Recipe Mini - Meal Planner & Cookbook</title>
-    
-    <!-- Smart App Banner for iOS -->
-    <meta name="apple-itunes-app" content="app-id=6754278129">
-
+    <title>Recipe Mini — Meal Planner, Pantry &amp; Cookbook | Pandesal Bytes</title>
+    <meta name="description" content="Collect recipes, plan weekly meals, manage pantry stock, and auto-generate aisle-sorted grocery lists with Recipe Mini for iOS & iPadOS.">
+    <meta name="apple-itunes-app" content="app-id=6756092667">
+    <link rel="icon" type="image/jpeg" href="../assets/pb-logo.jpeg">
+    <link rel="apple-touch-icon" href="../assets/pagkain/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
 </head>
 <body>
 
-    <!-- This div will be populated by ../shared/header.html -->
     <div id="header-placeholder"></div>
-    
-    <!-- A simple spacer for the fixed header -->
-    <div style="height: 64px;"></div>
 
     <main>
-        <!-- Carousel Hero -->
         <section class="hero-carousel hero-section">
             <div class="container">
-                <h1 class="hero-title" data-i18n-key="rm.hero.title">Recipe Mini</h1>
-                <h3 class="hero-subtitle" data-i18n-key="rm.hero.subtitle">Recipe Manager & Meal Planner</h3>
-                
+                <div class="product-hero-header">
+                    <div class="product-hero-icon">
+                        <img src="../assets/pagkain/icon.png" alt="Recipe Mini App Icon">
+                    </div>
+                    <div class="platform-pills" data-pb-product-pills="recipe-mini"></div>
+                    <h1 class="hero-title" data-i18n-key="rm.hero.title">Recipe Mini</h1>
+                    <p class="hero-subtitle" data-i18n-key="rm.hero.subtitle">Personal Cookbook, Weekly Meal Planner, Smart Pantry &amp; Grocery Assistant</p>
+                </div>
+
                 <div class="hero-carousel-wrapper">
-                    <!-- Phone Frame -->
                     <div class="phone-frame">
                         <div class="phone-screen">
                             <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="../assets/pagkain/1-home.png" alt="Recipe Mini Home" class="app-screenshot">
+                                    <img src="../assets/pagkain/1-home.png" alt="Recipe Mini Home Cookbook" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/pagkain/2-recipedetails.png" alt="Recipe Details" class="app-screenshot">
+                                    <img src="../assets/pagkain/2-recipedetails.png" alt="Recipe Mini Ingredients and Scaling" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/pagkain/5-planner.png" alt="Meal Planner" class="app-screenshot">
+                                    <img src="../assets/pagkain/5-planner.png" alt="Recipe Mini Weekly Meal Planner" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/pagkain/6-shopping.png" alt="Shopping List" class="app-screenshot">
+                                    <img src="../assets/pagkain/6-shopping.png" alt="Recipe Mini Automatic Shopping List" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/pagkain/4-stepbystep.png" alt="Cooking Mode" class="app-screenshot">
+                                    <img src="../assets/pagkain/4-stepbystep.png" alt="Recipe Mini Step-by-Step Cooking Mode" class="app-screenshot">
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <!-- Carousel Dots -->
                     <div id="carousel-dots" class="carousel-dots"></div>
-                    <!-- CTA Button -->
-                    <a href="https://apps.apple.com/us/app/recipe-mini-manager-planner/id6756092667" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="rm.download">
-                        Download on the App Store
-                    </a>
+                    <div data-pb-product-actions="recipe-mini">
+                        <a href="https://apps.apple.com/us/app/recipe-mini-manager-planner/id6756092667" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="rm.download">
+                            Download on the App Store
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
         <section id="features" class="page-section">
-             <div class="container">
-                     <div class="text-section" style="padding: 0 0 48px 0;">
-                     <h2 class="section-title" data-i18n-key="rm.features.title">Cook Smarter, Not Harder</h2>
-                     <p class="section-subtitle" data-i18n-key="rm.features.subtitle">The all-in-one kitchen companion for collecting recipes, planning meals, and shopping.</p>
-                 </div>
-                 <div class="features-grid">
-                     <div class="feature-item">
+            <div class="container">
+                <div class="text-section" style="padding: 0 0 48px 0;">
+                    <h2 class="section-title" data-i18n-key="rm.features.title">Cook Smarter, Zero Ad Clutter</h2>
+                    <p class="section-subtitle" data-i18n-key="rm.features.subtitle">A calm, structured kitchen companion for collecting recipes, planning family meals, and reducing food waste.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
                         <h3 data-i18n-key="rm.feature1.title">Recipe Collection</h3>
-                        <p data-i18n-key="rm.feature1.body">Save and organize your favorite recipes. Import from websites or add your own family secrets.</p>
-                     </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="rm.feature2.title">Meal Planning</h3>
-                        <p data-i18n-key="rm.feature2.body">Plan your breakfast, lunch, and dinner for the week. Drag and drop to rearrange with ease.</p>
-                     </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="rm.feature3.title">Smart Shopping</h3>
-                        <p data-i18n-key="rm.feature3.body">Automatically generate shopping lists from your meal plan. Sort by aisle to shop faster.</p>
-                     </div>
-                 </div>
-             </div>
+                        <p data-i18n-key="rm.feature1.body">Import recipes from cooking websites cleanly without popups or ads, scale servings instantly, and organize by cuisine.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="rm.feature2.title">Meal Planner &amp; Pantry</h3>
+                        <p data-i18n-key="rm.feature2.body">Schedule breakfast, lunch, and dinner across your week while keeping track of fridge and pantry staples.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="rm.feature3.title">Aisle-Sorted Groceries</h3>
+                        <p data-i18n-key="rm.feature3.body">Automatically compile grocery lists directly from your weekly meal calendar, neatly grouped by store category.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- FAQ Section -->
+        <section class="page-section" style="padding-top: 0;">
+            <div class="container" style="display: flex; flex-direction: column; gap: 32px;">
+                <div class="feature-showcase card-style">
+                    <div class="feature-showcase-text">
+                        <h3 data-i18n-key="rm.showcase1.title">Distraction-Free Kitchen Display</h3>
+                        <p data-i18n-key="rm.showcase1.body">Keep your screen awake while cooking with side-by-side ingredients and step-by-step preparation instructions—optimized for both portrait and spacious dual-pane layouts.</p>
+                    </div>
+                    <div class="feature-showcase-image-wrapper">
+                        <img src="../assets/pagkain/duo-2-cooking.png" alt="Recipe Mini Side-by-Side Kitchen Display" class="feature-showcase-image feature-showcase-image--wide" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="feature-showcase feature-showcase--reverse card-style">
+                    <div class="feature-showcase-image-wrapper">
+                        <img src="../assets/pagkain/duo-4-pantry.png" alt="Recipe Mini Smart Pantry View" class="feature-showcase-image feature-showcase-image--wide" loading="lazy">
+                    </div>
+                    <div class="feature-showcase-text">
+                        <h3 data-i18n-key="rm.showcase2.title">Smart Pantry &amp; Family Nutrition</h3>
+                        <p data-i18n-key="rm.showcase2.body">Track pantry inventory to prevent duplicate purchases, and optionally log first foods and allergen notes for growing families.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="faq" class="page-section faq-section">
             <div class="container faq-content">
                 <div class="text-section" style="padding: 0 0 40px 0;">
@@ -94,73 +116,52 @@
                 </div>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <h3 data-i18n-key="rm.faq1.title">Does it import from websites?</h3>
-                        <p data-i18n-key="rm.faq1.body">Yes! Recipe Mini can extract ingredients and instructions from most popular cooking websites automatically.</p>
+                        <h3 data-i18n-key="rm.faq1.title">Does it import recipes from websites?</h3>
+                        <p data-i18n-key="rm.faq1.body">Yes. Recipe Mini extracts ingredients and instructions cleanly from popular recipe sites without clutter.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="rm.faq2.title">Can I scale servings?</h3>
-                        <p data-i18n-key="rm.faq2.body">Absolutely. You can adjust the serving size, and the app will automatically recalculate the ingredient quantities for you.</p>
+                        <h3 data-i18n-key="rm.faq2.title">Can I scale serving sizes?</h3>
+                        <p data-i18n-key="rm.faq2.body">Yes. Adjust the serving count anytime and Recipe Mini automatically recalculates every ingredient quantity.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="rm.faq3.title">Is there a cooking mode?</h3>
-                        <p data-i18n-key="rm.faq3.body">Yes, Step-by-Step mode keeps your screen on and lets you focus on one instruction at a time, so you never lose your place.</p>
+                        <h3 data-i18n-key="rm.faq3.title">Is there a hands-free cooking mode?</h3>
+                        <p data-i18n-key="rm.faq3.body">Yes. Step-by-Step mode keeps your display awake and highlights one instruction at a time while you cook.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- This div will be populated by ../shared/footer.html -->
     <div id="footer-placeholder"></div>
 
     <script src="../shared/paths.js"></script>
+    <script src="../shared/products.js"></script>
     <script src="../shared/scripts.js" defer></script>
     <script>
-        // Page-specific script for Carousel
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 const track = document.querySelector('.carousel-track');
                 if (!track) return;
-                
                 const slides = Array.from(track.children);
                 const dotsNav = document.getElementById('carousel-dots');
                 let currentIndex = 0;
                 let slideInterval;
-
                 if (slides.length > 0 && dotsNav) {
                     slides.forEach((_, i) => {
                         const dot = document.createElement('button');
                         dot.className = 'carousel-dot';
-                        dot.addEventListener('click', () => {
-                            goToSlide(i);
-                            resetInterval();
-                        });
+                        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                        dot.addEventListener('click', () => { goToSlide(i); resetInterval(); });
                         dotsNav.appendChild(dot);
                     });
                     const dots = Array.from(dotsNav.children);
-
                     const goToSlide = (index) => {
                         track.style.transform = `translateX(-${index * 100}%)`;
-                        dots.forEach((dot, i) => {
-                            dot.classList.toggle('active', i === index);
-                        });
+                        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
                         currentIndex = index;
                     };
-
-                    const nextSlide = () => {
-                        const nextIndex = (currentIndex + 1) % slides.length;
-                        goToSlide(nextIndex);
-                    };
-                    
-                    const startInterval = () => {
-                        slideInterval = setInterval(nextSlide, 3500);
-                    };
-
-                    const resetInterval = () => {
-                        clearInterval(slideInterval);
-                        startInterval();
-                    };
-
+                    const startInterval = () => { slideInterval = setInterval(() => goToSlide((currentIndex + 1) % slides.length), 3500); };
+                    const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
                     goToSlide(0);
                     startInterval();
                 }

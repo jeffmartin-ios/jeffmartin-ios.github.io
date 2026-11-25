@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="pb-site-base" content="">
-    <title>Pattern Projects - Craft Tracker</title>
-    
-    <!-- Smart App Banner for iOS -->
+    <title>Pattern Projects — Sewing, Knitting &amp; Craft Organizer | Pandesal Bytes</title>
+    <meta name="description" content="Organize sewing, knitting, and craft projects alongside your fabric and yarn stash privately on iOS with Pattern Projects.">
     <meta name="apple-itunes-app" content="app-id=6754258425">
-
+    <link rel="icon" type="image/jpeg" href="../assets/pb-logo.jpeg">
+    <link rel="apple-touch-icon" href="../assets/stitch/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
 </head>
 <body>
 
-    <!-- This div will be populated by ../shared/header.html -->
     <div id="header-placeholder"></div>
-    
-    <!-- A simple spacer for the fixed header -->
-    <div style="height: 64px;"></div>
 
     <main>
-        <!-- Carousel Hero -->
         <section class="hero-carousel hero-section">
             <div class="container">
-                <h1 class="hero-title" data-i18n-key="pp.hero.title">Pattern Projects</h1>
-                <h3 class="hero-subtitle" data-i18n-key="pp.hero.subtitle">Track Your Sewing & Knitting Projects</h3>
-                
+                <div class="product-hero-header">
+                    <div class="product-hero-icon">
+                        <img src="../assets/stitch/icon.png" alt="Pattern Projects App Icon">
+                    </div>
+                    <div class="platform-pills" data-pb-product-pills="pattern-projects"></div>
+                    <h1 class="hero-title" data-i18n-key="pp.hero.title">Pattern Projects</h1>
+                    <p class="hero-subtitle" data-i18n-key="pp.hero.subtitle">Track sewing, knitting, and craft projects alongside your material stash.</p>
+                </div>
+
                 <div class="hero-carousel-wrapper">
-                    <!-- Phone Frame -->
                     <div class="phone-frame">
                         <div class="phone-screen">
                             <div class="carousel-track">
@@ -49,41 +49,39 @@
                             </div>
                         </div>
                     </div>
-                     <!-- Carousel Dots -->
                     <div id="carousel-dots" class="carousel-dots"></div>
-                    <!-- CTA Button -->
-                    <a href="https://apps.apple.com/us/app/pattern-projects/id6754258425" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="pp.download">
-                        Download on the App Store
-                    </a>
+                    <div data-pb-product-actions="pattern-projects">
+                        <a href="https://apps.apple.com/us/app/pattern-projects/id6754258425" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="pp.download">
+                            Download on the App Store
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
         <section id="features" class="page-section">
-             <div class="container">
-                     <div class="text-section" style="padding: 0 0 48px 0;">
-                     <h2 class="section-title" data-i18n-key="pp.features.title">Made for Crafters</h2>
-                     <p class="section-subtitle" data-i18n-key="pp.features.subtitle">The perfect companion for your sewing, knitting, and embroidery projects.</p>
-                 </div>
-                 <div class="features-grid">
-                     <div class="feature-item">
+            <div class="container">
+                <div class="text-section" style="padding: 0 0 48px 0;">
+                    <h2 class="section-title" data-i18n-key="pp.features.title">Crafted for Makers</h2>
+                    <p class="section-subtitle" data-i18n-key="pp.features.subtitle">Keep every measurement, needle size, pattern PDF, and fabric swatch organized in one place.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
                         <h3 data-i18n-key="pp.feature1.title">Organize Projects</h3>
-                        <p data-i18n-key="pp.feature1.body">Keep track of what you're making, from cast-on to bind-off. Save pattern details, dates, and notes.</p>
-                     </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="pp.feature2.title">Fabric Stash</h3>
-                        <p data-i18n-key="pp.feature2.body">Catalogue your fabric and yarn stash. Know exactly what materials you have on hand for your next creation.</p>
-                     </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="pp.feature3.title">Project Details</h3>
-                        <p data-i18n-key="pp.feature3.body">Log specific details like needle size, fabric type, and measurements so you never forget where you left off.</p>
-                     </div>
-                 </div>
-             </div>
+                        <p data-i18n-key="pp.feature1.body">Track progress from start to finish with photos, pattern references, target dates, and row/step notes.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="pp.feature2.title">Fabric &amp; Yarn Stash</h3>
+                        <p data-i18n-key="pp.feature2.body">Catalog fabrics, yarns, yardage, dye lots, and notions so you always know what materials are on hand.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="pp.feature3.title">Detailed Specifications</h3>
+                        <p data-i18n-key="pp.feature3.body">Record needle sizes, gauge, garment measurements, and modifications so you can pick up right where you left off.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- FAQ Section -->
         <section id="faq" class="page-section faq-section">
             <div class="container faq-content">
                 <div class="text-section" style="padding: 0 0 40px 0;">
@@ -92,75 +90,51 @@
                 <div class="faq-list">
                     <div class="faq-item">
                         <h3 data-i18n-key="pp.faq1.title">What crafts can I track?</h3>
-                        <p data-i18n-key="pp.faq1.body">Pattern Projects is versatile! It's designed for sewing and knitting, but works great for embroidery, quilting, and other crafts.</p>
+                        <p data-i18n-key="pp.faq1.body">Pattern Projects is tailored for sewing, knitting, crochet, embroidery, quilting, and general maker projects.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="pp.faq2.title">Is my data private?</h3>
-                        <p data-i18n-key="pp.faq2.body">Yes. Your project data and photos are stored locally on your device and synced securely via your private iCloud account.</p>
+                        <h3 data-i18n-key="pp.faq2.title">Is my project data private?</h3>
+                        <p data-i18n-key="pp.faq2.body">Yes. All project notes and photos stay on your device and sync privately through your personal iCloud account.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="pp.faq3.title">Can I track my stash?</h3>
-                        <p data-i18n-key="pp.faq3.body">Yes, the app includes a dedicated Stash section to help you organize your fabrics, yarns, and notions.</p>
+                        <h3 data-i18n-key="pp.faq3.title">Can I catalog my material stash?</h3>
+                        <p data-i18n-key="pp.faq3.body">Yes, the dedicated Stash view keeps fabrics, yarns, and notions searchable alongside your active projects.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- This div will be populated by ../shared/footer.html -->
     <div id="footer-placeholder"></div>
 
     <script src="../shared/paths.js"></script>
+    <script src="../shared/products.js"></script>
     <script src="../shared/scripts.js" defer></script>
     <script>
-        // Page-specific script for Carousel
         document.addEventListener('DOMContentLoaded', () => {
-            // A short delay to ensure the main script has loaded the header
             setTimeout(() => {
                 const track = document.querySelector('.carousel-track');
                 if (!track) return;
-                
                 const slides = Array.from(track.children);
                 const dotsNav = document.getElementById('carousel-dots');
                 let currentIndex = 0;
                 let slideInterval;
-
                 if (slides.length > 0 && dotsNav) {
-                    // Create dots
                     slides.forEach((_, i) => {
                         const dot = document.createElement('button');
                         dot.className = 'carousel-dot';
-                        dot.addEventListener('click', () => {
-                            goToSlide(i);
-                            resetInterval();
-                        });
+                        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                        dot.addEventListener('click', () => { goToSlide(i); resetInterval(); });
                         dotsNav.appendChild(dot);
                     });
                     const dots = Array.from(dotsNav.children);
-
                     const goToSlide = (index) => {
                         track.style.transform = `translateX(-${index * 100}%)`;
-                        dots.forEach((dot, i) => {
-                            dot.classList.toggle('active', i === index);
-                        });
+                        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
                         currentIndex = index;
                     };
-
-                    const nextSlide = () => {
-                        const nextIndex = (currentIndex + 1) % slides.length;
-                        goToSlide(nextIndex);
-                    };
-                    
-                    const startInterval = () => {
-                        slideInterval = setInterval(nextSlide, 3000);
-                    };
-
-                    const resetInterval = () => {
-                        clearInterval(slideInterval);
-                        startInterval();
-                    };
-
-                    // Initialize
+                    const startInterval = () => { slideInterval = setInterval(() => goToSlide((currentIndex + 1) % slides.length), 3400); };
+                    const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
                     goToSlide(0);
                     startInterval();
                 }

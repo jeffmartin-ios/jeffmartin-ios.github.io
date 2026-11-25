@@ -4,213 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="pb-site-base" content="">
-    <title>Camera Shelf - Gear Tracker</title>
-    
-    <!-- Smart App Banner for iOS -->
+    <title>Camera Shelf — Gear Inventory &amp; Packing Kits | Pandesal Bytes</title>
+    <meta name="description" content="Organize camera bodies, lenses, drones, modular shoot kits, pack weights, and insurance PDF manifests with Camera Shelf for iOS & iPadOS.">
     <meta name="apple-itunes-app" content="app-id=6755641228">
-
+    <link rel="icon" type="image/jpeg" href="../assets/pb-logo.jpeg">
+    <link rel="apple-touch-icon" href="../assets/camerashelf/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
     <style>
-        .cs-page .hero-title {
-            letter-spacing: -0.03em;
-        }
-        .cs-page .hero-subtitle {
-            max-width: 38rem;
-            line-height: 1.9;
-        }
         .cs-section-label {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             font-family: var(--font-mono);
             font-size: 11px;
+            font-weight: 600;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: var(--secondary-text);
+            color: var(--accent-color);
             margin-bottom: 14px;
         }
         .cs-section-label::before {
             content: "";
             width: 20px;
-            height: 1px;
-            background: color-mix(in srgb, var(--accent-color) 45%, var(--border-color));
-        }
-        .cs-soft-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .cs-soft-card {
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 20px 18px;
-            background: color-mix(in srgb, var(--surface-solid) 84%, transparent);
-            text-align: left;
-        }
-        .cs-soft-card h3 {
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-        .cs-soft-card p {
-            color: var(--secondary-text);
-            line-height: 1.75;
-            font-size: 0.95rem;
-        }
-        .cs-page .feature-showcase {
-            border-radius: 16px;
-        }
-        .cs-page .feature-showcase-text p {
-            line-height: 1.85;
-        }
-        .cs-page .faq-item h3 {
-            letter-spacing: -0.01em;
-        }
-        @media (max-width: 900px) {
-            .cs-soft-grid {
-                grid-template-columns: 1fr;
-            }
+            height: 1.5px;
+            background: rgba(0, 85, 212, 0.35);
         }
     </style>
 </head>
 <body class="cs-page">
 
-    <!-- This div will be populated by ../shared/header.html -->
     <div id="header-placeholder"></div>
-    
-    <!-- A simple spacer for the fixed header -->
-    <div style="height: 64px;"></div>
 
     <main>
         <section class="hero-carousel hero-section">
             <div class="container">
-                <p class="mono-eyebrow" data-i18n-key="cs.hero.eyebrow">Camera inventory for creators</p>
-                <h1 class="hero-title" data-i18n-key="cs.hero.title">Camera Shelf</h1>
-                <h3 class="hero-subtitle" data-i18n-key="cs.hero.subtitle">The simple inventory manager for photographers, filmmakers, and gear enthusiasts.</h3>
-                
+                <div class="product-hero-header">
+                    <div class="product-hero-icon">
+                        <img src="../assets/camerashelf/icon.png" alt="Camera Shelf App Icon">
+                    </div>
+                    <div class="platform-pills" data-pb-product-pills="camerashelf"></div>
+                    <h1 class="hero-title" data-i18n-key="cs.hero.title">Camera Shelf</h1>
+                    <p class="hero-subtitle" data-i18n-key="cs.hero.subtitle">The structured gear inventory manager for photographers, filmmakers, and production teams.</p>
+                </div>
+
                 <div class="hero-carousel-wrapper">
-                    <div class="phone-frame">
-                        <div class="phone-screen">
+                    <div class="duo-frame">
+                        <div class="duo-screen">
                             <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="../assets/camerashelf/1-home.png" alt="Camera Shelf Home" class="app-screenshot">
+                                    <img src="../assets/camerashelf/duo-1-home.png" alt="Camera Shelf Visual Collection Overview" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/camerashelf/2-kitshome.png" alt="Camera Shelf Kits List" class="app-screenshot">
+                                    <img src="../assets/camerashelf/duo-2-item-detail.png" alt="Camera Shelf Detailed Specifications and Serials" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/camerashelf/2-kitsdetail.png" alt="Camera Shelf Kit Details" class="app-screenshot">
+                                    <img src="../assets/camerashelf/duo-3-kits.png" alt="Camera Shelf Modular Packing Kits" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/camerashelf/3-insights.png" alt="Camera Shelf Insights" class="app-screenshot">
+                                    <img src="../assets/camerashelf/duo-4-kit-detail.png" alt="Camera Shelf Fast Packing Checklists" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/camerashelf/duo-5-export.png" alt="Camera Shelf Insurance PDF Manifests" class="app-screenshot">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="carousel-dots" class="carousel-dots"></div>
-                    <a href="https://apps.apple.com/app/id6755641228" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="cs.download">
-                        Download on the App Store
-                    </a>
+                    <div data-pb-product-actions="camerashelf">
+                        <a href="https://apps.apple.com/app/id6755641228" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="cs.download">
+                            Download on the App Store
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="page-section" style="padding-top: 0;">
+        <section class="page-section" style="padding-top: 16px;">
             <div class="container">
                 <p class="cs-section-label" data-i18n-key="cs.section.value">Overview</p>
-                <div class="text-section" style="padding: 0 0 40px 0;">
-                    <h2 class="section-title" data-i18n-key="cs.value.title">Stop using spreadsheets. Start building your digital shelf.</h2>
-                    <p class="section-subtitle" data-i18n-key="cs.value.subtitle">Know exactly what you own, where it is, and what it is worth.</p>
-                 </div>
-                 <div class="cs-soft-grid">
-                     <div class="cs-soft-card">
-                        <h3 data-i18n-key="cs.value1.title">Organize your collection</h3>
-                        <p data-i18n-key="cs.value1.body">Create a visual database for cameras, lenses, drones, lighting, and accessories with detailed specs and photo logs.</p>
-                     </div>
-                     <div class="cs-soft-card">
-                        <h3 data-i18n-key="cs.value2.title">Smart packing kits</h3>
-                        <p data-i18n-key="cs.value2.body">Build custom loadouts for each shoot with automatic weight and insurance-value totals.</p>
-                     </div>
-                     <div class="cs-soft-card">
-                        <h3 data-i18n-key="cs.value3.title">Insights and protection</h3>
-                        <p data-i18n-key="cs.value3.body">Track maintenance, attach receipts, and generate reports for insurance, planning, and production workflows.</p>
-                     </div>
-                 </div>
-            </div>
-        </section>
-
-        <section class="page-section" style="padding-top: 0;">
-            <div class="container">
-                <p class="cs-section-label" data-i18n-key="cs.section.kits">Kits</p>
-                <div class="feature-showcase card-style">
-                    <div class="feature-showcase-text">
-                        <h3 data-i18n-key="cs.kits.title">Never leave a battery or SD card behind</h3>
-                        <p data-i18n-key="cs.kits.body">Create kits like Wedding Day, Travel Light, or Studio Rig, then check total pack weight before heading out.</p>
-                        <h3 style="margin-top: 18px;" data-i18n-key="cs.kits.point1.title">Build loadouts for every job</h3>
-                        <p data-i18n-key="cs.kits.point1.body">Group bodies, lenses, filters, and accessories into reusable packing templates.</p>
-                        <h3 style="margin-top: 18px;" data-i18n-key="cs.kits.point2.title">Weight and value calculators built in</h3>
-                        <p data-i18n-key="cs.kits.point2.body">See pack weight for travel constraints and total value for insurance planning.</p>
+                <div class="text-section" style="padding: 0 0 44px 0;">
+                    <h2 class="section-title" data-i18n-key="cs.value.title">Stop using spreadsheets. Build your digital gear shelf.</h2>
+                    <p class="section-subtitle" data-i18n-key="cs.value.subtitle">Know exactly what you own, which bag it is packed in, and what your collection is worth.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3 data-i18n-key="cs.value1.title">Visual Gear Database</h3>
+                        <p data-i18n-key="cs.value1.body">Catalog cameras, lenses, drones, lighting, and media cards with serial numbers, mount specs, and purchase records.</p>
                     </div>
-                    <div class="feature-showcase-image-wrapper">
-                        <img src="../assets/camerashelf/2-kitshome.png" alt="Camera Shelf kit loadout screen" class="feature-showcase-image">
+                    <div class="feature-item">
+                        <h3 data-i18n-key="cs.value2.title">Modular Packing Kits</h3>
+                        <p data-i18n-key="cs.value2.body">Build reusable loadouts and nested subkits for each shoot with automatic bag weight and insurance-value totals.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="cs.value3.title">Insurance &amp; Production PDFs</h3>
+                        <p data-i18n-key="cs.value3.body">Log maintenance history, store receipts, and export clean PDF equipment manifests for insurers or crew members.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="page-section" style="padding-top: 0;">
-            <div class="container">
-                <p class="cs-section-label" data-i18n-key="cs.section.insights">Insights</p>
-                <div class="feature-showcase card-style">
-                    <div class="feature-showcase-image-wrapper">
-                        <img src="../assets/camerashelf/3-insights.png" alt="Camera Shelf analytics dashboard" class="feature-showcase-image">
-                    </div>
-                    <div class="feature-showcase-text">
-                        <h3 data-i18n-key="cs.insights.title">Understand your investment</h3>
-                        <p data-i18n-key="cs.insights.body">Use dashboard analytics to see collection value, item counts, and brand/category distribution at a glance.</p>
-                        <h3 style="margin-top: 18px;" data-i18n-key="cs.insights.point1.title">Maintenance history included</h3>
-                        <p data-i18n-key="cs.insights.point1.body">Keep logs of cleanings, repairs, and firmware updates so your kit stays reliable over time.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="page-section" style="padding-top: 0;">
-            <div class="container">
-                <p class="cs-section-label" data-i18n-key="cs.section.protect">Protection</p>
-                <div class="feature-showcase card-style">
-                    <div class="feature-showcase-text">
-                        <h3 data-i18n-key="cs.protect.title">Protect your gear investment</h3>
-                        <p data-i18n-key="cs.protect.body">Store receipts, export professional PDFs, and keep records ready for insurers or production teams.</p>
-                        <h3 style="margin-top: 18px;" data-i18n-key="cs.protect.point1.title">Secure and private by design</h3>
-                        <p data-i18n-key="cs.protect.point1.body">Your data stays on your device and syncs via personal iCloud. No accounts. No tracking.</p>
-                    </div>
-                    <div class="feature-showcase-image-wrapper">
-                        <img src="../assets/camerashelf/1-home.png" alt="Camera Shelf collection overview" class="feature-showcase-image">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="page-section" style="padding-top: 0;">
-            <div class="container">
-                <p class="cs-section-label" data-i18n-key="cs.section.premium">Premium</p>
-                <div class="text-section card-style" style="padding: 40px 28px;">
-                    <h2 class="section-title" data-i18n-key="cs.premium.title">Camera Shelf Premium</h2>
-                    <p class="section-subtitle" data-i18n-key="cs.premium.subtitle">Unlock the full workflow with one-time purchase access. No subscriptions.</p>
-                    <div class="faq-list" style="margin-top: 20px;">
-                        <div class="faq-item">
-                            <h3 data-i18n-key="cs.premium.item1">Unlimited Items & Kits</h3>
+            <div class="container" style="display: flex; flex-direction: column; gap: 32px;">
+                <div>
+                    <p class="cs-section-label" data-i18n-key="cs.section.kits">Kits</p>
+                    <div class="feature-showcase card-style">
+                        <div class="feature-showcase-text">
+                            <h3 data-i18n-key="cs.kits.title">Never leave a battery or CFexpress card behind</h3>
+                            <p data-i18n-key="cs.kits.body">Create loadouts like Commercial Rig, Travel Light, or Documentary Kit, nest subkits, and verify total carry-on weight before departure.</p>
+                            <h3 style="margin-top: 18px;" data-i18n-key="cs.kits.point2.title">Built-in weight &amp; value calculators</h3>
+                            <p data-i18n-key="cs.kits.point2.body">Instantly review pack weight for airline limits and total replacement value for production insurance.</p>
                         </div>
-                        <div class="faq-item">
-                            <h3 data-i18n-key="cs.premium.item2">PDF Report Exporting</h3>
+                        <div class="feature-showcase-image-wrapper">
+                            <img src="../assets/camerashelf/duo-3-kits.png" alt="Camera Shelf Modular Kits" class="feature-showcase-image feature-showcase-image--wide" loading="lazy">
                         </div>
-                        <div class="faq-item">
-                            <h3 data-i18n-key="cs.premium.item3">Unlimited Receipt Storage</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="cs-section-label" data-i18n-key="cs.section.protect">Protection &amp; Reports</p>
+                    <div class="feature-showcase feature-showcase--reverse card-style">
+                        <div class="feature-showcase-image-wrapper">
+                            <img src="../assets/camerashelf/duo-5-export.png" alt="Camera Shelf PDF Export and Backups" class="feature-showcase-image feature-showcase-image--wide" loading="lazy">
+                        </div>
+                        <div class="feature-showcase-text">
+                            <h3 data-i18n-key="cs.protect.title">Protect your gear investment</h3>
+                            <p data-i18n-key="cs.protect.body">Attach purchase proof, track multi-currency valuations, schedule automatic offline backups, and export ready-to-send PDF manifests.</p>
+                            <h3 style="margin-top: 18px;" data-i18n-key="cs.protect.point1.title">Private by architecture</h3>
+                            <p data-i18n-key="cs.protect.point1.body">Your serial numbers and equipment lists stay on your device and sync privately via personal iCloud. Zero tracking.</p>
                         </div>
                     </div>
                 </div>
@@ -219,22 +142,21 @@
 
         <section id="faq" class="page-section faq-section">
             <div class="container faq-content">
-                <p class="cs-section-label" data-i18n-key="cs.section.faq">FAQ</p>
                 <div class="text-section" style="padding: 0 0 40px 0;">
                     <h2 class="section-title" data-i18n-key="cs.faq.title">Frequently Asked Questions</h2>
                 </div>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <h3 data-i18n-key="cs.faq1.title">Where is my data stored?</h3>
-                        <p data-i18n-key="cs.faq1.body">Your gear list is personal. Data is stored locally on your device and synced to your other devices via your private iCloud account.</p>
+                        <h3 data-i18n-key="cs.faq1.title">Where is my gear catalog stored?</h3>
+                        <p data-i18n-key="cs.faq1.body">Data is stored locally on your device and synced across your Apple devices via your private iCloud account.</p>
                     </div>
                     <div class="faq-item">
                         <h3 data-i18n-key="cs.faq2.title">Does it support multiple currencies?</h3>
-                        <p data-i18n-key="cs.faq2.body">Yes. You can input purchase prices in different currencies, and the app will help you normalize the total value of your collection.</p>
+                        <p data-i18n-key="cs.faq2.body">Yes. Record purchases in JPY, USD, EUR, GBP, CAD, CHF, and more while viewing normalized collection totals.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="cs.faq3.title">Do I need a subscription for premium?</h3>
-                        <p data-i18n-key="cs.faq3.body">No. Premium is a one-time purchase that unlocks unlimited items and kits, report exports, and receipt storage.</p>
+                        <h3 data-i18n-key="cs.faq3.title">What does Camera Shelf Premium include?</h3>
+                        <p data-i18n-key="cs.faq3.body">Camera Shelf includes core gear cataloging for free, while Camera Shelf Premium unlocks unlimited items and kits, PDF manifest exports, and unlimited receipt storage.</p>
                     </div>
                 </div>
             </div>
@@ -245,23 +167,22 @@
     <section id="whats-new" class="page-section" style="display: none;">
         <div class="container">
             <div class="text-section" style="padding: 0 0 40px 0;">
-                <h2 class="section-title">What's New</h2>
-                <p class="section-subtitle">The latest updates and improvements to Camera Shelf.</p>
+                <h2 class="section-title">Release Notes</h2>
+                <p class="section-subtitle">Latest updates and enhancements to Camera Shelf.</p>
             </div>
-            <div id="cs-posts-grid" class="updates-posts-grid" style="max-width: 900px; margin: 0 auto;"></div>
+            <div id="cs-posts-grid" class="updates-posts-grid" style="max-width: 960px; margin: 0 auto;"></div>
             <div style="text-align: center; margin-top: 32px;">
-                <a href="../updates/?tag=camerashelf" class="cta-button">See All Camera Shelf Updates</a>
+                <a href="../updates/?tag=camerashelf" class="cta-button cta-button--outline">All Camera Shelf Updates →</a>
             </div>
         </div>
     </section>
 
-    <!-- This div will be populated by ../shared/footer.html -->
     <div id="footer-placeholder"></div>
 
     <script src="../shared/paths.js"></script>
+    <script src="../shared/products.js"></script>
     <script src="../shared/scripts.js" defer></script>
     <script>
-        // Load Camera Shelf-tagged posts for What's New section
         function formatDateCS(dateStr) {
             return new Date(dateStr + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
         }
@@ -282,7 +203,7 @@
                                 <div class="post-card-meta">
                                     <span class="post-date">${formatDateCS(post.date)}</span>
                                 </div>
-                                <h2 class="post-card-title">${post.title}</h2>
+                                <h3 class="post-card-title">${post.title}</h3>
                                 <p class="post-card-excerpt">${post.excerpt}</p>
                             </div>
                             <span class="post-read-more">Read more →</span>
@@ -290,56 +211,34 @@
                     grid.appendChild(card);
                 });
                 document.getElementById('whats-new').style.display = 'block';
-            } catch (e) { /* silently skip */ }
+            } catch (e) { /* skip */ }
         }
         document.addEventListener('DOMContentLoaded', loadCSUpdates);
-    </script>
-    <script>
-        // Page-specific script for Carousel
+
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 const track = document.querySelector('.carousel-track');
                 if (!track) return;
-                
                 const slides = Array.from(track.children);
                 const dotsNav = document.getElementById('carousel-dots');
                 let currentIndex = 0;
                 let slideInterval;
-
                 if (slides.length > 0 && dotsNav) {
                     slides.forEach((_, i) => {
                         const dot = document.createElement('button');
                         dot.className = 'carousel-dot';
-                        dot.addEventListener('click', () => {
-                            goToSlide(i);
-                            resetInterval();
-                        });
+                        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                        dot.addEventListener('click', () => { goToSlide(i); resetInterval(); });
                         dotsNav.appendChild(dot);
                     });
                     const dots = Array.from(dotsNav.children);
-
                     const goToSlide = (index) => {
                         track.style.transform = `translateX(-${index * 100}%)`;
-                        dots.forEach((dot, i) => {
-                            dot.classList.toggle('active', i === index);
-                        });
+                        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
                         currentIndex = index;
                     };
-
-                    const nextSlide = () => {
-                        const nextIndex = (currentIndex + 1) % slides.length;
-                        goToSlide(nextIndex);
-                    };
-                    
-                    const startInterval = () => {
-                        slideInterval = setInterval(nextSlide, 3000);
-                    };
-
-                    const resetInterval = () => {
-                        clearInterval(slideInterval);
-                        startInterval();
-                    };
-
+                    const startInterval = () => { slideInterval = setInterval(() => goToSlide((currentIndex + 1) % slides.length), 3600); };
+                    const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
                     goToSlide(0);
                     startInterval();
                 }

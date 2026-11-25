@@ -2,14 +2,18 @@
 (async function () {
     var PRODUCT_NAMES = {
         'camerashelf':      'Camera Shelf',
-        'camerapouch':      'Camera Pouch',
+        'camerapouch':      'CamPouch',
+        'campouch':         'CamPouch',
         'simulatedfilm':    'Simulated Film',
         'spent-today':      'Spent Today',
         'inventory':        'My Inventory Stack',
+        'archiveshelf':     'ArchiveShelf',
         'habit-habit':      'Habit Habit',
         'pattern-projects': 'Pattern Projects',
         'recipe-mini':      'Recipe Mini',
         'vocab-bento':      'Vocab Bento',
+        'slideshow-frames': 'Slideshow Frames',
+        'os39':             'OS-39',
     };
 
     function formatDate(dateStr) {
@@ -58,7 +62,10 @@
         return;
     }
 
-    var tag      = window.UPDATES_FILTER_TAG || '';
-    var filtered = tag ? allPosts.filter(function (p) { return p.tags.includes(tag); }) : allPosts;
+    var tag = window.UPDATES_FILTER_TAG || '';
+    var matchTags = (tag === 'campouch' || tag === 'camerapouch') ? ['campouch', 'camerapouch'] : [tag];
+    var filtered = tag ? allPosts.filter(function (p) {
+        return p.tags.some(function (t) { return matchTags.includes(t); });
+    }) : allPosts;
     renderPosts(filtered);
 })();

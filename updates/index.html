@@ -4,39 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="pb-site-base" content="">
-    <title>Updates — Pandesal Bytes</title>
+    <title>News &amp; Release Notes — Pandesal Bytes</title>
+    <link rel="icon" type="image/jpeg" href="../assets/pb-logo.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
 </head>
 <body>
 
     <div id="header-placeholder"></div>
-    <div class="header-spacer"></div>
 
-    <section class="hero-section hero-section--home">
+    <section class="company-hero">
         <div class="container">
-            <div class="hero-home-inner">
-                <p class="site-tagline mono-eyebrow">Blog &amp; Updates <span class="tagline-sep">/</span> ブログ・お知らせ</p>
-                <h1 class="hero-title hero-title--home">Updates</h1>
-                <p class="hero-subtitle hero-subtitle--home" style="max-width: none;">Release notes, new features, and news from Pandesal Bytes.</p>
-            </div>
+            <span class="section-eyebrow-pill" data-i18n-key="updates.eyebrow">News &amp; Release Notes</span>
+            <h1 class="hero-title" style="text-align: left;" data-i18n-key="updates.hero.title">Updates</h1>
+            <p class="company-lead" data-i18n-key="updates.hero.lead">Product updates, release notes, and studio announcements from Pandesal Bytes.</p>
         </div>
     </section>
 
-    <main class="container main-home">
+    <main class="container">
         <section class="page-section page-section--tight-top">
 
             <header class="section-block-head">
-                <h2 class="section-block-title" id="filter-label">All Posts</h2>
-                <span class="section-block-label mono-eyebrow" id="filter-count" aria-hidden="true"></span>
+                <h2 class="section-block-title" id="filter-label" data-i18n-key="updates.all-posts">All Posts</h2>
+                <span class="section-block-label" id="filter-count" aria-hidden="true"></span>
             </header>
             <div class="section-block-rule" role="presentation"></div>
 
             <div id="filter-bar" class="updates-filter-bar" style="display: none;"></div>
             <div id="posts-container" class="updates-posts-grid"></div>
-            <p id="posts-empty" class="updates-empty" style="display: none;">No updates yet. Check back soon.</p>
+            <p id="posts-empty" class="updates-empty" style="display: none;" data-i18n-key="updates.empty">No updates yet. Check back soon.</p>
 
         </section>
     </main>
@@ -44,28 +42,35 @@
     <div id="footer-placeholder"></div>
 
     <script src="../shared/paths.js"></script>
+    <script src="../shared/products.js"></script>
     <script src="../shared/scripts.js" defer></script>
     <script>
-        const PRODUCT_NAMES = {
+        const PRODUCT_NAMES = Object.assign({
             'camerashelf':      'Camera Shelf',
-            'camerapouch':      'Camera Pouch',
+            'camerapouch':      'CamPouch',
+            'campouch':         'CamPouch',
             'simulatedfilm':    'Simulated Film',
             'spent-today':      'Spent Today',
             'inventory':        'My Inventory Stack',
+            'archiveshelf':     'ArchiveShelf',
             'habit-habit':      'Habit Habit',
             'pattern-projects': 'Pattern Projects',
             'recipe-mini':      'Recipe Mini',
             'vocab-bento':      'Vocab Bento',
-        };
+            'slideshow-frames': 'Slideshow Frames',
+            'os39':             'OS-39',
+        }, window.PB_PRODUCT_NAMES || {});
 
         function formatDate(dateStr) {
+            const lang = window.__pbLang === 'ja' ? 'ja-JP' : 'en-US';
             const d = new Date(dateStr + 'T12:00:00');
-            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            return d.toLocaleDateString(lang, { year: 'numeric', month: 'long', day: 'numeric' });
         }
 
         function renderPosts(posts) {
             const container = document.getElementById('posts-container');
             const empty     = document.getElementById('posts-empty');
+            const readMore  = (window.__pbTranslations && window.__pbTranslations['home.updates.readmore']) || 'Read more →';
             container.innerHTML = '';
             if (posts.length === 0) {
                 empty.style.display = 'block';
@@ -89,7 +94,7 @@
                             <h2 class="post-card-title">${post.title}</h2>
                             <p class="post-card-excerpt">${post.excerpt}</p>
                         </div>
-                        <span class="post-read-more">Read more →</span>
+                        <span class="post-read-more">${readMore}</span>
                     </div>
                 `;
                 container.appendChild(card);
@@ -97,43 +102,46 @@
         }
 
         function applyFilter(tag, posts) {
-            const filtered = tag ? posts.filter(p => p.tags.includes(tag)) : posts;
+            const matchTags = (tag === 'campouch' || tag === 'camerapouch') ? ['campouch', 'camerapouch'] : [tag];
+            const filtered = tag ? posts.filter(p => p.tags.some(t => matchTags.includes(t))) : posts;
             renderPosts(filtered);
             const filterLabel = document.getElementById('filter-label');
             const filterCount = document.getElementById('filter-count');
-            if (filterLabel) filterLabel.textContent = tag ? (PRODUCT_NAMES[tag] || tag) : 'All Posts';
+            const allLabel = (window.__pbTranslations && window.__pbTranslations['updates.all-posts']) || 'All Posts';
+            if (filterLabel) filterLabel.textContent = tag ? (PRODUCT_NAMES[tag] || tag) : allLabel;
             if (filterCount) filterCount.textContent = filtered.length > 0 ? String(filtered.length) : '';
         }
 
+        let cachedPosts = [];
+        let activeTagState = '';
+
         async function init() {
-            let posts = [];
             try {
-                const res  = await fetch('posts.json');
-                posts = await res.json();
+                const res = await fetch('posts.json');
+                cachedPosts = await res.json();
             } catch (e) {
                 document.getElementById('posts-empty').style.display = 'block';
                 return;
             }
 
-            const params     = new URLSearchParams(window.location.search);
-            let   activeTag  = params.get('tag') || '';
+            const params = new URLSearchParams(window.location.search);
+            activeTagState = params.get('tag') || '';
 
-            // Build filter bar
-            const allTags  = [...new Set(posts.flatMap(p => p.tags))];
+            const allTags = [...new Set(cachedPosts.flatMap(p => p.tags))];
             const filterBar = document.getElementById('filter-bar');
 
             if (allTags.length > 0) {
                 filterBar.style.display = 'flex';
 
                 const allBtn = document.createElement('button');
-                allBtn.className   = 'filter-btn' + (activeTag === '' ? ' active' : '');
+                allBtn.className = 'filter-btn' + (activeTagState === '' ? ' active' : '');
                 allBtn.textContent = 'All';
                 allBtn.dataset.tag = '';
                 filterBar.appendChild(allBtn);
 
                 allTags.forEach(tag => {
                     const btn = document.createElement('button');
-                    btn.className   = 'filter-btn' + (activeTag === tag ? ' active' : '');
+                    btn.className = 'filter-btn' + (activeTagState === tag ? ' active' : '');
                     btn.textContent = PRODUCT_NAMES[tag] || tag;
                     btn.dataset.tag = tag;
                     filterBar.appendChild(btn);
@@ -144,27 +152,29 @@
                     if (!btn) return;
                     filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    activeTag = btn.dataset.tag;
-                    applyFilter(activeTag, posts);
-                    // Keep URL in sync so filtered views are shareable
-                    const newUrl = activeTag
-                        ? `?tag=${encodeURIComponent(activeTag)}`
+                    activeTagState = btn.dataset.tag;
+                    applyFilter(activeTagState, cachedPosts);
+                    const newUrl = activeTagState
+                        ? `?tag=${encodeURIComponent(activeTagState)}`
                         : window.location.pathname;
-                    history.pushState({ tag: activeTag }, '', newUrl);
+                    history.pushState({ tag: activeTagState }, '', newUrl);
                 });
             }
 
-            // Restore filter on browser back / forward
             window.addEventListener('popstate', e => {
-                const tag = e.state?.tag ?? new URLSearchParams(window.location.search).get('tag') ?? '';
+                activeTagState = e.state?.tag ?? new URLSearchParams(window.location.search).get('tag') ?? '';
                 filterBar.querySelectorAll('.filter-btn').forEach(b => {
-                    b.classList.toggle('active', b.dataset.tag === tag);
+                    b.classList.toggle('active', b.dataset.tag === activeTagState);
                 });
-                applyFilter(tag, posts);
+                applyFilter(activeTagState, cachedPosts);
             });
 
-            applyFilter(activeTag, posts);
+            applyFilter(activeTagState, cachedPosts);
         }
+
+        window.onPandesalTranslationsReady = function () {
+            if (cachedPosts.length) applyFilter(activeTagState, cachedPosts);
+        };
 
         document.addEventListener('DOMContentLoaded', init);
     </script>

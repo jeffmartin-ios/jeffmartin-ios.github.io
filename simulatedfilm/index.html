@@ -4,83 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="pb-site-base" content="">
-    <title>Simulated Film - Film Recipes</title>
-    
-    <!-- Smart App Banner for iOS -->
-    <meta name="apple-itunes-app" content="app-id=PLACEHOLDER_SF_ID">
-
+    <title>Simulated Film — Fujifilm &amp; Ricoh Recipe Manager | Pandesal Bytes</title>
+    <meta name="description" content="Store, preview, and share custom film simulation recipes for Fujifilm X-Series and Ricoh GR cameras on iOS.">
+    <meta name="apple-itunes-app" content="app-id=6755539247">
+    <link rel="icon" type="image/jpeg" href="../assets/pb-logo.jpeg">
+    <link rel="apple-touch-icon" href="../assets/simulatedfilm/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/styles.css">
 </head>
 <body>
 
-    <!-- This div will be populated by ../shared/header.html -->
     <div id="header-placeholder"></div>
-    
-    <!-- A simple spacer for the fixed header -->
-    <div style="height: 64px;"></div>
 
     <main>
-        <!-- Carousel Hero -->
         <section class="hero-carousel hero-section">
             <div class="container">
-                <h1 class="hero-title" data-i18n-key="sf.hero.title">Simulated Film</h1>
-                <h3 class="hero-subtitle" data-i18n-key="sf.hero.subtitle">Manage your Fujifilm & Ricoh Recipes</h3>
-                
+                <div class="product-hero-header">
+                    <div class="product-hero-icon">
+                        <img src="../assets/simulatedfilm/icon.png" alt="Simulated Film App Icon">
+                    </div>
+                    <div class="platform-pills" data-pb-product-pills="simulatedfilm"></div>
+                    <h1 class="hero-title" data-i18n-key="sf.hero.title">Simulated Film</h1>
+                    <p class="hero-subtitle" data-i18n-key="sf.hero.subtitle">Manage and share custom Fujifilm &amp; Ricoh film simulation recipes.</p>
+                </div>
+
                 <div class="hero-carousel-wrapper">
-                    <!-- Phone Frame -->
                     <div class="phone-frame">
                         <div class="phone-screen">
                             <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="../assets/simulatedfilm/1-home.png" alt="Simulated Film Home" class="app-screenshot">
+                                    <img src="../assets/simulatedfilm/1-home.png" alt="Simulated Film Recipe Library" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/simulatedfilm/2-detail.png" alt="Simulated Film Details" class="app-screenshot">
+                                    <img src="../assets/simulatedfilm/2-detail.png" alt="Simulated Film Camera Settings Detail" class="app-screenshot">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="../assets/simulatedfilm/3-share.png" alt="Simulated Film Sharing" class="app-screenshot">
+                                    <img src="../assets/simulatedfilm/3-frame.png" alt="Simulated Film Framed Preview" class="app-screenshot">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="../assets/simulatedfilm/4-share.png" alt="Simulated Film QR and Recipe Card Sharing" class="app-screenshot">
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <!-- Carousel Dots -->
                     <div id="carousel-dots" class="carousel-dots"></div>
-                    <!-- CTA Button -->
-                    <a href="https://apps.apple.com/us/app/simulated-film-recipe-manager/id6755539247" target="_blank" class="app-store-button" data-i18n-key="sf.download">
-                        Download on the App Store
-                    </a>
+                    <div data-pb-product-actions="simulatedfilm">
+                        <a href="https://apps.apple.com/us/app/simulated-film-recipe-manager/id6755539247" target="_blank" rel="noopener" class="app-store-button" data-i18n-key="sf.download">
+                            Download on the App Store
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
         <section id="features" class="page-section">
-             <div class="container">
-                     <div class="text-section" style="padding: 0 0 48px 0;">
-                     <h2 class="section-title" data-i18n-key="sf.features.title">Your Digital Film Library</h2>
-                     <p class="section-subtitle" data-i18n-key="sf.features.subtitle">A dedicated home for your custom camera settings and film recipes.</p>
-                 </div>
-                 <div class="features-grid">
-                     <div class="feature-item">
+            <div class="container">
+                <div class="text-section" style="padding: 0 0 48px 0;">
+                    <h2 class="section-title" data-i18n-key="sf.features.title">Your Digital Film Recipe Library</h2>
+                    <p class="section-subtitle" data-i18n-key="sf.features.subtitle">A dedicated, distraction-free home for your custom camera settings and color recipes.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
                         <h3 data-i18n-key="sf.feature1.title">Recipe Manager</h3>
-                        <p data-i18n-key="sf.feature1.body">Store and organize your custom film simulation recipes for Fujifilm and Ricoh cameras in one beautiful place.</p>
-                     </div>
-                     <div class="feature-item">
+                        <p data-i18n-key="sf.feature1.body">Store and organize custom film simulation recipes for Fujifilm X-Series and Ricoh GR cameras in one clean library.</p>
+                    </div>
+                    <div class="feature-item">
                         <h3 data-i18n-key="sf.feature2.title">Visual Preview</h3>
-                        <p data-i18n-key="sf.feature2.body">See your recipes come to life. The interface adapts to show you the simulated look of your settings.</p>
-                     </div>
-                     <div class="feature-item">
-                        <h3 data-i18n-key="sf.feature3.title">Easy Sharing</h3>
-                        <p data-i18n-key="sf.feature3.body">Share your recipes with friends or the community using generated recipe cards and QR codes.</p>
-                     </div>
-                 </div>
-             </div>
+                        <p data-i18n-key="sf.feature2.body">Attach sample frames and inspect white balance shifts, tone curves, grain, and color chrome settings at a glance.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3 data-i18n-key="sf.feature3.title">Instant QR Sharing</h3>
+                        <p data-i18n-key="sf.feature3.body">Exchange recipes with fellow photographers effortlessly via generated recipe cards and scannable QR codes.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- FAQ Section -->
         <section id="faq" class="page-section faq-section">
             <div class="container faq-content">
                 <div class="text-section" style="padding: 0 0 40px 0;">
@@ -88,73 +89,52 @@
                 </div>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <h3 data-i18n-key="sf.faq1.title">Which cameras are supported?</h3>
-                        <p data-i18n-key="sf.faq1.body">We currently support custom recipe storage for most modern Fujifilm X-Series cameras and Ricoh GR cameras.</p>
+                        <h3 data-i18n-key="sf.faq1.title">Which camera systems are supported?</h3>
+                        <p data-i18n-key="sf.faq1.body">Simulated Film supports custom recipe parameters for modern Fujifilm X-Series / GFX cameras and Ricoh GR cameras.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="sf.faq2.title">Is my data private?</h3>
-                        <p data-i18n-key="sf.faq2.body">Yes. Your recipes are stored locally on your device and synced securely via your private iCloud. We do not have access to your library.</p>
+                        <h3 data-i18n-key="sf.faq2.title">Is my recipe library private?</h3>
+                        <p data-i18n-key="sf.faq2.body">Yes. Recipes are stored locally on your device and synced privately via your personal iCloud account.</p>
                     </div>
                     <div class="faq-item">
-                        <h3 data-i18n-key="sf.faq3.title">Can I import recipes?</h3>
-                        <p data-i18n-key="sf.faq3.body">Yes, you can import recipes from other users via QR code, making it easy to try out new looks from the community.</p>
+                        <h3 data-i18n-key="sf.faq3.title">Can I import recipes from other photographers?</h3>
+                        <p data-i18n-key="sf.faq3.body">Yes, scan any Simulated Film QR code to add new looks straight into your collection.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- This div will be populated by ../shared/footer.html -->
     <div id="footer-placeholder"></div>
 
     <script src="../shared/paths.js"></script>
+    <script src="../shared/products.js"></script>
     <script src="../shared/scripts.js" defer></script>
     <script>
-        // Page-specific script for Carousel
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 const track = document.querySelector('.carousel-track');
                 if (!track) return;
-                
                 const slides = Array.from(track.children);
                 const dotsNav = document.getElementById('carousel-dots');
                 let currentIndex = 0;
                 let slideInterval;
-
                 if (slides.length > 0 && dotsNav) {
                     slides.forEach((_, i) => {
                         const dot = document.createElement('button');
                         dot.className = 'carousel-dot';
-                        dot.addEventListener('click', () => {
-                            goToSlide(i);
-                            resetInterval();
-                        });
+                        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                        dot.addEventListener('click', () => { goToSlide(i); resetInterval(); });
                         dotsNav.appendChild(dot);
                     });
                     const dots = Array.from(dotsNav.children);
-
                     const goToSlide = (index) => {
                         track.style.transform = `translateX(-${index * 100}%)`;
-                        dots.forEach((dot, i) => {
-                            dot.classList.toggle('active', i === index);
-                        });
+                        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
                         currentIndex = index;
                     };
-
-                    const nextSlide = () => {
-                        const nextIndex = (currentIndex + 1) % slides.length;
-                        goToSlide(nextIndex);
-                    };
-                    
-                    const startInterval = () => {
-                        slideInterval = setInterval(nextSlide, 3000);
-                    };
-
-                    const resetInterval = () => {
-                        clearInterval(slideInterval);
-                        startInterval();
-                    };
-
+                    const startInterval = () => { slideInterval = setInterval(() => goToSlide((currentIndex + 1) % slides.length), 3400); };
+                    const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
                     goToSlide(0);
                     startInterval();
                 }

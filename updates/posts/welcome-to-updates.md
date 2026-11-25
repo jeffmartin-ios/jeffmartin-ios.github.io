@@ -1,21 +1,21 @@
-## Hello
+## Welcome
 
-Welcome to the Pandesal Bytes Updates page.
+Welcome to the Pandesal Bytes News & Release Notes hub.
 
-This is where I'll share release notes, new feature announcements, and the occasional behind-the-scenes update about what's being worked on across all the apps.
+This is where our team shares product announcements, detailed release notes, and engineering updates across the Pandesal Bytes software suite.
 
-## Why an Updates Page?
+## Why a Dedicated Updates Hub?
 
-As the app lineup grows, it's become harder to communicate changes clearly through App Store release notes alone. They're limited in length and don't support any formatting.
+As our portfolio of applications for the Apple ecosystem grows, App Store release notes alone don't offer enough space or formatting to highlight workflow improvements clearly.
 
-This page gives more room to explain *what* changed, *why* it changed, and what's coming next — organized by app so you can follow only what's relevant to you.
+This hub provides clear context on *what* shipped, *why* we built it, and how each update fits into our product roadmap — organized by application so you can follow the tools relevant to your work.
 
 ## What to Expect
 
-- **Release notes** for every meaningful update to every app
-- **Feature previews** when something bigger is in development
-- **General posts** about the studio, new apps, or other news
+- **Release notes** for major updates across our product suite
+- **Feature deep dives** showcasing new workflows and design refinements
+- **Studio announcements** covering new releases and company news
 
-Use the filter buttons at the top of the Updates page to view posts for a specific app.
+Use the product filter bar at the top of the Updates page to browse notes for a specific application.
 
-Thanks for using Pandesal Bytes apps.
+Thank you for choosing software by Pandesal Bytes.

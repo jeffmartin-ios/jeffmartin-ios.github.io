@@ -2,15 +2,18 @@
  * GitHub Pages–aware URL helpers.
  * - Custom domain at / : base is empty (default).
  * - Project site at /your-repo/ : base is auto-detected from the first path segment
- *   unless that segment is a known top-level route (updates, privacy, spent-today, …).
+ *   unless that segment is a known top-level route.
  * Override anytime: <meta name="pb-site-base" content="/your-repo-name">
  */
 (function (w) {
     var KNOWN_TOP = {
         updates: 1,
         privacy: 1,
+        company: 1,
         'spent-today': 1,
+        campouch: 1,
         camerapouch: 1,
+        cameraplan: 1,
         'habit-habit': 1,
         simulatedfilm: 1,
         camerashelf: 1,
@@ -18,9 +21,12 @@
         'recipe-mini': 1,
         'vocab-bento': 1,
         inventory: 1,
+        archiveshelf: 1,
+        'slideshow-frames': 1,
+        os39: 1,
         assets: 1,
         shared: 1,
-        lang: 1,
+        lang: 1
     };
 
     function getPbSiteBase() {
